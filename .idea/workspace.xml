@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="now with all commands(mostly dummies)">
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/CommandDoesntExistException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandFiller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjectsForCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

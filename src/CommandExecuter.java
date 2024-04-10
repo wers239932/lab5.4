@@ -1,4 +1,5 @@
 import Commands.Command;
+import Exceptions.CommandDoesntExistException;
 import Exceptions.WrongDataException;
 import cli.Terminal;
 
@@ -28,9 +29,13 @@ public class CommandExecuter {
                 ArrayList response = command.execute(commandLine);
                 this.terminal.writeResponse(response);
             }
-            catch (NullPointerException e)
+            catch (CommandDoesntExistException e)
             {
                 this.terminal.writeLine("такой команды не существует");
+            }
+            catch (NullPointerException e)
+            {
+                this.terminal.writeLine("команда возвращает null набор строк");
             }
             catch (WrongDataException e)
             {
