@@ -13,14 +13,18 @@ public class CommandArray extends HashMap<String, Command>{
         }
     }
     @Override
-    public Command get(Object name) throws CommandDoesntExistException {
+    public Command get(Object name) {
         try{
             Command command = super.get((String) name);
             return command;
         }
         catch (NullPointerException e)
         {
-            throw new CommandDoesntExistException();
+            try {
+                throw new CommandDoesntExistException();
+            } catch (CommandDoesntExistException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
     public void addBasicCommands()

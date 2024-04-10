@@ -6,4 +6,5 @@ import java.util.ArrayList;
 
 public interface Command {
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException;
+    //public String[] getName();
 }
