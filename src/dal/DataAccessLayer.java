@@ -1,4 +1,7 @@
+package dal;
+
 import java.io.*;
+import java.util.ArrayList;
 
 public class DataAccessLayer {
     private FileReader reader;
@@ -21,7 +24,20 @@ public class DataAccessLayer {
             throw new RuntimeException(e);
         }
     }
-    public String readRecord() throws IOException {
+    public ArrayList<String> readAllRecords() throws IOException {
+        ArrayList<String> records = new ArrayList<>();
+        String record;
+        while (true)
+        {
+            record = this.readRecord();
+            if(record == null)
+                break;
+            records.add(record);
+        }
+        records.removeFirst();
+        return records;
+    }
+    private String readRecord() throws IOException {
         String str = null;
         int ch = this.reader.read();
         if (ch != -1) str = "";
@@ -38,11 +54,15 @@ public class DataAccessLayer {
             ch = this.reader.read();
 
         }
+        if(str!=null && str.equals("")) str=null;
         return str;
     }
-    public void writeRecord(String line) throws IOException {
+    public void writeAllRecords(ArrayList<String> lines) throws IOException {
         BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(filename));
-        outputStream.write(line.getBytes());
+        for (String line : lines) {
+            outputStream.write(line.getBytes());
+            outputStream.write("\n".getBytes());
+        }
         outputStream.flush();
         outputStream.close();
     }

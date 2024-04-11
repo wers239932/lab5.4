@@ -1,4 +1,5 @@
 import cli.Commands.Command;
+import storage.Storage;
 
 import java.util.HashMap;
 

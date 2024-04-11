@@ -2,6 +2,7 @@ package cli.Commands;
 
 import Exceptions.CommandException;
 import objectSpace.City;
+import storage.Storage;
 
 import java.util.ArrayList;
 
@@ -12,9 +13,9 @@ public class Show implements Command{
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, City city) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        for(Object city1: storage)
+        for(Object city1: storage.getAllCitiesList())
         {
             response.add(((City) city1).toString());
         }
