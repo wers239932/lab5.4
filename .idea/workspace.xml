@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="deleted some more useless methods from CommandExecuter">
-      <change afterPath="$PROJECT_DIR$/src/filework/DataAccessLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/savefile.csv" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="added DataAccessLayer - static-like class that can save and load Storage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandArrayFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Write.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filework/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filework/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712843165142</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added DataAccessLayer - static-like class that can save and load Storage">
+      <created>1712847137709</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712847137709</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +223,7 @@
     <MESSAGE value="now we add an array of commands instead of map when loading commandArray" />
     <MESSAGE value="deleted useless methods from CommandExecuter" />
     <MESSAGE value="deleted some more useless methods from CommandExecuter" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted some more useless methods from CommandExecuter" />
+    <MESSAGE value="added DataAccessLayer - static-like class that can save and load Storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added DataAccessLayer - static-like class that can save and load Storage" />
   </component>
 </project>

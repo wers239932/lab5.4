@@ -1,9 +1,14 @@
 package cli.Commands;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Help implements Command{
+    private HashMap<String, Command> commandArray;
+    public Help()
+    {
 
+    }
     @Override
     public ArrayList<String> execute(ArrayList<String> args) {
         ArrayList<String> response = new ArrayList<>();

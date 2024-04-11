@@ -19,7 +19,7 @@ public class Main {
             storage = new Storage();
             System.out.println("не удалось загрузить коллекцию");
         }
-        ArrayList commandArray = CommandArrayFiller.setBasicCommands();
+        ArrayList commandArray = CommandArrayFiller.setBasicCommands(storage);
         CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, storage);
         commandExecuter.start();
     }

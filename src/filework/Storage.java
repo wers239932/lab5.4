@@ -35,4 +35,5 @@ public class Storage<T extends City> extends ArrayList<T> {
         Comparator<City> comparator= new Comparater();
         this.sort(comparator);
     }
+
 }
