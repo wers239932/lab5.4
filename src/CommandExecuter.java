@@ -2,20 +2,25 @@ import cli.Commands.*;
 import Exceptions.CommandDoesntExistException;
 import Exceptions.CommandException;
 import cli.Terminal;
+import filework.Storage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Vector;
 
 public class CommandExecuter {
     private HashMap<String, Command> commandArray;
     private Terminal terminal;
+    private Storage storage;
 
-    public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray) {
+    public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray, Storage storage) {
         this.terminal = terminal;
         this.commandArray = new HashMap<>();
         this.addCommandArray(commandArray);
+        this.storage = storage;
     }
+
 
     private void addCommandArray(ArrayList<Command> commandArrayList) {
         for (Command command : commandArrayList) {

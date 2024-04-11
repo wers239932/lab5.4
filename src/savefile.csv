@@ -1,0 +1,4 @@
+id,name,coordinate_x,coordinate_y,creationDate,area,population,metersAboveSeaLevel,capital,carCode,government,governor_birthday
+1517709351,1,1.0,1,2024-04-06T08:51:42.836106300+03:00[Europe/Moscow],1,1,1.0,false,454,KLEPTOCRACY,1111-11-11T11:11:11
+1810410344,null,453.0,34,2024-04-06T09:01:10.083478600+03:00[Europe/Moscow],453,543,453.0,false,435,CORPORATOCRACY,1111-11-11T11:11:11
+1014756347,sadsdas,453.0,43543,2024-04-06T09:05:40.195611100+03:00[Europe/Moscow],43,34,43.0,false,null,CORPORATOCRACY,1111-11-11T11:11:11
