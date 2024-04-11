@@ -4,13 +4,20 @@ public class DataAccessLayer {
     private FileReader reader;
     private File file;
     private String filename;
-    public DataAccessLayer(String filename)
-    {
+    public DataAccessLayer(String filename){
         this.filename = filename;
         this.file = new File(filename);
         try {
             this.reader = new FileReader(file);
         } catch (FileNotFoundException e) {
+            try {
+                file.createNewFile();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        catch (Exception e)
+        {
             throw new RuntimeException(e);
         }
     }
