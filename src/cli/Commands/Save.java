@@ -1,6 +1,7 @@
 package cli.Commands;
 
 import Exceptions.CommandException;
+import cli.Terminal;
 import objectSpace.City;
 import storage.Storage;
 
@@ -14,7 +15,7 @@ public class Save implements Command{
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
         try {
             storage.save();
         } catch (IOException e) {
