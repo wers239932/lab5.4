@@ -9,4 +9,13 @@ public class Save implements Command{
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
+    @Override
+    public String getName() {
+        return "save";
+    }
+
+    @Override
+    public String getDescription() {
+        return "save : сохранить коллекцию в файл";
+    }
 }

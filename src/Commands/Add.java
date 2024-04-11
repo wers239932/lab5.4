@@ -9,4 +9,14 @@ public class Add implements Command{
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
+
+    @Override
+    public String getName() {
+        return "add";
+    }
+
+    @Override
+    public String getDescription() {
+        return "add {element} : добавить новый элемент в коллекцию";
+    }
 }

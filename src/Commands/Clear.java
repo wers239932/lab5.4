@@ -9,4 +9,13 @@ public class Clear implements Command{
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
+    @Override
+    public String getName() {
+        return "clear";
+    }
+
+    @Override
+    public String getDescription() {
+        return "clear : очистить коллекцию";
+    }
 }

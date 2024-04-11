@@ -10,4 +10,13 @@ public class Help implements Command{
         response.add("it's too late to help");
         return response;
     }
+    @Override
+    public String getName() {
+        return "help";
+    }
+
+    @Override
+    public String getDescription() {
+        return "help : вывести справку по доступным командам";
+    }
 }

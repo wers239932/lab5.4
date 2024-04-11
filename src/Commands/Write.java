@@ -12,4 +12,13 @@ public class Write implements Command {
         response.add(args.get(0));
         return response;
     }
+    @Override
+    public String getName() {
+        return "write";
+    }
+
+    @Override
+    public String getDescription() {
+        return "write : пишет первое слово ввода";
+    }
 }

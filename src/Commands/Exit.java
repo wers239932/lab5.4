@@ -9,4 +9,13 @@ public class Exit implements Command{
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
+    @Override
+    public String getName() {
+        return "exit";
+    }
+
+    @Override
+    public String getDescription() {
+        return "exit : завершить программу (без сохранения в файл)";
+    }
 }

@@ -11,7 +11,7 @@ public class CommandExecuter {
     private HashMap<String, Command> commandArray;
     private Terminal terminal;
 
-    public void addCommandArray(CommandArray commandArray)
+    public void addCommandArray(HashMap<String, Command> commandArray)
     {
         this.commandArray = commandArray;
     }
