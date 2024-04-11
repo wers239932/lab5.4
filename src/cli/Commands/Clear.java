@@ -1,21 +1,21 @@
-package Commands;
+package cli.Commands;
 
 import Exceptions.WrongDataException;
 
 import java.util.ArrayList;
 
-public class Exit implements Command{
+public class Clear implements Command{
     @Override
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
     @Override
     public String getName() {
-        return "exit";
+        return "clear";
     }
 
     @Override
     public String getDescription() {
-        return "exit : завершить программу (без сохранения в файл)";
+        return "clear : очистить коллекцию";
     }
 }

@@ -1,8 +1,7 @@
-import Commands.*;
+import cli.Commands.*;
 import Exceptions.CommandDoesntExistException;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class CommandArray extends HashMap<String, Command>{
     public void addCommand(String[] names, Command command)
@@ -12,20 +11,12 @@ public class CommandArray extends HashMap<String, Command>{
             this.put(name, command);
         }
     }
-    @Override
-    public Command get(Object name) {
-        try{
-            Command command = super.get((String) name);
-            return command;
-        }
-        catch (NullPointerException e)
-        {
-            try {
-                throw new CommandDoesntExistException();
-            } catch (CommandDoesntExistException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
+    public Command get(String name) throws CommandDoesntExistException {
+
+        Command command = this.get((String) name);
+        if(command==null) throw new CommandDoesntExistException();
+        return command;
+
     }
     public void addBasicCommands()
     {

@@ -1,4 +1,4 @@
-package Commands;
+package cli.Commands;
 
 import Exceptions.WrongDataException;
 

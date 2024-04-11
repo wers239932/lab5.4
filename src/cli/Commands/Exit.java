@@ -1,21 +1,21 @@
-package Commands;
+package cli.Commands;
 
 import Exceptions.WrongDataException;
 
 import java.util.ArrayList;
 
-public class Show implements Command{
+public class Exit implements Command{
     @Override
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
     @Override
     public String getName() {
-        return "show";
+        return "exit";
     }
 
     @Override
     public String getDescription() {
-        return "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
+        return "exit : завершить программу (без сохранения в файл)";
     }
 }

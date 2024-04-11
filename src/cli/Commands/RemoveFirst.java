@@ -1,22 +1,21 @@
-package Commands;
+package cli.Commands;
 
 import Exceptions.WrongDataException;
 
 import java.util.ArrayList;
 
-public class Add implements Command{
+public class RemoveFirst implements Command{
     @Override
     public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
         return null;
     }
-
     @Override
     public String getName() {
-        return "add";
+        return "remove_first";
     }
 
     @Override
     public String getDescription() {
-        return "add {element} : добавить новый элемент в коллекцию";
+        return "remove_first : удалить первый элемент из коллекции";
     }
 }

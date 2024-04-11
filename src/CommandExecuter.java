@@ -1,4 +1,4 @@
-import Commands.*;
+import cli.Commands.*;
 import Exceptions.CommandDoesntExistException;
 import Exceptions.WrongDataException;
 import cli.Terminal;
@@ -57,6 +57,10 @@ public class CommandExecuter {
         }
     }
 
+    public void addCommand(Command command)
+    {
+        this.commandArray.put(command.getName(), command);
+    }
     private Command get(Object name) throws CommandDoesntExistException {
 
         Command command = this.commandArray.get((String) name);
@@ -66,22 +70,23 @@ public class CommandExecuter {
     }
     public void addBasicCommands()
     {
-        this.commandArray.put("add", new Add());
-        this.commandArray.put("clear", new Clear());
-        this.commandArray.put("count_greater_than_capital", new CountGreaterThanCapital());
-        this.commandArray.put("execute_script", new ExecuteScript());
-        this.commandArray.put("exit", new Exit());
-        this.commandArray.put("help", new Help());
-        this.commandArray.put("info", new Info());
-        this.commandArray.put("remove_all_by_car_code", new RemoveAllByCarCode());
-        this.commandArray.put("remove_by_id", new RemoveById());
-        this.commandArray.put("remove_first", new RemoveFirst());
-        this.commandArray.put("remove_greater", new RemoveGreater());
-        this.commandArray.put("remove_lower", new RemoveLower());
-        this.commandArray.put("save", new Save());
-        this.commandArray.put("Show", new Show());
-        this.commandArray.put("Sum_of_carcode", new SumOfCarCode());
-        this.commandArray.put("update", new Update());
-        this.commandArray.put("write", new Write());
+        this.commandArray = new HashMap<>();
+        this.addCommand(new Add());
+        this.addCommand(new Clear());
+        this.addCommand(new CountGreaterThanCapital());
+        this.addCommand(new ExecuteScript());
+        this.addCommand(new Exit());
+        this.addCommand(new Help());
+        this.addCommand(new Info());
+        this.addCommand(new RemoveAllByCarCode());
+        this.addCommand(new RemoveById());
+        this.addCommand(new RemoveFirst());
+        this.addCommand(new RemoveGreater());
+        this.addCommand(new RemoveLower());
+        this.addCommand(new Save());
+        this.addCommand(new Show());
+        this.addCommand(new SumOfCarCode());
+        this.addCommand(new Update());
+        this.addCommand(new Write());
     }
 }
