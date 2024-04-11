@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="fixed exceptions with command execution">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="made constructor for CommandExecuter, made static CommandArrayFiller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandArray.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandArrayFiller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnvironmentVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnvironmentVars.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712838374500</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="made constructor for CommandExecuter, made static CommandArrayFiller">
+      <created>1712840194810</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712840194810</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +165,7 @@
     <MESSAGE value="added getname and getdescr functions" />
     <MESSAGE value="removed CommandArray, added correct addCommand method" />
     <MESSAGE value="fixed exceptions with command execution" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed exceptions with command execution" />
+    <MESSAGE value="made constructor for CommandExecuter, made static CommandArrayFiller" />
+    <option name="LAST_COMMIT_MESSAGE" value="made constructor for CommandExecuter, made static CommandArrayFiller" />
   </component>
 </project>

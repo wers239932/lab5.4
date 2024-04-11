@@ -11,14 +11,18 @@ public class CommandExecuter {
     private HashMap<String, Command> commandArray;
     private Terminal terminal;
 
-    public CommandExecuter(Terminal terminal, HashMap<String, Command> commandArray)
+    public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray)
     {
         this.terminal = terminal;
-        this.commandArray = commandArray;
+        this.commandArray = new HashMap<>();
+        this.addCommandArray(commandArray);
     }
-    public void addCommandArray(HashMap<String, Command> commandArray)
+    public void addCommandArray(ArrayList<Command> commandArrayList)
     {
-        this.commandArray = commandArray;
+        for(Command command : commandArrayList)
+        {
+            this.addCommand(command);
+        }
     }
     public void addTerminal(Terminal terminal){
         this.terminal = terminal;
