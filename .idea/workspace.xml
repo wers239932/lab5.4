@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="deleted useless methods from CommandExecuter">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="deleted some more useless methods from CommandExecuter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EnvironmentVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnvironmentVars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filework/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712842091698</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="deleted some more useless methods from CommandExecuter">
+      <created>1712843165142</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712843165142</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +186,7 @@
     <MESSAGE value="made constructor for CommandExecuter, made static CommandArrayFiller" />
     <MESSAGE value="now we add an array of commands instead of map when loading commandArray" />
     <MESSAGE value="deleted useless methods from CommandExecuter" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted useless methods from CommandExecuter" />
+    <MESSAGE value="deleted some more useless methods from CommandExecuter" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted some more useless methods from CommandExecuter" />
   </component>
 </project>

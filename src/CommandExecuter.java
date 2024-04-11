@@ -58,7 +58,7 @@ public class CommandExecuter {
 
     }
 
-    public HashMap<String, Command> getCommandArray() {
+    private HashMap<String, Command> getCommandArray() {
         return this.commandArray;
     }
 }
