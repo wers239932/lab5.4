@@ -1,7 +1,6 @@
 package cli.Commands;
 
 import Exceptions.CommandException;
-import filework.Storage;
 import objectSpace.City;
 
 import java.util.ArrayList;
@@ -13,11 +12,11 @@ public class Show implements Command{
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, City city) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        for(Object city: storage)
+        for(Object city1: storage)
         {
-            response.add(((City) city).toString());
+            response.add(((City) city1).toString());
         }
         return response;
     }
@@ -29,5 +28,9 @@ public class Show implements Command{
     @Override
     public String getDescription() {
         return "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
+    }
+    @Override
+    public Boolean getNeedObject() {
+        return false;
     }
 }

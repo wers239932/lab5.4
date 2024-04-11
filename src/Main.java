@@ -1,12 +1,8 @@
-import cli.Commands.Command;
 import cli.Terminal;
-import filework.DataAccessLayer;
-import filework.Storage;
 import objectSpace.exceptions.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +16,7 @@ public class Main {
             System.out.println("не удалось загрузить коллекцию");
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(storage);
-        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, storage);
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();
     }
 }

@@ -1,5 +1,7 @@
 package cli.Commands;
 
+import objectSpace.City;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -10,7 +12,7 @@ public class Help implements Command{
 
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args) {
+    public ArrayList<String> execute(ArrayList<String> args, City city) {
         ArrayList<String> response = new ArrayList<>();
         response.add("it's too late to help");
         return response;
@@ -23,5 +25,9 @@ public class Help implements Command{
     @Override
     public String getDescription() {
         return "help : вывести справку по доступным командам";
+    }
+    @Override
+    public Boolean getNeedObject() {
+        return false;
     }
 }

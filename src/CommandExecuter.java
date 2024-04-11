@@ -2,23 +2,19 @@ import cli.Commands.*;
 import Exceptions.CommandDoesntExistException;
 import Exceptions.CommandException;
 import cli.Terminal;
-import filework.Storage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Vector;
 
 public class CommandExecuter {
     private HashMap<String, Command> commandArray;
     private Terminal terminal;
-    private Storage storage;
 
-    public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray, Storage storage) {
+    public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray) {
         this.terminal = terminal;
         this.commandArray = new HashMap<>();
         this.addCommandArray(commandArray);
-        this.storage = storage;
     }
 
 
@@ -35,7 +31,7 @@ public class CommandExecuter {
                 ArrayList commandLine = new ArrayList(List.of(this.terminal.readLine().split(" +")));
                 Command command = this.get(commandLine.get(0));
                 commandLine.removeFirst();
-                ArrayList response = command.execute(commandLine);
+                ArrayList response = command.execute(commandLine, null);
                 this.terminal.writeResponse(response);
             } catch (CommandDoesntExistException e) {
                 this.terminal.writeLine("такой команды не существует");

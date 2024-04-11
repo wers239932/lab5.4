@@ -1,13 +1,14 @@
 package cli.Commands;
 
 import Exceptions.CommandException;
+import objectSpace.City;
 
 import java.util.ArrayList;
 
 public class Write implements Command {
 
     @Override
-    public ArrayList<String> execute(ArrayList<String> args) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, City city) throws CommandException {
         if(args.isEmpty()) throw new CommandException("неверный набор данных");
         ArrayList<String> response = new ArrayList<>();
         response.add(args.get(0));
@@ -21,5 +22,9 @@ public class Write implements Command {
     @Override
     public String getDescription() {
         return "write : пишет первое слово ввода";
+    }
+    @Override
+    public Boolean getNeedObject() {
+        return false;
     }
 }
