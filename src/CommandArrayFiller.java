@@ -3,26 +3,31 @@ import cli.Commands.*;
 import java.util.HashMap;
 
 public class CommandArrayFiller {
-    public static void addBasicCommands(CommandExecuter commandExecuter)
+    static HashMap<String,Command> commandList;
+    public static HashMap<String,Command> setBasicCommands()
     {
-
-        commandExecuter.setCommandArray(new HashMap<>());
-        commandExecuter.addCommand(new Add());
-        commandExecuter.addCommand(new Clear());
-        commandExecuter.addCommand(new CountGreaterThanCapital());
-        commandExecuter.addCommand(new ExecuteScript());
-        commandExecuter.addCommand(new Exit());
-        commandExecuter.addCommand(new Help());
-        commandExecuter.addCommand(new Info());
-        commandExecuter.addCommand(new RemoveAllByCarCode());
-        commandExecuter.addCommand(new RemoveById());
-        commandExecuter.addCommand(new RemoveFirst());
-        commandExecuter.addCommand(new RemoveGreater());
-        commandExecuter.addCommand(new RemoveLower());
-        commandExecuter.addCommand(new Save());
-        commandExecuter.addCommand(new Show());
-        commandExecuter.addCommand(new SumOfCarCode());
-        commandExecuter.addCommand(new Update());
-        commandExecuter.addCommand(new Write());
+        commandList = new HashMap<>();
+        addCommand(new Add());
+        addCommand(new Clear());
+        addCommand(new CountGreaterThanCapital());
+        addCommand(new ExecuteScript());
+        addCommand(new Exit());
+        addCommand(new Help());
+        addCommand(new Info());
+        addCommand(new RemoveAllByCarCode());
+        addCommand(new RemoveById());
+        addCommand(new RemoveFirst());
+        addCommand(new RemoveGreater());
+        addCommand(new RemoveLower());
+        addCommand(new Save());
+        addCommand(new Show());
+        addCommand(new SumOfCarCode());
+        addCommand(new Update());
+        addCommand(new Write());
+        return commandList;
+    }
+    public static void addCommand(Command command)
+    {
+        commandList.put(command.getName(), command);
     }
 }
