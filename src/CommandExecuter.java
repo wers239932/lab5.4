@@ -23,9 +23,6 @@ public class CommandExecuter {
         }
     }
 
-    public void addTerminal(Terminal terminal) {
-        this.terminal = terminal;
-    }
 
     public void start() {
         while (true) {

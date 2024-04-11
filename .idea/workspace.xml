@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="now we add an array of commands instead of map when loading commandArray">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="deleted useless methods from CommandExecuter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnvironmentVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnvironmentVars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filework/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712840729883</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="deleted useless methods from CommandExecuter">
+      <created>1712842091698</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712842091698</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,7 +157,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/new_stuff" />
                       </list>
                     </value>
                   </entry>
@@ -171,6 +179,7 @@
     <MESSAGE value="fixed exceptions with command execution" />
     <MESSAGE value="made constructor for CommandExecuter, made static CommandArrayFiller" />
     <MESSAGE value="now we add an array of commands instead of map when loading commandArray" />
-    <option name="LAST_COMMIT_MESSAGE" value="now we add an array of commands instead of map when loading commandArray" />
+    <MESSAGE value="deleted useless methods from CommandExecuter" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted useless methods from CommandExecuter" />
   </component>
 </project>
