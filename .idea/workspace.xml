@@ -1,34 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="4">
-      <change afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandArrayFiller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccessLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/DataAccessLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EnvironmentVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnvironmentVars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Write.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/savefile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/savefile.csv" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712860770980</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show">
+      <created>1712864630257</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712864630257</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +253,7 @@
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4" />
+    <MESSAGE value="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show" />
   </component>
 </project>
