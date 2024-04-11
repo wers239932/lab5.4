@@ -17,6 +17,7 @@ public class CommandExecuter {
         this.addCommandArray(commandArray);
     }
 
+
     private void addCommandArray(ArrayList<Command> commandArrayList) {
         for (Command command : commandArrayList) {
             this.addCommand(command);

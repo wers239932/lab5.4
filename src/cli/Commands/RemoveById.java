@@ -1,10 +1,17 @@
 package cli.Commands;
 
 import Exceptions.CommandException;
+import objectSpace.City;
+import storage.Storage;
 
 import java.util.ArrayList;
 
 public class RemoveById implements Command{
+    private Storage storage;
+    public RemoveById(Storage storage)
+    {
+        this.storage = storage;
+    }
     @Override
     public ArrayList<String> execute(ArrayList<String> args) throws CommandException {
         return null;
@@ -17,5 +24,9 @@ public class RemoveById implements Command{
     @Override
     public String getDescription() {
         return "remove_by_id id : удалить элемент из коллекции по его id";
+    }
+    @Override
+    public Boolean getNeedObject() {
+        return false;
     }
 }

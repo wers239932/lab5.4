@@ -211,7 +211,7 @@ public class City implements Comparable<City>{
     public static City parseCity(String[] args) throws CoordinatesException, NameCityException, AreaException, PopulationException, HeightException, CapitalException, CarCodeException, GovernmentException, GovernorException {
         if(args.length!=12)
         {
-            throw new IncorrectDataExceptoin("некорректное количество данных");
+            throw new IncorrectDataExceptoin("некорректное количество данных, введено " + args.length + " аргументов");
         }
         else
         {

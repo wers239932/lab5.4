@@ -1,9 +1,16 @@
 package cli.Commands;
 
+import objectSpace.City;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Help implements Command{
+    private HashMap<String, Command> commandArray;
+    public Help()
+    {
 
+    }
     @Override
     public ArrayList<String> execute(ArrayList<String> args) {
         ArrayList<String> response = new ArrayList<>();
@@ -18,5 +25,9 @@ public class Help implements Command{
     @Override
     public String getDescription() {
         return "help : вывести справку по доступным командам";
+    }
+    @Override
+    public Boolean getNeedObject() {
+        return false;
     }
 }
