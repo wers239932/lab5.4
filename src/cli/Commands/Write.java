@@ -1,13 +1,13 @@
 package cli.Commands;
 
-import Exceptions.WrongDataException;
+import Exceptions.CommandException;
 
 import java.util.ArrayList;
 
 public class Write implements Command {
     @Override
-    public ArrayList<String> execute(ArrayList<String> args) throws WrongDataException {
-        if(args.isEmpty()) throw new WrongDataException();
+    public ArrayList<String> execute(ArrayList<String> args) throws CommandException {
+        if(args.isEmpty()) throw new CommandException("неверный набор данных");
         ArrayList<String> response = new ArrayList<>();
         response.add(args.get(0));
         return response;

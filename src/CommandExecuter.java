@@ -1,6 +1,6 @@
 import cli.Commands.*;
 import Exceptions.CommandDoesntExistException;
-import Exceptions.WrongDataException;
+import Exceptions.CommandException;
 import cli.Terminal;
 
 import java.util.ArrayList;
@@ -38,9 +38,9 @@ public class CommandExecuter {
             {
                 this.terminal.writeLine("команда возвращает null набор строк");
             }
-            catch (WrongDataException e)
+            catch (CommandException e)
             {
-                this.terminal.writeLine("введен неверный набор данных");
+                this.terminal.writeLine(e.getMessage());
             }
             catch (Exception e)
             {
@@ -68,25 +68,13 @@ public class CommandExecuter {
         return command;
 
     }
-    public void addBasicCommands()
+    public HashMap<String, Command> getCommandArray()
     {
-        this.commandArray = new HashMap<>();
-        this.addCommand(new Add());
-        this.addCommand(new Clear());
-        this.addCommand(new CountGreaterThanCapital());
-        this.addCommand(new ExecuteScript());
-        this.addCommand(new Exit());
-        this.addCommand(new Help());
-        this.addCommand(new Info());
-        this.addCommand(new RemoveAllByCarCode());
-        this.addCommand(new RemoveById());
-        this.addCommand(new RemoveFirst());
-        this.addCommand(new RemoveGreater());
-        this.addCommand(new RemoveLower());
-        this.addCommand(new Save());
-        this.addCommand(new Show());
-        this.addCommand(new SumOfCarCode());
-        this.addCommand(new Update());
-        this.addCommand(new Write());
+        return this.commandArray;
     }
+    public void setCommandArray(HashMap<String, Command> commandArray)
+    {
+        this.commandArray = commandArray;
+    }
+
 }
