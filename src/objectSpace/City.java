@@ -2,6 +2,7 @@ package objectSpace;
 
 import objectSpace.exceptions.*;
 
+import java.security.spec.ECField;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
@@ -14,6 +15,23 @@ import java.util.Random;
 public class City implements Comparable<City>{
 
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    public static String parseName(String nameToCheck){
+        return nameToCheck;
+    }
+    public static int parseId(String idToCheck) throws Exception{
+        int id;
+        if(!idToCheck.matches("[1-9]\\d*\\s*")) {
+            throw new IdException("id должен быть целым неотрицательным числом");
+        }
+        try {
+            id = Integer.parseInt(idToCheck);
+        }
+        catch (Exception e)
+        {
+            throw new IdException("не удалось преобразовать из строки в int");
+        }
+        return id;
+    }
     /**
      * название
      */
@@ -22,38 +40,157 @@ public class City implements Comparable<City>{
      * @see Coordinates
      */
     private Coordinates coordinates; //Поле не может быть null
+    public static float parseXCoord(String x) throws CoordinatesException {
+        float y;
+        try
+        {
+            y = Float.parseFloat(x);
+        }
+        catch (Exception e)
+        {
+            throw new CoordinatesException("не удалось преобразовать из строки в float");
+        }
+        return y;
+    }
+    public static long parseYCoord(String x) throws CoordinatesException {
+        long y;
+        try
+        {
+            y = Long.parseLong(x);
+        }
+        catch (Exception e)
+        {
+            throw new CoordinatesException("не удалось преобразовать из строки в long");
+        }
+        return y;
+    }
     /**
      * дата создания объекта
      */
     private ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    public static ZonedDateTime parseDate(String date){
+        ZonedDateTime zonedDateTime;
+        try
+        {
+            zonedDateTime = ZonedDateTime.parse(date);
+        }
+        catch (Exception e)
+        {
+            throw new DateTimeException("не удалось преобразовать строку в ZonedDateTime");
+        }
+        return zonedDateTime;
+    }
     /**
      * площадь города
      */
     private Long area; //Значение поля должно быть больше 0, Поле не может быть null
+    public static long parseArea(String area) throws AreaException {
+        long y;
+        try {
+            y = Long.parseLong(area);
+        }
+        catch (Exception e)
+        {
+            throw new AreaException("не удалось преобразовать из строки в long");
+        }
+        if(y<0) throw new AreaException("area<0");
+        return y;
+    }
     /**
      * население
      */
     private int population; //Значение поля должно быть больше 0
+    public static int parsePopulation(String population) throws Exception {
+        int y;
+        try {
+            y = Integer.parseInt(population);
+        }
+        catch (Exception e)
+        {
+            throw new PopulationException("не удалось преобразовать из строки в long");
+        }
+        if(y<0) throw new PopulationException("население меньше 0");
+        return y;
+    }
     /**
      * высота над уровнем моря, должно быть больше 0
      */
     private double metersAboveSeaLevel;
+    public static double parseDeep(String x) throws  HeightException {
+        double y;
+        try {
+            y = Double.parseDouble(x);
+        } catch (Exception e) {
+            throw new HeightException("не удалось преобразовать из строки в Double");
+        }
+        return y;
+    }
+
     /**
      * наличие столицы
      */
     private Boolean capital; //Поле может быть null
+    public static Boolean parseCapital(String capital) throws CapitalException {
+        Boolean y;
+        if(!capital.equals("")) {
+            try {
+                y = Boolean.parseBoolean(capital);
+                return y;
+            } catch (Exception e) {
+                throw new CapitalException("не удалось преобразовать из строки в Boolean");
+            }
+        }
+        else return null;
+    }
     /**
-     * carCode, некоторое поле, больше 0, меньше 1001
+     * carCode, некоторое поле, больше 0, меньше 1000
      */
     private Long carCode; //Значение поля должно быть больше 0, Максимальное значение поля: 1000, Поле может быть null
+    public static Long parseCarCode(String carcode) throws CarCodeException {
+        Long carcode1;
+        if (!carcode.equals("") && !carcode.equals("null")) {
+            try {
+                carcode1 = Long.parseLong(carcode);
+            } catch (Exception e) {
+                throw new CarCodeException("не удалось преобразовать из строки в Long");
+            }
+            if (carcode1 <= 0 || carcode1 > 1000) throw new CarCodeException("carcode не в промежутке от 0 до 999");
+            return carcode1;
+        }
+        else return null;
+    }
     /**
      * @see Government
      */
     private Government government; //Поле может быть null
+    public static Government parseGovernment(String government) throws GovernmentException {
+        Government government1;
+        if (!government.equals("") && !government.equals("null")) {
+            try {
+                government1 = Government.valueOf(government);
+            } catch (Exception e) {
+                throw new GovernmentException("не удалось преобразовать из строки в enum");
+            }
+            return government1;
+        }
+        else return null;
+    }
     /**
      * @see Human
      */
     private Human governor; //Поле может быть null
+    public static Human parseGovernor(String governor) throws GovernorException {
+        LocalDateTime date;
+        try
+        {
+            date = LocalDateTime.parse(governor);
+        }
+        catch (Exception e)
+        {
+            throw new GovernorException("не удалось преобразовать строку в дату");
+        }
+        return new Human(date);
+    }
     private static final Random randonGenerator = new Random();
     public City(String name, Coordinates coordinates, Long area, int population, double metersAboveSeaLevel, Boolean capital, Long carCode, Government government, Human governor)
     {
@@ -213,249 +350,41 @@ public class City implements Comparable<City>{
         }
         else
         {
-            try
-            {
-                Integer id;
-                try {
-                    id=Integer.parseInt(args[0].trim());
-                }
-                catch (Exception e)
-                {
-                    throw new IncorrectDataExceptoin("id cannot be understood");
-                }
-
-
-                String name = args[1].trim();
-                Coordinates coordinates;
-                ZonedDateTime creationDate;
-                Long area;
-                Integer population;
-                Double metersAboveSeaLevel;
-                Boolean capital;
-                Long carCode;
-                Government government;
-                Human governor;
-                if(name=="") throw new NameCityException("имя должно быть строкой, не должно быть null");
-                try {
-                    float x;
-                    long y;
-                    x= Float.parseFloat(args[2].trim());
-                    y=Long.parseLong(args[3].trim());
-                    coordinates = new Coordinates(x, y);
-                    }
-                catch (Exception e) {
-                    throw new CoordinatesException("coords быть в формате (long x, Integer y), y не должен быть null");
-                }
-                try {
-                    creationDate=ZonedDateTime.parse(args[4].trim());
-                }
-                catch (Exception e)
-                {
-                    throw new AreaException("площадь должна быть не null, должна быть >0");
-                }
-                try {
-                    area = Long.parseLong(args[5].trim());
-                    if(area<=0) throw new Exception();
-                }
-                catch (Exception e)
-                {
-                    throw new AreaException("площадь должна быть не null, должна быть >0");
-                }
-
-                try {
-                    population = Integer.parseInt(args[6].trim());
-                }
-                catch (Exception e)
-                {
-                    throw new PopulationException("население должно быть числом long или null");
-                }
-                try {
-                    metersAboveSeaLevel = Double.parseDouble(args[7].trim());
-                }
-                catch (Exception e)
-                {
-                    throw new HeightException("высота над уровнем моря должна быть числом");
-                }
-                try {
-
-                    if(!args[8].trim().equals("null"))
-                        capital = Boolean.parseBoolean(args[8].trim());
-                    else capital = null;
-                }
-                catch (Exception e)
-                {
-                    throw new CapitalException("столица должна быть типа boolean");
-                }
-                try {
-
-                    if(!args[9].trim().equals("null")) {
-                        carCode = Long.parseLong(args[9].trim());
-                        if (carCode <= 0 || carCode > 1000) throw new Exception();
-                    }
-                    else carCode=null;
-                }
-                catch (Exception e)
-                {
-                    throw new CarCodeException("carCode должен быть числом, больше 0 и не больше 1000");
-                }
-                try {
-
-                    if(!args[10].trim().equals("null"))
-                        government = Government.valueOf(args[10].trim());
-                    else government=null;
-                }
-                catch (Exception e)
-                {
-                    throw new GovernmentException("правительство должно быть null, KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY");
-                }
-                try {
-                    //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                    governor = new Human(LocalDateTime.parse(args[11].trim()));
-                }
-                catch (Exception e)
-                {
-                    throw new GovernorException("правитель должен родиться в легитимный день в формате yyyy-MM-dd HH:mm");
-                }
-
-                City city = new City(name,coordinates,area,population,metersAboveSeaLevel,capital,carCode,government,governor);
-                city.setCreationDate(creationDate);
-                city.setId(id);
-                return city;
+            Integer id = null;
+            String name = null;
+            Coordinates coordinates = null;
+            ZonedDateTime creationDate = null;
+            Long area = null;
+            Integer population = null;
+            Double metersAboveSeaLevel = null;
+            Boolean capital = null;
+            Long carCode = null;
+            Government government = null;
+            Human governor = null;
+            try {
+                id = City.parseId(args[0].trim());
+                name = City.parseName(args[1].trim());
+                float x = City.parseXCoord(args[2].trim());
+                long y = City.parseYCoord(args[3].trim());
+                coordinates = new Coordinates(x,y);
+                creationDate = City.parseDate(args[4].trim());
+                area = City.parseArea(args[5].trim());
+                population = City.parsePopulation(args[6].trim());
+                metersAboveSeaLevel = City.parseDeep(args[7].trim());
+                capital = City.parseCapital(args[8].trim());
+                carCode = City.parseCarCode(args[9].trim());
+                government = City.parseGovernment(args[10].trim());
+                governor = City.parseGovernor(args[11].trim());
             }
             catch (Exception e)
             {
-                throw new IncorrectDataExceptoin("неверный формат ввода данных", e);
+                throw new RuntimeException(e);
             }
+            City city = new City(name,coordinates,area,population,metersAboveSeaLevel,capital,carCode,government,governor);
+            city.setCreationDate(creationDate);
+            city.setId(id);
+            return city;
         }
     }
-    public static int parseId(String idToCheck) throws Exception{
 
-        if(!idToCheck.matches("[1-9]\\d*\\s*")) {
-//           this.terminal.writeLine("id должен быть целым неотрицательным числом");
-            throw new IdException("id должен быть целым неотрицательным числом");
-        }
-        return Integer.parseInt(idToCheck);
-    }
-    public static String parseName(String nameToCheck){
-        return nameToCheck;
-    }
-    public static float parseFloat(String x) throws CoordinatesException {
-        float y;
-        try
-        {
-            y = Float.parseFloat(x);
-        }
-        catch (Exception e)
-        {
-            throw new CoordinatesException("не удалось преобразовать из строки в float");
-        }
-        return y;
-    }
-    public static long parseLong(String x) throws CoordinatesException {
-        long y;
-        try
-        {
-            y = Long.parseLong(x);
-        }
-        catch (Exception e)
-        {
-            throw new CoordinatesException("не удалось преобразовать из строки в long");
-        }
-        return y;
-    }
-    public static double parseDouble(String x) throws  HeightException {
-        double y;
-        try {
-            y = Double.parseDouble(x);
-        } catch (Exception e) {
-            throw new HeightException("не удалось преобразовать из строки в Double");
-        }
-        return y;
-    }
-    public static ZonedDateTime parseDate(String date){
-        ZonedDateTime zonedDateTime;
-        try
-        {
-            zonedDateTime = ZonedDateTime.parse(date);
-        }
-        catch (Exception e)
-        {
-            throw new DateTimeException("не удалось преобразовать строку в ZonedDateTime");
-        }
-        return zonedDateTime;
-    }
-    public static long parseArea(String area) throws AreaException {
-        long y;
-        try {
-            y = Long.parseLong(area);
-        }
-        catch (Exception e)
-        {
-            throw new AreaException("не удалось преобразовать из строки в long");
-        }
-        if(y<0) throw new AreaException("area<0");
-        return y;
-    }
-    public static int parsePopulation(String population) throws Exception {
-        int y;
-        try {
-            y = Integer.parseInt(population);
-        }
-        catch (Exception e)
-        {
-            throw new PopulationException("не удалось преобразовать из строки в long");
-        }
-        if(y<0) throw new PopulationException("население меньше 0");
-        return y;
-    }
-    public static Boolean parseCapital(String capital) throws CapitalException {
-        Boolean y;
-        if(!capital.equals("")) {
-            try {
-                y = Boolean.parseBoolean(capital);
-                return y;
-            } catch (Exception e) {
-                throw new CapitalException("не удалось преобразовать из строки в Boolean");
-            }
-        }
-        else return null;
-    }
-    public static Long parseCarCode(String carcode) throws CarCodeException {
-        Long carcode1;
-        if (!carcode.equals("")) {
-            try {
-                carcode1 = Long.parseLong(carcode);
-            } catch (Exception e) {
-                throw new CarCodeException("не удалось преобразовать из строки в Boolean");
-            }
-            if (carcode1 <= 0 || carcode1 > 1000) throw new CarCodeException("carcode не в промежутке от 0 до 999");
-            return carcode1;
-        }
-        else return null;
-    }
-    public static Government parseGovernment(String government) throws GovernmentException {
-        Government government1;
-        if (!government.equals("")) {
-            try {
-                government1 = Government.valueOf(government);
-            } catch (Exception e) {
-                throw new GovernmentException("не удалось преобразовать из строки в enum");
-            }
-            return government1;
-        }
-        else return null;
-    }
-    public static Human parseGovernor(String governor) throws GovernorException {
-        LocalDateTime date;
-        try
-        {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            date = LocalDateTime.parse(governor,formatter);
-        }
-        catch (Exception e)
-        {
-            throw new GovernorException("не удалось преобразовать строку в дату");
-        }
-        return new Human(date);
-    }
 }

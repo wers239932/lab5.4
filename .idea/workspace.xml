@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="странная вещь с add">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="add работает, коллекция сохраняется">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/City.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712937123011</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add работает, коллекция сохраняется">
+      <created>1712938085061</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1712938085061</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,6 +312,7 @@
     <MESSAGE value="парсеры для полей города сделаны, нет парсинга внутри города, странно работает команда add" />
     <MESSAGE value="очень странная вещь с add" />
     <MESSAGE value="странная вещь с add" />
-    <option name="LAST_COMMIT_MESSAGE" value="странная вещь с add" />
+    <MESSAGE value="add работает, коллекция сохраняется" />
+    <option name="LAST_COMMIT_MESSAGE" value="add работает, коллекция сохраняется" />
   </component>
 </project>
