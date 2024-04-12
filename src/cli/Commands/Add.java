@@ -47,6 +47,7 @@ public class Add implements Command{
             response.add("added city");
             return response;
         }
+
         catch (Exception e)
         {
             terminal.writeLine(e.getMessage());
