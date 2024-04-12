@@ -19,13 +19,18 @@ public class Add implements Command{
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
         Parser<Long> parser = new Parser<>();
-
-        String name = parser.getArgumentWithRules("введите название города", terminal, arg -> City.parseName(arg));
-        Long area1 = parser.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
-                arg -> City.parseArea(arg));
-        float x = parser.getArgumentWithRules("введите число в формате float, первую координату", terminal,
-                arg -> City.parseFloat(arg));
-
+        try {
+            String name = String.valueOf(parser.getArgumentWithRules("введите название города", terminal,
+                    arg -> City.parseName((String) arg)));
+            Long area1 = parser.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
+                    arg -> City.parseArea((String) arg));
+            float x = parser.getArgumentWithRules("введите число в формате float, первую координату", terminal,
+                    arg -> City.parseFloat((String) arg));
+        }
+        catch (Exception e)
+        {
+            terminal.writeLine(e.getMessage());
+        }
 
         return null;
     }
