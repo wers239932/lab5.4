@@ -22,10 +22,10 @@ public class Add implements Command{
                     arg -> City.parseName((String) arg));
             Parser<Float> parser1 = new Parser();
             float x = parser1.getArgumentWithRules("введите число в формате float, первую координату", terminal,
-                    arg -> City.parseXCoord((String) arg));
+                    arg -> Coordinates.parseXCoord((String) arg));
             Parser<Long> parser2 = new Parser();
             long y = parser2.getArgumentWithRules("введите число в формате long, вторую координату", terminal,
-                    arg -> City.parseYCoord((String) arg));
+                    arg -> Coordinates.parseYCoord((String) arg));
             Parser<Long> parser3 = new Parser();
             Long area = parser3.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
                     arg -> City.parseArea((String) arg));
@@ -40,7 +40,7 @@ public class Add implements Command{
             Parser<Government> parser8 = new Parser();
             Government government = parser8.getArgumentWithRules("введите тип правительства: KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY", terminal, arg -> City.parseGovernment((String) arg));
             Parser<Human> parser9 = new Parser();
-            Human guvernor = parser9.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> City.parseGovernor((String) arg));
+            Human guvernor = parser9.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> Human.parseGovernor((String) arg));
             City city = new City(name,new Coordinates(x,y),area,population,deep,capital,carcode,government, guvernor);
             this.storage.getAllCitiesList().add(city);
             ArrayList<String> response = new ArrayList<>();

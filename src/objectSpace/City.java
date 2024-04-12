@@ -39,30 +39,7 @@ public class City implements Comparable<City>{
      * @see Coordinates
      */
     private Coordinates coordinates; //Поле не может быть null
-    public static float parseXCoord(String x) throws CoordinatesException {
-        float y;
-        try
-        {
-            y = Float.parseFloat(x);
-        }
-        catch (Exception e)
-        {
-            throw new CoordinatesException("не удалось преобразовать из строки в float");
-        }
-        return y;
-    }
-    public static long parseYCoord(String x) throws CoordinatesException {
-        long y;
-        try
-        {
-            y = Long.parseLong(x);
-        }
-        catch (Exception e)
-        {
-            throw new CoordinatesException("не удалось преобразовать из строки в long");
-        }
-        return y;
-    }
+
     /**
      * дата создания объекта
      */
@@ -178,18 +155,7 @@ public class City implements Comparable<City>{
      * @see Human
      */
     private Human governor; //Поле может быть null
-    public static Human parseGovernor(String governor) throws GovernorException {
-        LocalDateTime date;
-        try
-        {
-            date = LocalDateTime.parse(governor);
-        }
-        catch (Exception e)
-        {
-            throw new GovernorException("не удалось преобразовать строку в дату");
-        }
-        return new Human(date);
-    }
+
     private static final Random randonGenerator = new Random();
     public City(String name, Coordinates coordinates, Long area, int population, double metersAboveSeaLevel, Boolean capital, Long carCode, Government government, Human governor)
     {
@@ -363,8 +329,8 @@ public class City implements Comparable<City>{
             try {
                 id = City.parseId(args[0].trim());
                 name = City.parseName(args[1].trim());
-                float x = City.parseXCoord(args[2].trim());
-                long y = City.parseYCoord(args[3].trim());
+                float x = Coordinates.parseXCoord(args[2].trim());
+                long y = Coordinates.parseYCoord(args[3].trim());
                 coordinates = new Coordinates(x,y);
                 creationDate = City.parseZonedDateTime(args[4].trim());
                 area = City.parseArea(args[5].trim());
@@ -373,7 +339,7 @@ public class City implements Comparable<City>{
                 capital = City.parseCapital(args[8].trim());
                 carCode = City.parseCarCode(args[9].trim());
                 government = City.parseGovernment(args[10].trim());
-                governor = City.parseGovernor(args[11].trim());
+                governor = Human.parseGovernor(args[11].trim());
             }
             catch (Exception e)
             {
