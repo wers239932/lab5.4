@@ -14,7 +14,7 @@ public class ExecuteScript implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, LineReader terminal) throws CommandException {
         return null;
     }
     @Override

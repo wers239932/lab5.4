@@ -3,6 +3,7 @@ package cli;
 import cli.commandExceptions.CommandDoesntExistException;
 import cli.commandExceptions.CommandException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,12 +11,23 @@ import java.util.List;
 public class CommandExecuter {
     private HashMap<String, Command> commandArray;
     private Terminal terminal;
+    private LineReader lineReader;
+    private Boolean executionFromFile;
 
     public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray) {
         this.terminal = terminal;
+        this.lineReader = terminal;
         this.commandArray = new HashMap<>();
         commandArray.add(new Help(this.commandArray));
         this.addCommandArray(commandArray);
+        this.executionFromFile=false;
+    }
+    public CommandExecuter(LineReader lineReader, ArrayList<Command> commandArray) {
+        this.lineReader = lineReader;
+        this.commandArray = new HashMap<>();
+        commandArray.add(new Help(this.commandArray));
+        this.addCommandArray(commandArray);
+        this.executionFromFile=true;
     }
 
 
@@ -26,7 +38,7 @@ public class CommandExecuter {
     }
 
 
-    public void start() {
+    public void startFromTerminal() {
         while (true) {
             try {
                 ArrayList commandLine = new ArrayList(List.of(this.terminal.readLine().split(" +")));
@@ -43,6 +55,19 @@ public class CommandExecuter {
             } catch (Exception e) {
                 terminal.writeLine(e.getMessage() + "\n" + e.getClass());
             }
+
+        }
+    }
+    public ArrayList<String> startFromFile() throws Exception {
+        ArrayList<String> responses = new ArrayList<>();
+        while (true) {
+
+
+            ArrayList commandLine = new ArrayList(List.of(this.lineReader.readLine().split(" +")));
+            Command command = this.get(commandLine.get(0));
+            commandLine.removeFirst();
+            ArrayList response = command.execute(commandLine, lineReader);
+            responses.addAll(response);
 
         }
     }
