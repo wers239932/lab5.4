@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написаны команды">
-      <change beforePath="$PROJECT_DIR$/src/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandArrayFiller.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="перемещен сторадж интерфейс">
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/StorageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712948696530</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="перемещен сторадж интерфейс">
+      <created>1712949234175</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1712949234175</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,7 +319,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="now with all commands(mostly dummies)" />
     <MESSAGE value="strange mistake with CommandDoesntExistException" />
     <MESSAGE value="mistake fixed" />
     <MESSAGE value="added getname and getdescr functions" />
@@ -350,6 +343,7 @@
     <MESSAGE value="нормальная валидация элементов коллекции при парсинге" />
     <MESSAGE value="исправлены комментерии" />
     <MESSAGE value="написаны команды" />
-    <option name="LAST_COMMIT_MESSAGE" value="написаны команды" />
+    <MESSAGE value="перемещен сторадж интерфейс" />
+    <option name="LAST_COMMIT_MESSAGE" value="перемещен сторадж интерфейс" />
   </component>
 </project>
