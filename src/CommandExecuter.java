@@ -1,6 +1,6 @@
 import cli.Commands.*;
-import Exceptions.CommandDoesntExistException;
-import Exceptions.CommandException;
+import cli.Commands.Exceptions.CommandDoesntExistException;
+import cli.Commands.Exceptions.CommandException;
 import cli.Terminal;
 
 import java.util.ArrayList;

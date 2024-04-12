@@ -1,6 +1,6 @@
 package cli.Commands;
 
-import Exceptions.CommandException;
+import cli.Commands.Exceptions.CommandException;
 import cli.Terminal;
 import objectSpace.City;
 import StorageInterface.StorageInterface;
