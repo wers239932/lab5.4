@@ -1,20 +1,19 @@
 import cli.Commands.*;
 import storage.Storage;
+import storage.StorageInterface;
 
 import java.util.ArrayList;
 
 public class CommandArrayFiller {
     static ArrayList<Command> commandList;
-    public static ArrayList<Command> setBasicCommands(Storage storage)
+    public static ArrayList<Command> setBasicCommands(StorageInterface storage)
     {
         commandList = new ArrayList<>();
-        commandList.add(new Add(storage));
         commandList.add(new Add(storage));
         commandList.add(new Clear(storage));
         commandList.add(new CountGreaterThanCapital(storage));
         commandList.add(new ExecuteScript(storage));
         commandList.add(new Exit());
-        commandList.add(new Help());
         commandList.add(new Info(storage));
         commandList.add(new RemoveAllByCarCode(storage));
         commandList.add(new RemoveById(storage));

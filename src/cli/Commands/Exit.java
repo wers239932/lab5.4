@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Exit implements Command{
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+        System.exit(0);
         return null;
     }
     @Override

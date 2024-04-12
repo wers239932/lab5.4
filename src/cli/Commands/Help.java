@@ -8,14 +8,17 @@ import java.util.HashMap;
 
 public class Help implements Command{
     private HashMap<String, Command> commandArray;
-    public Help()
+    public Help(HashMap<String,Command> commandArray)
     {
-
+        this.commandArray = commandArray;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) {
         ArrayList<String> response = new ArrayList<>();
-        response.add("it's too late to help");
+        for(Command command: commandArray.values())
+        {
+            response.add(command.getDescription());
+        }
         return response;
     }
     @Override

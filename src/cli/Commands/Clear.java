@@ -4,18 +4,22 @@ import Exceptions.CommandException;
 import cli.Terminal;
 import objectSpace.City;
 import storage.Storage;
+import storage.StorageInterface;
 
 import java.util.ArrayList;
 
 public class Clear implements Command{
-    private Storage storage;
-    public Clear(Storage storage)
+    private StorageInterface storage;
+    public Clear(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        return null;
+        ArrayList<String> response = new ArrayList<>();
+        this.storage.clear();
+        response.add("коллекция очищена");
+        return response;
     }
     @Override
     public String getName() {

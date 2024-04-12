@@ -14,6 +14,7 @@ public class CommandExecuter {
     public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray) {
         this.terminal = terminal;
         this.commandArray = new HashMap<>();
+        commandArray.add(new Help(this.commandArray));
         this.addCommandArray(commandArray);
     }
 

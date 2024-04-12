@@ -4,12 +4,13 @@ import Exceptions.CommandException;
 import cli.Terminal;
 import objectSpace.*;
 import storage.Storage;
+import storage.StorageInterface;
 
 import java.util.ArrayList;
 
 public class Add implements Command{
-    private Storage storage;
-    public Add(Storage storage)
+    private StorageInterface storage;
+    public Add(StorageInterface storage)
     {
         this.storage = storage;
     }
@@ -42,18 +43,15 @@ public class Add implements Command{
             Parser<Human> parser9 = new Parser();
             Human guvernor = parser9.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> Human.parseGovernor((String) arg));
             City city = new City(name,new Coordinates(x,y),area,population,deep,capital,carcode,government, guvernor);
-            this.storage.getAllCitiesList().add(city);
+            this.storage.add(city);
             ArrayList<String> response = new ArrayList<>();
-            response.add("added city");
+            response.add("добавлен элемент");
             return response;
         }
-
         catch (Exception e)
         {
-            terminal.writeLine(e.getMessage());
+            throw new CommandException(e.getMessage());
         }
-
-        return null;
     }
 
     @Override

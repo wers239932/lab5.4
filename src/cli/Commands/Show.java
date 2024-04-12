@@ -4,19 +4,20 @@ import Exceptions.CommandException;
 import cli.Terminal;
 import objectSpace.City;
 import storage.Storage;
+import storage.StorageInterface;
 
 import java.util.ArrayList;
 
 public class Show implements Command{
-    private Storage storage;
-    public Show(Storage storage)
+    private StorageInterface storage;
+    public Show(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        for(Object city1: storage.getAllCitiesList())
+        for(Object city1: storage.getStorage())
         {
             response.add(((City) city1).toString());
         }

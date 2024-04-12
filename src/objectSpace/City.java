@@ -17,7 +17,7 @@ public class City implements Comparable<City>{
         if(nameToCheck.equals("")) throw new NameCityException("название не может быть null");
         return nameToCheck;
     }
-    public static int parseId(String idToCheck) throws Exception{
+    public static int parseId(String idToCheck) throws IdException{
         int id;
         if(!idToCheck.matches("[1-9]\\d*\\s*")) {
             throw new IdException("id должен быть целым неотрицательным числом");

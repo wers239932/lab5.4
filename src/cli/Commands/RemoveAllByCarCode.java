@@ -3,19 +3,38 @@ package cli.Commands;
 import Exceptions.CommandException;
 import cli.Terminal;
 import objectSpace.City;
+import objectSpace.exceptions.CarCodeException;
 import storage.Storage;
+import storage.StorageInterface;
 
 import java.util.ArrayList;
 
 public class RemoveAllByCarCode implements Command{
-    private Storage storage;
-    public RemoveAllByCarCode(Storage storage)
+    private StorageInterface storage;
+    private Long carCode;
+    public RemoveAllByCarCode(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        return null;
+        try {
+            this.carCode = City.parseCarCode(args.get(0));
+        } catch (CarCodeException e) {
+            throw new CommandException(e.getMessage());
+        }
+
+        ArrayList<String> response = new ArrayList<>();
+        for(Object city2:storage.getStorage())
+        {
+            City city1=(City) city2;
+            if(city1.getCarCode()==carCode)
+            {
+                storage.remove((City) city2);
+            }
+        }
+        response.add("объекты удалены");
+        return response;
     }
     @Override
     public String getName() {
