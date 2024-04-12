@@ -4,8 +4,8 @@ package objectSpace.exceptions;
  * @author vladimir
  */
 public class CoordinatesException extends ArgumentCityException{
-    public CoordinatesException(String msg, int argumentNumber){
-        super(msg, argumentNumber);
+    public CoordinatesException(String msg){
+        super(msg);
     }
 
     public CoordinatesException(String msg, Throwable cause, int argumentNumber){

@@ -2,10 +2,7 @@ package objectSpace;
 
 import objectSpace.exceptions.*;
 
-import java.time.Clock;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Random;
@@ -238,7 +235,7 @@ public class City implements Comparable<City>{
                 Long carCode;
                 Government government;
                 Human governor;
-                if(name=="") throw new NameCityException("имя должно быть строкой, не должно быть null",1);
+                if(name=="") throw new NameCityException("имя должно быть строкой, не должно быть null");
                 try {
                     float x;
                     long y;
@@ -247,7 +244,7 @@ public class City implements Comparable<City>{
                     coordinates = new Coordinates(x, y);
                     }
                 catch (Exception e) {
-                    throw new CoordinatesException("coords быть в формате (long x, Integer y), y не должен быть null", 2);
+                    throw new CoordinatesException("coords быть в формате (long x, Integer y), y не должен быть null");
                 }
                 try {
                     creationDate=ZonedDateTime.parse(args[4].trim());
@@ -270,14 +267,14 @@ public class City implements Comparable<City>{
                 }
                 catch (Exception e)
                 {
-                    throw new PopulationException("население должно быть числом long или null", 5);
+                    throw new PopulationException("население должно быть числом long или null");
                 }
                 try {
                     metersAboveSeaLevel = Double.parseDouble(args[7].trim());
                 }
                 catch (Exception e)
                 {
-                    throw new HeightException("высота над уровнем моря должна быть числом", 6);
+                    throw new HeightException("высота над уровнем моря должна быть числом");
                 }
                 try {
 
@@ -287,7 +284,7 @@ public class City implements Comparable<City>{
                 }
                 catch (Exception e)
                 {
-                    throw new CapitalException("столица должна быть типа boolean", 7);
+                    throw new CapitalException("столица должна быть типа boolean");
                 }
                 try {
 
@@ -299,7 +296,7 @@ public class City implements Comparable<City>{
                 }
                 catch (Exception e)
                 {
-                    throw new CarCodeException("carCode должен быть числом, больше 0 и не больше 1000", 8);
+                    throw new CarCodeException("carCode должен быть числом, больше 0 и не больше 1000");
                 }
                 try {
 
@@ -309,7 +306,7 @@ public class City implements Comparable<City>{
                 }
                 catch (Exception e)
                 {
-                    throw new GovernmentException("правительство должно быть null, KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY", 9);
+                    throw new GovernmentException("правительство должно быть null, KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY");
                 }
                 try {
                     //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -317,7 +314,7 @@ public class City implements Comparable<City>{
                 }
                 catch (Exception e)
                 {
-                    throw new GovernorException("правитель должен родиться в легитимный день в формате yyyy-MM-dd HH:mm", 10);
+                    throw new GovernorException("правитель должен родиться в легитимный день в формате yyyy-MM-dd HH:mm");
                 }
 
                 City city = new City(name,coordinates,area,population,metersAboveSeaLevel,capital,carCode,government,governor);
@@ -339,135 +336,126 @@ public class City implements Comparable<City>{
         }
         return Integer.parseInt(idToCheck);
     }
-    public boolean checkName(String nameToCheck){
-        if(Objects.equals(nameToCheck, ""))
-        {
-//            this.terminal.writeLine("название должно быть не null");
-            return false;
-        }
-        return true;
+    public static String parseName(String nameToCheck){
+        return nameToCheck;
     }
-    public boolean checkCoordinates(String[] coordinates){
-        if(coordinates.length!=2)
-        {
-//            this.terminal.writeLine("координаты должно быть две");
-            return false;
-        }
-        return (checkFloat(coordinates[0]) && checkLong(coordinates[1]));
-    }
-    public boolean checkFloat(String x){
+    public static float parseFloat(String x) throws CoordinatesException {
+        float y;
         try
         {
-            float y = Float.parseFloat(x);
-            if(!Float.isFinite(y)) return false;
+            y = Float.parseFloat(x);
         }
         catch (Exception e)
         {
-            return false;
+            throw new CoordinatesException("не удалось преобразовать из строки в float");
         }
-        return true;
+        return y;
     }
-    public boolean checkLong(String x){
+    public static long parseLong(String x) throws CoordinatesException {
+        long y;
         try
         {
-            long y = Long.parseLong(x);
+            y = Long.parseLong(x);
         }
         catch (Exception e)
         {
-            return false;
+            throw new CoordinatesException("не удалось преобразовать из строки в long");
         }
-        return true;
+        return y;
     }
-    public boolean checkDouble(String x){
+    public static double parseDouble(String x) throws  HeightException {
+        double y;
+        try {
+            y = Double.parseDouble(x);
+        } catch (Exception e) {
+            throw new HeightException("не удалось преобразовать из строки в Double");
+        }
+        return y;
+    }
+    public static ZonedDateTime parseDate(String date){
+        ZonedDateTime zonedDateTime;
         try
         {
-            double y = Double.parseDouble(x);
+            zonedDateTime = ZonedDateTime.parse(date);
         }
         catch (Exception e)
         {
-            return false;
+            throw new DateTimeException("не удалось преобразовать строку в ZonedDateTime");
         }
-        return true;
-    }
-    public boolean checkDate(String date){
-        try
-        {
-            ZonedDateTime y = ZonedDateTime.parse(date);
-        }
-        catch (Exception e)
-        {
-//            this.terminal.writeLine("некорректный формат даты");
-            return false;
-        }
-        return true;
+        return zonedDateTime;
     }
     public static long parseArea(String area) throws AreaException {
-        long y = Long.parseLong(area);
+        long y;
+        try {
+            y = Long.parseLong(area);
+        }
+        catch (Exception e)
+        {
+            throw new AreaException("не удалось преобразовать из строки в long");
+        }
         if(y<0) throw new AreaException("area<0");
         return y;
     }
-    public boolean checkPopulation(String population){
-        try
-        {
-            int y = Integer.parseInt(population);
-            if(y<0) return false;
+    public static int parsePopulation(String population) throws Exception {
+        int y;
+        try {
+            y = Integer.parseInt(population);
         }
         catch (Exception e)
         {
-            return false;
+            throw new PopulationException("не удалось преобразовать из строки в long");
         }
-        return true;
+        if(y<0) throw new PopulationException("население меньше 0");
+        return y;
     }
-    public boolean checkCapital(String capital){
-        try
-        {
-            if(capital!="") {
-                Boolean y = Boolean.parseBoolean(capital);
+    public static Boolean parseCapital(String capital) throws CapitalException {
+        Boolean y;
+        if(!capital.equals("")) {
+            try {
+                y = Boolean.parseBoolean(capital);
+                return y;
+            } catch (Exception e) {
+                throw new CapitalException("не удалось преобразовать из строки в Boolean");
             }
         }
-        catch (Exception e)
-        {
-            return false;
-        }
-        return true;
+        else return null;
     }
-    public boolean checkCarCode(String carcode){
-        try
-        {
-            if(carcode!="") {
-                Long carcode1=Long.parseLong(carcode);
-                if(carcode1<=0 || carcode1>1000) return false;
+    public static Long parseCarCode(String carcode) throws CarCodeException {
+        Long carcode1;
+        if (!carcode.equals("")) {
+            try {
+                carcode1 = Long.parseLong(carcode);
+            } catch (Exception e) {
+                throw new CarCodeException("не удалось преобразовать из строки в Boolean");
             }
+            if (carcode1 <= 0 || carcode1 > 1000) throw new CarCodeException("carcode не в промежутке от 0 до 999");
+            return carcode1;
         }
-        catch (Exception e)
-        {
-            return false;
-        }
-        return true;
+        else return null;
     }
-    public boolean checkGovernment(String government){
-        try
-        {
-            if(government!="") {
-                Government government1 = Government.valueOf(government);
+    public static Government parseGovernment(String government) throws GovernmentException {
+        Government government1;
+        if (!government.equals("")) {
+            try {
+                government1 = Government.valueOf(government);
+            } catch (Exception e) {
+                throw new GovernmentException("не удалось преобразовать из строки в enum");
             }
+            return government1;
         }
-        catch (Exception e)
-        {
-            return false;
-        }
-        return true;
+        else return null;
     }
-    public boolean checkGovernor(String governor){
+    public static Human parseGovernor(String governor) throws GovernorException {
+        LocalDateTime date;
         try
         {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            LocalDateTime date = LocalDateTime.parse(governor,formatter);
+            date = LocalDateTime.parse(governor,formatter);
         }
         catch (Exception e)
         {
-            return false;
+            throw new GovernorException("не удалось преобразовать строку в дату");
         }
-        return true;
+        return new Human(date);
     }
 }
