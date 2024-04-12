@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="очень странная вещь с add">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="странная вещь с add">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712936454079</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="странная вещь с add">
+      <created>1712937123011</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1712937123011</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +303,7 @@
     <MESSAGE value="парсеры для полей города" />
     <MESSAGE value="парсеры для полей города сделаны, нет парсинга внутри города, странно работает команда add" />
     <MESSAGE value="очень странная вещь с add" />
-    <option name="LAST_COMMIT_MESSAGE" value="очень странная вещь с add" />
+    <MESSAGE value="странная вещь с add" />
+    <option name="LAST_COMMIT_MESSAGE" value="странная вещь с add" />
   </component>
 </project>

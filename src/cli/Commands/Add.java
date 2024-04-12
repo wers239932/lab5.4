@@ -2,8 +2,7 @@ package cli.Commands;
 
 import Exceptions.CommandException;
 import cli.Terminal;
-import objectSpace.ArgumentCheker;
-import objectSpace.City;
+import objectSpace.*;
 import storage.Storage;
 
 import java.io.IOException;
@@ -31,9 +30,25 @@ public class Add implements Command{
             long y = parser2.getArgumentWithRules("введите число в формате long, вторую координату", terminal,
                     arg -> City.parseLong((String) arg));
             Parser<Long> parser3 = new Parser();
-            Long area1 = parser3.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
+            Long area = parser3.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
                     arg -> City.parseArea((String) arg));
-            System.out.println("это должно выводиться");
+            Parser<Integer> parser4 = new Parser();
+            int population = parser4.getArgumentWithRules("введите население, должно быть больше 0", terminal, arg -> City.parsePopulation((String) arg));
+            Parser<Double> parser5 = new Parser();
+            double deep = parser5.getArgumentWithRules("введите высоту над уровнем моря в формате double", terminal, arg -> City.parseDouble((String) arg));
+            Parser<Boolean> parser6 = new Parser();
+            Boolean capital  = parser6.getArgumentWithRules("введите true если у города есть столица, что угодно другое в ином случае", terminal, arg -> City.parseCapital((String) arg));
+            Parser<Long> parser7 = new Parser();
+            Long carcode = parser7.getArgumentWithRules("введите carCode - целое число от 0 до 1000", terminal, arg -> City.parseCarCode((String) arg));
+            Parser<Government> parser8 = new Parser();
+            Government government = parser8.getArgumentWithRules("введите тип правительства: KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY", terminal, arg -> City.parseGovernment((String) arg));
+            Parser<Human> parser9 = new Parser();
+            Human guvernor = parser9.getArgumentWithRules("введите дату в формате yyyy-MM-dd HH:mm:ss", terminal, arg -> City.parseGovernor((String) arg));
+            City city = new City(name,new Coordinates(x,y),area,population,deep,capital,carcode,government, guvernor);
+            this.storage.getAllCitiesList().add(city);
+            ArrayList<String> response = new ArrayList<>();
+            response.add("added city");
+            return response;
         }
         catch (Exception e)
         {
