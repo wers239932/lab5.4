@@ -1,5 +1,6 @@
 package cli.Commands;
 
+import cli.Terminal;
 import objectSpace.City;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class Help implements Command{
 
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args) {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) {
         ArrayList<String> response = new ArrayList<>();
         response.add("it's too late to help");
         return response;

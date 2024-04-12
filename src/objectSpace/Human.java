@@ -1,5 +1,7 @@
 package objectSpace;
 
+import objectSpace.exceptions.GovernorException;
+
 import java.time.LocalDateTime;
 
 /**
@@ -8,6 +10,18 @@ import java.time.LocalDateTime;
 
 public class Human {
     private final LocalDateTime birthday;
+    public static Human parseGovernor(String governor) throws GovernorException {
+        LocalDateTime date;
+        try
+        {
+            date = LocalDateTime.parse(governor);
+        }
+        catch (Exception e)
+        {
+            throw new GovernorException("не удалось преобразовать строку в дату");
+        }
+        return new Human(date);
+    }
 
     public Human(LocalDateTime date)
     {

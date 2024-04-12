@@ -6,7 +6,10 @@ package objectSpace.exceptions;
  */
 
 public abstract class ArgumentCityException extends Exception{
-    public final int argumentNumber;
+    public int argumentNumber;
+    public ArgumentCityException(String msg){
+        super(msg);
+    }
 
     public ArgumentCityException(String msg, int argumentNumber){
         super(msg);

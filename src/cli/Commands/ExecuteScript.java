@@ -1,6 +1,7 @@
 package cli.Commands;
 
 import Exceptions.CommandException;
+import cli.Terminal;
 import objectSpace.City;
 import storage.Storage;
 
@@ -13,8 +14,7 @@ public class ExecuteScript implements Command{
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args
-    ) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
         return null;
     }
     @Override

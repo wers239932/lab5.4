@@ -5,8 +5,8 @@ package objectSpace.exceptions;
  */
 public class PopulationException extends ArgumentCityException{
 
-    public PopulationException(String msg, int argumentNumber){
-        super(msg, argumentNumber);
+    public PopulationException(String msg){
+        super(msg);
     }
 
     public PopulationException(String msg, Throwable cause, int argumentNumber){
