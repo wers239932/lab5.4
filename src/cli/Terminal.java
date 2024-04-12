@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Terminal {
+public class Terminal implements LineReader {
     private final Scanner sc;
     public void writeLine(String line)
     {
@@ -22,7 +22,7 @@ public class Terminal {
     {
         this.sc=new Scanner(System.in);
     }
-
+    @Override
     public String readLine()
     {
         return this.sc.nextLine();
