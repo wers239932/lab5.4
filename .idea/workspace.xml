@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="перемещен сторадж интерфейс">
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Update.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="переместил пакет комманд в кли">
+      <change afterPath="$PROJECT_DIR$/src/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -292,7 +290,28 @@
       <option name="project" value="LOCAL" />
       <updated>1712949234175</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="start">
+      <created>1712951710269</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1712951710269</updated>
+    </task>
+    <task id="LOCAL-00031" summary="некоторый прогресс">
+      <created>1712952270707</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1712952270707</updated>
+    </task>
+    <task id="LOCAL-00032" summary="переместил пакет комманд в кли">
+      <created>1712952591437</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1712952591437</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,9 +338,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="strange mistake with CommandDoesntExistException" />
-    <MESSAGE value="mistake fixed" />
-    <MESSAGE value="added getname and getdescr functions" />
     <MESSAGE value="removed CommandArray, added correct addCommand method" />
     <MESSAGE value="fixed exceptions with command execution" />
     <MESSAGE value="made constructor for CommandExecuter, made static CommandArrayFiller" />
@@ -344,6 +360,9 @@
     <MESSAGE value="исправлены комментерии" />
     <MESSAGE value="написаны команды" />
     <MESSAGE value="перемещен сторадж интерфейс" />
-    <option name="LAST_COMMIT_MESSAGE" value="перемещен сторадж интерфейс" />
+    <MESSAGE value="start" />
+    <MESSAGE value="некоторый прогресс" />
+    <MESSAGE value="переместил пакет комманд в кли" />
+    <option name="LAST_COMMIT_MESSAGE" value="переместил пакет комманд в кли" />
   </component>
 </project>

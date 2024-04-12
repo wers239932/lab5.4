@@ -1,6 +1,6 @@
 package objectSpace;
 
-import objectSpace.exceptions.GovernorException;
+import objectSpace.objectExceptions.GovernorException;
 
 import java.time.LocalDateTime;
 
