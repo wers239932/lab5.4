@@ -8,17 +8,18 @@ import java.io.IOException;
 import java.util.function.Function;
 
 public class Parser<T> {
-    T t;
-    public T getArgumentWithRules(String msg, Terminal terminal, Function parser) {
+    public T getArgumentWithRules(String msg, Terminal terminal, ArgumentCheker parser) {
         String arg = "";
+        T t;
         terminal.writeLine(msg);
         while (true) {
             try {
-                t = (T) parser.apply(terminal.readLine());
+                t = (T) parser.parse(terminal.readLine());
                 break;
             } catch (Exception e) {
                 terminal.writeLine(e.getMessage());
                 terminal.writeLine("некорректный ввод, повторите заново");
+                terminal.writeLine(msg);
             }
         }
         return t;

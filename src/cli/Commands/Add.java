@@ -9,6 +9,7 @@ import storage.Storage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Add implements Command{
     private Storage storage;
@@ -22,10 +23,13 @@ public class Add implements Command{
         try {
             String name = String.valueOf(parser.getArgumentWithRules("введите название города", terminal,
                     arg -> City.parseName((String) arg)));
-            Long area1 = parser.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
-                    arg -> City.parseArea((String) arg));
             float x = parser.getArgumentWithRules("введите число в формате float, первую координату", terminal,
                     arg -> City.parseFloat((String) arg));
+            long y = parser.getArgumentWithRules("введите число в формате long, вторую координату", terminal,
+                    arg -> City.parseLong((String) arg));
+            Long area1 = parser.getArgumentWithRules("введите площадь в формате Long, площадь должна быть больше 0", terminal,
+                    arg -> City.parseArea((String) arg));
+            System.out.println("это должно выводиться");
         }
         catch (Exception e)
         {
