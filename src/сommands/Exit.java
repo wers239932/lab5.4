@@ -1,28 +1,25 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
-import command.Command;
+import cli.Command;
 
 import java.util.ArrayList;
 
-public class Write implements Command {
-
+public class Exit implements Command {
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        if(args.isEmpty()) throw new CommandException("неверный набор данных");
-        ArrayList<String> response = new ArrayList<>();
-        response.add(args.get(0));
-        return response;
+        System.exit(0);
+        return null;
     }
     @Override
     public String getName() {
-        return "write";
+        return "exit";
     }
 
     @Override
     public String getDescription() {
-        return "write : пишет первое слово ввода";
+        return "exit : завершить программу (без сохранения в файл)";
     }
     @Override
     public Boolean getNeedObject() {

@@ -1,40 +1,48 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
-import command.Command;
+import cli.Command;
 import objectSpace.City;
+import objectSpace.objectExceptions.IdException;
 import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
-public class SumOfCarCode implements Command {
+public class RemoveById implements Command {
     private StorageInterface storage;
-    public SumOfCarCode(StorageInterface storage)
+    private int id;
+    public RemoveById(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        Long sum= 0L;
+        try {
+            this.id = City.parseId(args.get(0));
+        } catch (IdException e) {
+            throw new CommandException(e.getMessage());
+        }
         ArrayList<String> response = new ArrayList<>();
         for(Object city2:storage.getStorage())
         {
             City city1=(City) city2;
-            if(city1.getCarCode()!=null)
-            sum+=city1.getCarCode();
+            if(city1.getId()==this.id)
+            {
+                storage.remove((City) city2);
+            }
         }
-        response.add("сумма carcode по всем объектам равна " + sum.toString());
+        response.add("объект удален");
         return response;
     }
     @Override
     public String getName() {
-        return "sum_of_car_code";
+        return "remove_by_id";
     }
 
     @Override
     public String getDescription() {
-        return "sum_of_car_code : вывести сумму значений поля carCode для всех элементов коллекции";
+        return "remove_by_id id : удалить элемент из коллекции по его id";
     }
     @Override
     public Boolean getNeedObject() {

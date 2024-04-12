@@ -1,8 +1,8 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
-import command.Command;
+import cli.Command;
 import objectSpace.City;
 import objectSpace.objectExceptions.CarCodeException;
 import StorageInterface.StorageInterface;

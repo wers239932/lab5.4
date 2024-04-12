@@ -1,29 +1,33 @@
-package command;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
+import cli.Command;
 
 import java.util.ArrayList;
 
-public class ExecuteScript implements Command {
+public class Clear implements Command {
     private StorageInterface storage;
-    public ExecuteScript(StorageInterface storage)
+    public Clear(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        return null;
+        ArrayList<String> response = new ArrayList<>();
+        this.storage.clear();
+        response.add("коллекция очищена");
+        return response;
     }
     @Override
     public String getName() {
-        return "execute_script";
+        return "clear";
     }
 
     @Override
     public String getDescription() {
-        return "execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.";
+        return "clear : очистить коллекцию";
     }
     @Override
     public Boolean getNeedObject() {

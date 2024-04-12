@@ -1,5 +1,6 @@
-package command;
+package cli;
 
+import cli.Command;
 import cli.Terminal;
 
 import java.util.ArrayList;

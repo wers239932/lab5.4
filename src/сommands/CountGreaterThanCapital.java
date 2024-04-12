@@ -1,48 +1,49 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
-import command.Command;
+import cli.Command;
 import objectSpace.City;
-import objectSpace.objectExceptions.IdException;
+import objectSpace.objectExceptions.CapitalException;
 import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
-public class RemoveById implements Command {
+public class CountGreaterThanCapital implements Command {
     private StorageInterface storage;
-    private int id;
-    public RemoveById(StorageInterface storage)
+    public CountGreaterThanCapital(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+        Boolean capital;
         try {
-            this.id = City.parseId(args.get(0));
-        } catch (IdException e) {
+            capital = City.parseCapital(args.get(0));
+        } catch (CapitalException e) {
             throw new CommandException(e.getMessage());
         }
+        int amount=0;
         ArrayList<String> response = new ArrayList<>();
         for(Object city2:storage.getStorage())
         {
             City city1=(City) city2;
-            if(city1.getId()==this.id)
+            if(city1.getCapital().compareTo(capital)>0)
             {
-                storage.remove((City) city2);
+                amount++;
             }
         }
-        response.add("объект удален");
+        response.add("количество объектов с полем carCode больше заданного равно " + amount);
         return response;
     }
     @Override
     public String getName() {
-        return "remove_by_id";
+        return "count_greater_than_capital";
     }
 
     @Override
     public String getDescription() {
-        return "remove_by_id id : удалить элемент из коллекции по его id";
+        return "count_greater_than_capital capital : вывести количество элементов, значение поля capital которых больше заданного";
     }
     @Override
     public Boolean getNeedObject() {

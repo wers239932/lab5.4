@@ -1,8 +1,8 @@
-package otherCommands;
+package сommands;
 
-import command.Command;
+import cli.Command;
 import StorageInterface.StorageInterface;
-import command.ExecuteScript;
+import cli.ExecuteScript;
 
 import java.util.ArrayList;
 

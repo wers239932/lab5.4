@@ -1,36 +1,40 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
-import command.Command;
+import cli.Command;
 import objectSpace.City;
 import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
-public class Show implements Command {
+public class SumOfCarCode implements Command {
     private StorageInterface storage;
-    public Show(StorageInterface storage)
+    public SumOfCarCode(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+        Long sum= 0L;
         ArrayList<String> response = new ArrayList<>();
-        for(Object city1: storage.getStorage())
+        for(Object city2:storage.getStorage())
         {
-            response.add(((City) city1).toString());
+            City city1=(City) city2;
+            if(city1.getCarCode()!=null)
+            sum+=city1.getCarCode();
         }
+        response.add("сумма carcode по всем объектам равна " + sum.toString());
         return response;
     }
     @Override
     public String getName() {
-        return "show";
+        return "sum_of_car_code";
     }
 
     @Override
     public String getDescription() {
-        return "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
+        return "sum_of_car_code : вывести сумму значений поля carCode для всех элементов коллекции";
     }
     @Override
     public Boolean getNeedObject() {

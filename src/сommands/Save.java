@@ -1,9 +1,9 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
-import command.Command;
+import cli.Command;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
-package otherCommands;
+package сommands;
 
 import objectSpace.Parser;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
-import command.Command;
+import cli.Command;
 import objectSpace.City;
 import objectSpace.Coordinates;
 import objectSpace.Government;

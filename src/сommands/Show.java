@@ -1,33 +1,36 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
+import cli.Command;
+import objectSpace.City;
 import StorageInterface.StorageInterface;
-import command.Command;
 
 import java.util.ArrayList;
 
-public class Info implements Command {
+public class Show implements Command {
     private StorageInterface storage;
-    public Info(StorageInterface storage)
+    public Show(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        response.add("Дата созданиия: "+storage.getCreationDate().toString());
-        response.add("количество элементов в памяти: "+storage.getStorage().size());
+        for(Object city1: storage.getStorage())
+        {
+            response.add(((City) city1).toString());
+        }
         return response;
     }
     @Override
     public String getName() {
-        return "info";
+        return "show";
     }
 
     @Override
     public String getDescription() {
-        return "info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)";
+        return "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
     }
     @Override
     public Boolean getNeedObject() {

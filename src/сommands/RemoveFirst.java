@@ -1,33 +1,33 @@
-package otherCommands;
+package сommands;
 
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
-import command.Command;
+import cli.Command;
 
 import java.util.ArrayList;
 
-public class Clear implements Command {
+public class RemoveFirst implements Command {
     private StorageInterface storage;
-    public Clear(StorageInterface storage)
+    public RemoveFirst(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        ArrayList<String> response = new ArrayList<>();
-        this.storage.clear();
-        response.add("коллекция очищена");
-        return response;
+        ArrayList cities = this.storage.getStorage();
+        cities.removeFirst();
+        this.storage.setStorsge(cities);
+        return new ArrayList<>();
     }
     @Override
     public String getName() {
-        return "clear";
+        return "remove_first";
     }
 
     @Override
     public String getDescription() {
-        return "clear : очистить коллекцию";
+        return "remove_first : удалить первый элемент из коллекции";
     }
     @Override
     public Boolean getNeedObject() {
