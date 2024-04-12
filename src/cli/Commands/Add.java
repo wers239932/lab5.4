@@ -32,7 +32,7 @@ public class Add implements Command{
             Parser<Integer> parser4 = new Parser();
             int population = parser4.getArgumentWithRules("введите население, должно быть больше 0", terminal, arg -> City.parsePopulation((String) arg));
             Parser<Double> parser5 = new Parser();
-            double deep = parser5.getArgumentWithRules("введите высоту над уровнем моря в формате double", terminal, arg -> City.parseDeep((String) arg));
+            double deep = parser5.getArgumentWithRules("введите высоту над уровнем моря в формате double", terminal, arg -> City.parseMetersAboveSeaLevel((String) arg));
             Parser<Boolean> parser6 = new Parser();
             Boolean capital  = parser6.getArgumentWithRules("введите true если у города есть столица, что угодно другое в ином случае", terminal, arg -> City.parseCapital((String) arg));
             Parser<Long> parser7 = new Parser();

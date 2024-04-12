@@ -2,9 +2,7 @@ package objectSpace;
 
 import objectSpace.exceptions.*;
 
-import java.security.spec.ECField;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Random;
 
@@ -15,7 +13,8 @@ import java.util.Random;
 public class City implements Comparable<City>{
 
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-    public static String parseName(String nameToCheck){
+    public static String parseName(String nameToCheck) throws NameCityException {
+        if(nameToCheck.equals("")) throw new NameCityException("название не может быть null");
         return nameToCheck;
     }
     public static int parseId(String idToCheck) throws Exception{
@@ -68,7 +67,7 @@ public class City implements Comparable<City>{
      * дата создания объекта
      */
     private ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    public static ZonedDateTime parseDate(String date){
+    public static ZonedDateTime parseZonedDateTime(String date){
         ZonedDateTime zonedDateTime;
         try
         {
@@ -116,7 +115,7 @@ public class City implements Comparable<City>{
      * высота над уровнем моря, должно быть больше 0
      */
     private double metersAboveSeaLevel;
-    public static double parseDeep(String x) throws  HeightException {
+    public static double parseMetersAboveSeaLevel(String x) throws  HeightException {
         double y;
         try {
             y = Double.parseDouble(x);
@@ -367,10 +366,10 @@ public class City implements Comparable<City>{
                 float x = City.parseXCoord(args[2].trim());
                 long y = City.parseYCoord(args[3].trim());
                 coordinates = new Coordinates(x,y);
-                creationDate = City.parseDate(args[4].trim());
+                creationDate = City.parseZonedDateTime(args[4].trim());
                 area = City.parseArea(args[5].trim());
                 population = City.parsePopulation(args[6].trim());
-                metersAboveSeaLevel = City.parseDeep(args[7].trim());
+                metersAboveSeaLevel = City.parseMetersAboveSeaLevel(args[7].trim());
                 capital = City.parseCapital(args[8].trim());
                 carCode = City.parseCarCode(args[9].trim());
                 government = City.parseGovernment(args[10].trim());
