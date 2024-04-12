@@ -2,14 +2,13 @@ package cli.Commands;
 
 import Exceptions.CommandException;
 import cli.Terminal;
-import objectSpace.City;
-import storage.Storage;
+import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
 public class ExecuteScript implements Command{
-    private Storage storage;
-    public ExecuteScript(Storage storage)
+    private StorageInterface storage;
+    public ExecuteScript(StorageInterface storage)
     {
         this.storage = storage;
     }

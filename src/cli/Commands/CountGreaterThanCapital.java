@@ -3,19 +3,37 @@ package cli.Commands;
 import Exceptions.CommandException;
 import cli.Terminal;
 import objectSpace.City;
-import storage.Storage;
+import objectSpace.exceptions.CapitalException;
+import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
 public class CountGreaterThanCapital implements Command {
-    private Storage storage;
-    public CountGreaterThanCapital(Storage storage)
+    private StorageInterface storage;
+    public CountGreaterThanCapital(StorageInterface storage)
     {
         this.storage = storage;
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
-        return null;
+        Boolean capital;
+        try {
+            capital = City.parseCapital(args.get(0));
+        } catch (CapitalException e) {
+            throw new CommandException(e.getMessage());
+        }
+        int amount=0;
+        ArrayList<String> response = new ArrayList<>();
+        for(Object city2:storage.getStorage())
+        {
+            City city1=(City) city2;
+            if(city1.getCapital().compareTo(capital)>0)
+            {
+                amount++;
+            }
+        }
+        response.add("количество объектов с полем carCode больше заданного равно " + amount);
+        return response;
     }
     @Override
     public String getName() {

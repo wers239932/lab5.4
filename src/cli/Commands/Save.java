@@ -2,15 +2,14 @@ package cli.Commands;
 
 import Exceptions.CommandException;
 import cli.Terminal;
-import objectSpace.City;
-import storage.Storage;
+import StorageInterface.StorageInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Save implements Command{
-    private Storage storage;
-    public Save(Storage storage)
+    private StorageInterface storage;
+    public Save(StorageInterface storage)
     {
         this.storage = storage;
     }
