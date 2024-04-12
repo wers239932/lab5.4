@@ -1,4 +1,4 @@
-package storage;
+package StorageInterface;
 
 import objectSpace.City;
 

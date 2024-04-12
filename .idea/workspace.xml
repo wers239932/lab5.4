@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="исправлены комментерии">
-      <change afterPath="$PROJECT_DIR$/src/storage/StorageInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написаны команды">
       <change beforePath="$PROJECT_DIR$/src/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandArrayFiller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Clear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Help.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" afterDir="false" />
@@ -23,8 +17,8 @@
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Show.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storage/StorageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712941946959</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="написаны команды">
+      <created>1712948696530</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1712948696530</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,7 +325,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="this might work" />
     <MESSAGE value="now with all commands(mostly dummies)" />
     <MESSAGE value="strange mistake with CommandDoesntExistException" />
     <MESSAGE value="mistake fixed" />
@@ -349,6 +349,7 @@
     <MESSAGE value="add работает, коллекция сохраняется" />
     <MESSAGE value="нормальная валидация элементов коллекции при парсинге" />
     <MESSAGE value="исправлены комментерии" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлены комментерии" />
+    <MESSAGE value="написаны команды" />
+    <option name="LAST_COMMIT_MESSAGE" value="написаны команды" />
   </component>
 </project>

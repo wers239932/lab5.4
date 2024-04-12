@@ -1,14 +1,12 @@
 package storage;
 
+import StorageInterface.StorageInterface;
 import dal.DataAccessLayer;
 import objectSpace.City;
-import objectSpace.exceptions.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.LinkedList;
 
 public class Storage implements StorageInterface {
     private ArrayList<City> objects;

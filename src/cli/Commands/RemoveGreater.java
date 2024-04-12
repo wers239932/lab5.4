@@ -6,8 +6,7 @@ import objectSpace.City;
 import objectSpace.Coordinates;
 import objectSpace.Government;
 import objectSpace.Human;
-import storage.Storage;
-import storage.StorageInterface;
+import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 

@@ -2,9 +2,7 @@ package cli.Commands;
 
 import Exceptions.CommandException;
 import cli.Terminal;
-import objectSpace.City;
-import storage.Storage;
-import storage.StorageInterface;
+import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 

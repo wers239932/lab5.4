@@ -1,6 +1,5 @@
 import cli.Commands.*;
-import storage.Storage;
-import storage.StorageInterface;
+import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
