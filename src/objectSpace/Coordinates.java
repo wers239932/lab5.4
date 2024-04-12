@@ -1,6 +1,6 @@
 package objectSpace;
 
-import objectSpace.exceptions.CoordinatesException;
+import objectSpace.objectExceptions.CoordinatesException;
 
 /**
  * класс координат в формате (x,y)

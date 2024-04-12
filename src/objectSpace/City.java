@@ -1,6 +1,6 @@
 package objectSpace;
 
-import objectSpace.exceptions.*;
+import objectSpace.objectExceptions.*;
 
 import java.time.*;
 import java.util.Objects;

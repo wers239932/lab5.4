@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="перемещен сторадж интерфейс">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandExecuter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EnvironmentVars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/CommandDoesntExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Exceptions/CommandDoesntExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/CommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Exceptions/CommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Commands/Write.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="start">
+      <change beforePath="$PROJECT_DIR$/src/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/CommandArrayFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/CommandExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/CountGreaterThanCapital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Exceptions/CommandDoesntExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/commandExceptions/CommandDoesntExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Exceptions/CommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/commandExceptions/CommandException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/RemoveAllByCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/RemoveFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/RemoveLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/SumOfCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Commands/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otherCommands/Write.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/ArgumentCheker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/ArgumentCheker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/AreaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/AreaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/ArgumentCityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/ArgumentCityException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/CapitalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/CapitalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/CarCodeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/CarCodeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/CoordinatesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/CoordinatesException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/GovernmentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/GovernmentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/GovernorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/GovernorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/HeightException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/HeightException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/IdException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/IdException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/IncorrectDataExceptoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/IncorrectDataExceptoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/NameCityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/NameCityException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/exceptions/PopulationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/objectExceptions/PopulationException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712949234175</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="start">
+      <created>1712951710269</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1712951710269</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +362,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="strange mistake with CommandDoesntExistException" />
     <MESSAGE value="mistake fixed" />
     <MESSAGE value="added getname and getdescr functions" />
     <MESSAGE value="removed CommandArray, added correct addCommand method" />
@@ -362,6 +386,7 @@
     <MESSAGE value="исправлены комментерии" />
     <MESSAGE value="написаны команды" />
     <MESSAGE value="перемещен сторадж интерфейс" />
-    <option name="LAST_COMMIT_MESSAGE" value="перемещен сторадж интерфейс" />
+    <MESSAGE value="start" />
+    <option name="LAST_COMMIT_MESSAGE" value="start" />
   </component>
 </project>
