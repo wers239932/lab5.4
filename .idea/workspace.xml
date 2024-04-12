@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="переместил пакет комманд в кли">
-      <change afterPath="$PROJECT_DIR$/src/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="добавил метод для запуска комманд экзекьютера из скрипта">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/CommandFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/CommandExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/CommandArrayFiller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,26 +295,26 @@
       <option name="project" value="LOCAL" />
       <updated>1712949234175</updated>
     </task>
-    <task id="LOCAL-00030" summary="start">
-      <created>1712951710269</created>
+    <task id="LOCAL-00030" summary="execute">
+      <created>1712955205067</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1712951710269</updated>
+      <updated>1712955205067</updated>
     </task>
-    <task id="LOCAL-00031" summary="некоторый прогресс">
-      <created>1712952270707</created>
+    <task id="LOCAL-00031" summary="добавил читатель строк из файла и общего предка с терминалом - читатель строк">
+      <created>1712955576963</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1712952270707</updated>
+      <updated>1712955576963</updated>
     </task>
-    <task id="LOCAL-00032" summary="переместил пакет комманд в кли">
-      <created>1712952591437</created>
+    <task id="LOCAL-00032" summary="добавил метод для запуска комманд экзекьютера из скрипта">
+      <created>1712956499644</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1712952591437</updated>
+      <updated>1712956499644</updated>
     </task>
     <option name="localTasksCounter" value="33" />
     <servers />
@@ -360,9 +365,9 @@
     <MESSAGE value="исправлены комментерии" />
     <MESSAGE value="написаны команды" />
     <MESSAGE value="перемещен сторадж интерфейс" />
-    <MESSAGE value="start" />
-    <MESSAGE value="некоторый прогресс" />
-    <MESSAGE value="переместил пакет комманд в кли" />
-    <option name="LAST_COMMIT_MESSAGE" value="переместил пакет комманд в кли" />
+    <MESSAGE value="execute" />
+    <MESSAGE value="добавил читатель строк из файла и общего предка с терминалом - читатель строк" />
+    <MESSAGE value="добавил метод для запуска комманд экзекьютера из скрипта" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил метод для запуска комманд экзекьютера из скрипта" />
   </component>
 </project>

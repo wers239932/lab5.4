@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.LineReader;
 import objectSpace.Parser;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
@@ -7,6 +8,7 @@ import cli.Command;
 import objectSpace.*;
 import StorageInterface.StorageInterface;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Add implements Command {
@@ -16,7 +18,7 @@ public class Add implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, LineReader terminal) throws CommandException, IOException {
 
         try {
             Parser<String> parserName = new Parser();
@@ -48,6 +50,10 @@ public class Add implements Command {
             ArrayList<String> response = new ArrayList<>();
             response.add("добавлен элемент");
             return response;
+        }
+        catch (IOException e)
+        {
+        throw new IOException();
         }
         catch (Exception e)
         {

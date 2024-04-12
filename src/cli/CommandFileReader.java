@@ -1,3 +1,5 @@
+package cli;
+
 import cli.LineReader;
 
 import java.io.FileNotFoundException;

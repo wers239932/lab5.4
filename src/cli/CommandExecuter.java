@@ -26,6 +26,7 @@ public class CommandExecuter {
         this.lineReader = lineReader;
         this.commandArray = new HashMap<>();
         commandArray.add(new Help(this.commandArray));
+        commandArray.add(new ExecuteScript(commandArray));
         this.addCommandArray(commandArray);
         this.executionFromFile=true;
     }
@@ -62,13 +63,25 @@ public class CommandExecuter {
         ArrayList<String> responses = new ArrayList<>();
         while (true) {
 
-
-            ArrayList commandLine = new ArrayList(List.of(this.lineReader.readLine().split(" +")));
-            Command command = this.get(commandLine.get(0));
-            commandLine.removeFirst();
-            ArrayList response = command.execute(commandLine, lineReader);
-            responses.addAll(response);
-
+            try{
+                ArrayList commandLine = new ArrayList(List.of(this.lineReader.readLine().split(" +")));
+                Command command = this.get(commandLine.get(0));
+                commandLine.removeFirst();
+                ArrayList response = command.execute(commandLine, lineReader);
+                responses.addAll(response);
+            }
+            catch (CommandDoesntExistException e) {
+                responses.add("такой команды не существует");
+            } catch (NullPointerException e) {
+                responses.add("команда возвращает null набор строк");
+            } catch (CommandException e) {
+                responses.add(e.getMessage());
+            } catch (IOException e) {
+                return responses;
+            } catch (Exception e) {
+                responses.add(e.getMessage() + "\n" + e.getClass());
+                return responses;
+            }
         }
     }
 
