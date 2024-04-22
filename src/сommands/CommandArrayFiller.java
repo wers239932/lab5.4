@@ -2,7 +2,6 @@ package сommands;
 
 import cli.Command;
 import StorageInterface.StorageInterface;
-import cli.ExecuteScript;
 
 import java.util.ArrayList;
 
@@ -14,7 +13,6 @@ public class CommandArrayFiller {
         commandList.add(new Add(storage));
         commandList.add(new Clear(storage));
         commandList.add(new CountGreaterThanCapital(storage));
-        commandList.add(new ExecuteScript(storage));
         commandList.add(new Exit());
         commandList.add(new Info(storage));
         commandList.add(new RemoveAllByCarCode(storage));

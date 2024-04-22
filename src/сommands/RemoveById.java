@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.IOInterface;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import cli.Command;
@@ -17,7 +18,7 @@ public class RemoveById implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         try {
             this.id = City.parseId(args.get(0));
         } catch (IdException e) {

@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Terminal {
+public class Terminal implements IOInterface{
     private final Scanner sc;
+    @Override
     public void writeLine(String line)
     {
         System.out.println(line);
     }
+    @Override
     public void writeResponse(ArrayList<String> response)
     {
         for(String line : response)
@@ -22,10 +24,15 @@ public class Terminal {
     {
         this.sc=new Scanner(System.in);
     }
-
+    @Override
     public String readLine()
     {
         return this.sc.nextLine();
+    }
+
+    @Override
+    public Boolean isInteractive() {
+        return true;
     }
 
     public void closeStream() throws IOException {

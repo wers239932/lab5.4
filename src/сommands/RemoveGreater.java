@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.IOInterface;
 import objectSpace.Parser;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
@@ -19,7 +20,7 @@ public class RemoveGreater implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         City city;
         try {
             Parser<String> parserName = new Parser();
