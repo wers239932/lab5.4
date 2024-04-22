@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.IOInterface;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
@@ -14,7 +15,7 @@ public class RemoveFirst implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         ArrayList cities = this.storage.getStorage();
         cities.removeFirst();
         this.storage.setStorsge(cities);

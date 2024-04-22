@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="переместил пакет комманд в кли">
-      <change afterPath="$PROJECT_DIR$/src/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="добавил какую-то реализацию execute_script">
+      <change afterPath="$PROJECT_DIR$/1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cli/FileIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cli/FileTerminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cli/IOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/CommandExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/CommandExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/ExecuteScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Help.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/CommandArrayFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/CommandArrayFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/CountGreaterThanCapital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveAllByCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/SumOfCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Write.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,23 +71,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vladimir/Desktop/итмо/прога/программирование/лаба 5/lab5.4/src/objectSpace&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/vladimir/Desktop/итмо/прога/программирование/лаба 5/lab5.4",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4\src\objectSpace" />
+      <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4" />
       <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4\src" />
+      <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4\src\objectSpace" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cli" />
       <recent name="objectSpace.exceptions" />
       <recent name="objectSpace" />
       <recent name="" />
@@ -290,28 +322,35 @@
       <option name="project" value="LOCAL" />
       <updated>1712949234175</updated>
     </task>
-    <task id="LOCAL-00030" summary="start">
-      <created>1712951710269</created>
+    <task id="LOCAL-00030" summary="execute">
+      <created>1712955205067</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1712951710269</updated>
+      <updated>1712955205067</updated>
     </task>
-    <task id="LOCAL-00031" summary="некоторый прогресс">
-      <created>1712952270707</created>
+    <task id="LOCAL-00031" summary="добавил читатель строк из файла и общего предка с терминалом - читатель строк">
+      <created>1712955576963</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1712952270707</updated>
+      <updated>1712955576963</updated>
     </task>
-    <task id="LOCAL-00032" summary="переместил пакет комманд в кли">
-      <created>1712952591437</created>
+    <task id="LOCAL-00032" summary="добавил метод для запуска комманд экзекьютера из скрипта">
+      <created>1712956499644</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1712952591437</updated>
+      <updated>1712956499644</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="добавил какую-то реализацию execute_script">
+      <created>1712959427440</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1712959427440</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,7 +377,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed CommandArray, added correct addCommand method" />
     <MESSAGE value="fixed exceptions with command execution" />
     <MESSAGE value="made constructor for CommandExecuter, made static CommandArrayFiller" />
     <MESSAGE value="now we add an array of commands instead of map when loading commandArray" />
@@ -360,9 +398,10 @@
     <MESSAGE value="исправлены комментерии" />
     <MESSAGE value="написаны команды" />
     <MESSAGE value="перемещен сторадж интерфейс" />
-    <MESSAGE value="start" />
-    <MESSAGE value="некоторый прогресс" />
-    <MESSAGE value="переместил пакет комманд в кли" />
-    <option name="LAST_COMMIT_MESSAGE" value="переместил пакет комманд в кли" />
+    <MESSAGE value="execute" />
+    <MESSAGE value="добавил читатель строк из файла и общего предка с терминалом - читатель строк" />
+    <MESSAGE value="добавил метод для запуска комманд экзекьютера из скрипта" />
+    <MESSAGE value="добавил какую-то реализацию execute_script" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил какую-то реализацию execute_script" />
   </component>
 </project>

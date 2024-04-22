@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.IOInterface;
 import objectSpace.Parser;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
@@ -20,7 +21,7 @@ public class Update implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         int id;
         try {
             id = City.parseId(args.get(0));

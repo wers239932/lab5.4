@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.IOInterface;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import cli.Command;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class Exit implements Command {
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         System.exit(0);
         return null;
     }
