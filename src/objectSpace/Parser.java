@@ -1,18 +1,25 @@
 package objectSpace;
 
 import cli.ArgumentCheker;
+import cli.LineReader;
 import cli.Terminal;
+
+import java.io.IOException;
 
 public class Parser<T> {
     T t;
-    public T getArgumentWithRules(String msg, Terminal terminal, ArgumentCheker parser) {
+    public T getArgumentWithRules(String msg, Terminal terminal, LineReader lineReader, ArgumentCheker parser) throws IOException {
         String arg = "";
         terminal.writeLine(msg);
         while (true) {
             try {
-                t = (T) parser.parse(terminal.readLine());
+                t = (T) parser.parse(lineReader.readLine());
                 break;
-            } catch (Exception e) {
+            } catch (IOException e)
+            {
+                throw new IOException(e);
+            }
+            catch (Exception e) {
                 terminal.writeLine(e.getMessage());
                 terminal.writeLine("некорректный ввод, повторите заново");
                 terminal.writeLine(msg);

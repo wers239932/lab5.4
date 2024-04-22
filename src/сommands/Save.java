@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.LineReader;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
@@ -15,7 +16,7 @@ public class Save implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal, LineReader lineReader) throws CommandException {
         try {
             storage.save();
         } catch (IOException e) {

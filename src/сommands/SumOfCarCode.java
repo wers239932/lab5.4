@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.LineReader;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import cli.Command;
@@ -15,7 +16,7 @@ public class SumOfCarCode implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal, LineReader lineReader) throws CommandException {
         Long sum= 0L;
         ArrayList<String> response = new ArrayList<>();
         for(Object city2:storage.getStorage())

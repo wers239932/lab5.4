@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.LineReader;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import cli.Command;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public class Write implements Command {
 
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal, LineReader lineReader) throws CommandException {
         if(args.isEmpty()) throw new CommandException("неверный набор данных");
         ArrayList<String> response = new ArrayList<>();
         response.add(args.get(0));

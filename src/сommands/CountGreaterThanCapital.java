@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.LineReader;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import cli.Command;
@@ -16,8 +17,9 @@ public class CountGreaterThanCapital implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal, LineReader lineReader) throws CommandException {
         Boolean capital;
+        if(args.isEmpty()) throw new CommandException("неверный набор данных");
         try {
             capital = City.parseCapital(args.get(0));
         } catch (CapitalException e) {

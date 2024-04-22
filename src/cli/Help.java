@@ -13,7 +13,7 @@ public class Help implements Command {
         this.commandArray = commandArray;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal, LineReader lineReader) {
         ArrayList<String> response = new ArrayList<>();
         for(Command command: commandArray.values())
         {

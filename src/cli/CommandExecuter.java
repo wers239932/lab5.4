@@ -13,20 +13,36 @@ public class CommandExecuter {
     private Terminal terminal;
     private LineReader lineReader;
     private Boolean executionFromFile;
+    private ArrayList<String> scriptNames;
 
     public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray) {
+        this.scriptNames = new ArrayList<>();
         this.terminal = terminal;
         this.lineReader = terminal;
         this.commandArray = new HashMap<>();
         commandArray.add(new Help(this.commandArray));
+        commandArray.add(new ExecuteScript(commandArray, scriptNames));
         this.addCommandArray(commandArray);
         this.executionFromFile=false;
     }
-    public CommandExecuter(LineReader lineReader, ArrayList<Command> commandArray) {
-        this.lineReader = lineReader;
+    public CommandExecuter(Terminal terminal, ArrayList<Command> commandArray, ArrayList<String> scriptNames) {
+        this.scriptNames = scriptNames;
+        this.terminal = terminal;
+        this.lineReader = terminal;
         this.commandArray = new HashMap<>();
         commandArray.add(new Help(this.commandArray));
-        commandArray.add(new ExecuteScript(commandArray));
+        commandArray.add(new ExecuteScript(commandArray, scriptNames));
+        this.addCommandArray(commandArray);
+        this.executionFromFile=false;
+
+    }
+    public CommandExecuter(LineReader lineReader, Terminal terminal, ArrayList<Command> commandArray,ArrayList<String> scriptNames) {
+        this.scriptNames = scriptNames;
+        this.lineReader = lineReader;
+        this.terminal = terminal;
+        this.commandArray = new HashMap<>();
+        commandArray.add(new Help(this.commandArray));
+        commandArray.add(new ExecuteScript(commandArray, scriptNames));
         this.addCommandArray(commandArray);
         this.executionFromFile=true;
     }
@@ -45,7 +61,7 @@ public class CommandExecuter {
                 ArrayList commandLine = new ArrayList(List.of(this.terminal.readLine().split(" +")));
                 Command command = this.get(commandLine.get(0));
                 commandLine.removeFirst();
-                ArrayList response = command.execute(commandLine, terminal);
+                ArrayList response = command.execute(commandLine, terminal, terminal);
                 this.terminal.writeResponse(response);
             } catch (CommandDoesntExistException e) {
                 this.terminal.writeLine("такой команды не существует");
@@ -60,28 +76,23 @@ public class CommandExecuter {
         }
     }
     public ArrayList<String> startFromFile() throws Exception {
-        ArrayList<String> responses = new ArrayList<>();
         while (true) {
 
-            try{
+            /*try{*/
                 ArrayList commandLine = new ArrayList(List.of(this.lineReader.readLine().split(" +")));
                 Command command = this.get(commandLine.get(0));
                 commandLine.removeFirst();
-                ArrayList response = command.execute(commandLine, lineReader);
-                responses.addAll(response);
-            }
-            catch (CommandDoesntExistException e) {
-                responses.add("такой команды не существует");
+                ArrayList response = command.execute(commandLine, terminal, lineReader);
+            /*}*/
+            /*catch (CommandDoesntExistException e) {
+                this.terminal.writeLine("такой команды не существует");
             } catch (NullPointerException e) {
-                responses.add("команда возвращает null набор строк");
+                this.terminal.writeLine("команда возвращает null набор строк");
             } catch (CommandException e) {
-                responses.add(e.getMessage());
+                this.terminal.writeLine(e.getMessage());
             } catch (IOException e) {
-                return responses;
-            } catch (Exception e) {
-                responses.add(e.getMessage() + "\n" + e.getClass());
-                return responses;
-            }
+                throw new Exception("файл прочитан");
+            }*/
         }
     }
 
@@ -100,5 +111,9 @@ public class CommandExecuter {
 
     private HashMap<String, Command> getCommandArray() {
         return this.commandArray;
+    }
+
+    public ArrayList<String> getScriptNames() {
+        return scriptNames;
     }
 }

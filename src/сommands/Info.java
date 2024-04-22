@@ -1,5 +1,6 @@
 package сommands;
 
+import cli.LineReader;
 import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
@@ -14,7 +15,7 @@ public class Info implements Command {
         this.storage = storage;
     }
     @Override
-    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal) throws CommandException {
+    public ArrayList<String> execute(ArrayList<String> args, Terminal terminal, LineReader lineReader) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
         response.add("Дата созданиия: "+storage.getCreationDate().toString());
         response.add("количество элементов в памяти: "+storage.getStorage().size());

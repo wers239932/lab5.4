@@ -34,6 +34,7 @@ public class CommandFileReader implements LineReader {
             ch = this.reader.read();
 
         }
+        if(str==null) throw new IOException();
         return str;
     }
 

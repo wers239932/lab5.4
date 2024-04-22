@@ -22,6 +22,6 @@ public class App {
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(storage);
         CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
-        commandExecuter.start();
+        commandExecuter.startFromTerminal();
     }
 }
