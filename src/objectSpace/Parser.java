@@ -9,7 +9,9 @@ public class Parser<T> {
     T t;
     public T getArgumentWithRules(String msg, IOInterface terminal, ArgumentCheker parser) throws CommandException {
         String arg = "";
-        terminal.writeLine(msg);
+        if(terminal.isInteractive()) {
+            terminal.writeLine(msg);
+        }
         while (true) {
             try {
                 t = (T) parser.parse(terminal.readLine());
@@ -23,5 +25,6 @@ public class Parser<T> {
             }
         }
         return t;
+
     }
 }
