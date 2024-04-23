@@ -68,6 +68,19 @@ public class Storage implements StorageInterface {
     }
 
     @Override
+    public void update(City city) {
+        for(Object city2: this.getStorage())
+        {
+            City city1=(City) city2;
+            if(city1.getId()==city.getId())
+            {
+                this.remove((City) city2);
+                this.add(city);
+            }
+        }
+    }
+
+    @Override
     public void remove(City city) {
         this.objects.remove(city);
     }

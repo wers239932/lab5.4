@@ -55,21 +55,14 @@ public class Update implements Command {
             Parser<Human> parserGovernor = new Parser();
             Human governor = parserGovernor.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> Human.parseGovernor((String) arg));
             city = new City(name,new Coordinates(x,y),area,population,deep,capital,carcode,government, governor);
+            city.setId(id);
         }
         catch (Exception e)
         {
             throw new CommandException(e.getMessage());
         }
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getId()==id)
-            {
-                storage.remove((City) city2);
-                storage.add(city);
-            }
-        }
+        storage.update(city);
         response.add("объект обновлен");
         return response;
     }

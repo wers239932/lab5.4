@@ -1,4 +1,5 @@
 import app.App;
+import app.AppClient;
 import cli.CommandExecuter;
 import cli.Terminal;
 import dal.DataAccessLayer;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        App.Run();
+        /*App.Run();*/
+        AppClient.Run();
     }
 }

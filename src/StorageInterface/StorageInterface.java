@@ -11,6 +11,7 @@ public interface StorageInterface {
     public Date getCreationDate();
     public void setStorage(ArrayList storage);
     public void add(City city);
+    public void update(City city);
     public void remove(City city);
     public void clear();
     public void save() throws IOException;
