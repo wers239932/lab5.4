@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="перевел в 18 версию java">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713873352434</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)">
+      <created>1713876933279</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1713876933279</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -386,7 +389,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted useless methods from CommandExecuter" />
     <MESSAGE value="deleted some more useless methods from CommandExecuter" />
     <MESSAGE value="added DataAccessLayer - static-like class that can save and load Storage" />
     <MESSAGE value="storage now works, to check use command show - prints all elements in collection" />
@@ -411,6 +413,7 @@
     <MESSAGE value="добавил хорошую реализацию execute_script" />
     <MESSAGE value="создал классы для сервера и клиента" />
     <MESSAGE value="перевел в 18 версию java" />
-    <option name="LAST_COMMIT_MESSAGE" value="перевел в 18 версию java" />
+    <MESSAGE value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
+    <option name="LAST_COMMIT_MESSAGE" value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
   </component>
 </project>

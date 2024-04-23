@@ -2,12 +2,13 @@ package server;
 
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 
 public class Server {
     private DatagramChannel datagramChannel;
     private InetSocketAddress address;
-    private Socket client;
+    private SocketAddress client;
     private int port;
     public Server(int port)
     {
@@ -22,13 +23,13 @@ public class Server {
             throw new RuntimeException(e);
         }
     }
-    public void catchClient() throws IOException {
-        this.client = datagramChannel.connect();
-    }
     public void sendMessage(Serializable object) throws IOException {
-        BufferedOutputStream writer = new BufferedOutputStream(client.getOutputStream());
-        ObjectOutputStream outputStream = new ObjectOutputStream(writer);
-        outputStream.writeObject(object);
-        outputStream.flush();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+        objectOutputStream.writeObject(object);
+        objectOutputStream.flush();
+        byte[] sendData = byteArrayOutputStream.toByteArray();
+        ByteBuffer buf = ByteBuffer.wrap(sendData);
+        datagramChannel.send(buf, client);
     }
 }
