@@ -63,7 +63,7 @@ public class CommandExecuter {
                     default:
                     {
                         Command command = this.get(commandName);
-                        commandLine.removeFirst();
+                        commandLine.remove(0);
                         response = command.execute(commandLine, terminal);
                         break;
                     }
