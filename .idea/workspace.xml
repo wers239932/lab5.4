@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написал отправление сообщений с сервера">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
     </list>
@@ -50,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "server",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/mnt/c/Users/vladimir/Desktop/итмо/прога/программирование/лаба 5/lab5.4",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;server&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/c/Users/vladimir/Desktop/итмо/прога/программирование/лаба 5/lab5.4&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4" />
@@ -362,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713876933279</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="написал отправление сообщений с сервера">
+      <created>1713889772465</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1713889772465</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted some more useless methods from CommandExecuter" />
     <MESSAGE value="added DataAccessLayer - static-like class that can save and load Storage" />
     <MESSAGE value="storage now works, to check use command show - prints all elements in collection" />
     <MESSAGE value="1" />
@@ -414,6 +420,7 @@
     <MESSAGE value="создал классы для сервера и клиента" />
     <MESSAGE value="перевел в 18 версию java" />
     <MESSAGE value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
-    <option name="LAST_COMMIT_MESSAGE" value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
+    <MESSAGE value="написал отправление сообщений с сервера" />
+    <option name="LAST_COMMIT_MESSAGE" value="написал отправление сообщений с сервера" />
   </component>
 </project>

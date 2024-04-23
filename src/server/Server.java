@@ -8,11 +8,9 @@ import java.nio.channels.DatagramChannel;
 public class Server {
     private DatagramChannel datagramChannel;
     private InetSocketAddress address;
-    private SocketAddress client;
-    private int port;
+    private SocketAddress clientSocket;
     public Server(int port)
     {
-        this.port = port;
         try {
             this.address = new InetSocketAddress(port);
             this.datagramChannel = DatagramChannel.open();
@@ -23,13 +21,18 @@ public class Server {
             throw new RuntimeException(e);
         }
     }
-    public void sendMessage(Serializable object) throws IOException {
+    public void sendReply(Serializable object) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
         objectOutputStream.writeObject(object);
         objectOutputStream.flush();
         byte[] sendData = byteArrayOutputStream.toByteArray();
-        ByteBuffer buf = ByteBuffer.wrap(sendData);
-        datagramChannel.send(buf, client);
+        datagramChannel.send(ByteBuffer.wrap(sendData), clientSocket);
+    }
+    public Object getMessage()
+    {
+        this.datagramChannel.receive(new ByteBuffer());
+        byte[] data = this.datagramChannel.receive()
+        ByteBuffer buf = ByteBuffer.wrap(data);
     }
 }
