@@ -19,7 +19,7 @@ public class Client implements StorageInterface {
     }
 
     @Override
-    public void setStorsge(ArrayList storage) {
+    public void setStorage(ArrayList storage) {
 
     }
 

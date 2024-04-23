@@ -58,7 +58,7 @@ public class Storage implements StorageInterface {
     }
 
     @Override
-    public void setStorsge(ArrayList storage) {
+    public void setStorage(ArrayList storage) {
         this.objects = storage;
     }
 
