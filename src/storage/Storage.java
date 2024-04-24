@@ -5,10 +5,11 @@ import dal.DataAccessLayer;
 import objectSpace.City;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Storage implements StorageInterface {
+public class Storage implements StorageInterface, Serializable {
     private ArrayList<City> objects;
     private Date creationDate;
     private DataAccessLayer dataAccessLayer;

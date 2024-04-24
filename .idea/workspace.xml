@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написал часть функционала сторедж интерфейса">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="фиг его знает, вроде написал часть с приемом сообщения на сервере">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713906232445</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="фиг его знает, вроде написал часть с приемом сообщения на сервере">
+      <created>1713961216757</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1713961216757</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="storage now works, to check use command show - prints all elements in collection" />
     <MESSAGE value="1" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
@@ -435,6 +442,7 @@
     <MESSAGE value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
     <MESSAGE value="написал отправление сообщений с сервера" />
     <MESSAGE value="написал часть функционала сторедж интерфейса" />
-    <option name="LAST_COMMIT_MESSAGE" value="написал часть функционала сторедж интерфейса" />
+    <MESSAGE value="фиг его знает, вроде написал часть с приемом сообщения на сервере" />
+    <option name="LAST_COMMIT_MESSAGE" value="фиг его знает, вроде написал часть с приемом сообщения на сервере" />
   </component>
 </project>
