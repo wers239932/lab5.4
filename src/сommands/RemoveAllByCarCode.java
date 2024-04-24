@@ -26,14 +26,7 @@ public class RemoveAllByCarCode implements Command {
         }
 
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getCarCode()==carCode)
-            {
-                storage.remove((City) city2);
-            }
-        }
+        storage.removeAllByCarCode(carCode);
         response.add("объекты удалены");
         return response;
     }

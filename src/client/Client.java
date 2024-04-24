@@ -3,6 +3,7 @@ package client;
 import StorageInterface.StorageInterface;
 import api.Request;
 import objectSpace.City;
+import objectSpace.StorageInfo;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -11,19 +12,10 @@ import java.util.Date;
 
 public class Client implements StorageInterface {
     @Override
-    public ArrayList getStorage() {
+    public ArrayList<City> getCitiesList() {
         return null;
     }
 
-    @Override
-    public Date getCreationDate() {
-        return null;
-    }
-
-    @Override
-    public void setStorage(ArrayList storage) {
-
-    }
 
     @Override
     public void add(City city) {
@@ -40,31 +32,10 @@ public class Client implements StorageInterface {
             return;
         }
         byte[] obj = outputStream.toByteArray();
-
-
-        // начало примера куска серверного кода
-        String line = new String(obj);
-        System.out.println(line);
-        ByteArrayInputStream inputStream1 = new ByteArrayInputStream(obj);
-        try {
-            ObjectInputStream inputStream = new ObjectInputStream(inputStream1);
-            Request request1 = (Request) inputStream.readObject();
-            System.out.println(request1.toString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        // конец куска серверного кода
     }
 
     @Override
     public void update(City city) {
-
-    }
-
-    @Override
-    public void remove(City city) {
 
     }
 
@@ -81,5 +52,45 @@ public class Client implements StorageInterface {
     @Override
     public void load() throws IOException {
 
+    }
+
+    @Override
+    public int countGreaterThanCapital(Boolean capital) {
+        return 0;
+    }
+
+    @Override
+    public void removeAllByCarCode(Long carCode) {
+
+    }
+
+    @Override
+    public StorageInfo getInfo() {
+        return null;
+    }
+
+    @Override
+    public void removeById(int id) {
+
+    }
+
+    @Override
+    public void removeFirst() {
+
+    }
+
+    @Override
+    public void removeGreater(City city) {
+
+    }
+
+    @Override
+    public void removeLower(City city) {
+
+    }
+
+    @Override
+    public Long sumOfCarCode() {
+        return null;
     }
 }

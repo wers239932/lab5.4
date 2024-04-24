@@ -1,5 +1,6 @@
 import app.App;
 import app.AppClient;
+import app.AppServer;
 import cli.CommandExecuter;
 import cli.Terminal;
 import dal.DataAccessLayer;
@@ -11,7 +12,19 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        /*App.Run();*/
-        AppClient.Run();
+        switch (System.getenv("MODE")){
+            case ("standalone"): {
+                App.Run();
+                break;
+            }
+            case ("server"): {
+                AppServer.Run();
+                break;
+            }
+            case ("client"): {
+                AppClient.Run();
+                break;
+            }
+        }
     }
 }

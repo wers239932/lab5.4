@@ -5,6 +5,7 @@ import cli.commandExceptions.CommandException;
 import cli.Terminal;
 import StorageInterface.StorageInterface;
 import cli.Command;
+import objectSpace.StorageInfo;
 
 import java.util.ArrayList;
 
@@ -17,8 +18,9 @@ public class Info implements Command {
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        response.add("Дата созданиия: "+storage.getCreationDate().toString());
-        response.add("количество элементов в памяти: "+storage.getStorage().size());
+        StorageInfo storageInfo = storage.getInfo();
+        response.add("Дата созданиия: "+storageInfo.getCreationDate().toString());
+        response.add("количество элементов в памяти: " + storageInfo.getSize());
         return response;
     }
     @Override

@@ -15,9 +15,7 @@ public class RemoveFirst implements Command {
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
-        ArrayList cities = this.storage.getStorage();
-        cities.remove(0);
-        this.storage.setStorage(cities);
+        storage.removeFirst();
         return new ArrayList<>();
     }
     @Override

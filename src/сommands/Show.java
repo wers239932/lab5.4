@@ -18,7 +18,7 @@ public class Show implements Command {
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        for(Object city1: storage.getStorage())
+        for(Object city1: storage.getCitiesList())
         {
             response.add(((City) city1).toString());
         }

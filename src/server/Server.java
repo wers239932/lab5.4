@@ -8,6 +8,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.zip.CheckedInputStream;
 
@@ -19,7 +20,7 @@ public class Server {
     InetAddress hostAddress;
 
     private Storage storage;
-    private HashMap<String, Class> classCommandMap;
+    private final int messageSize = 60000;
     public Server(int port)
     {
         try {
@@ -27,9 +28,6 @@ public class Server {
         } catch (SocketException e) {
             throw new RuntimeException(e);
         }
-        this.classCommandMap = new HashMap<>();
-        this.classCommandMap.put("add", City.class);
-        this.classCommandMap.put("getStorage", null);
 
         /*try {
             this.address = new InetSocketAddress(port);
@@ -42,8 +40,8 @@ public class Server {
         }*/
     }
     public void handle(){
-        byte arr[] = new byte[60000];
-        DatagramPacket datagramPacket = new DatagramPacket(arr, 60000);
+        byte arr[] = new byte[messageSize];
+        DatagramPacket datagramPacket = new DatagramPacket(arr, messageSize);
         try {
             this.datagramSocket.receive(datagramPacket);
         } catch (IOException e) {
@@ -71,6 +69,9 @@ public class Server {
                     throw new RuntimeException(e);
                 }
             }
+
+
+
         }
 
         /*
@@ -89,12 +90,6 @@ public class Server {
         int len = sendData.length;
         DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
         this.datagramSocket.send(datagramPacket);
-        /*ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
-        objectOutputStream.writeObject(object);
-        objectOutputStream.flush();
-        byte[] sendData = byteArrayOutputStream.toByteArray();
-        datagramChannel.send(ByteBuffer.wrap(sendData), clientSocket);*/
     }
     /*public Object getMessage()
     {

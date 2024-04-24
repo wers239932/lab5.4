@@ -3,7 +3,9 @@ package storage;
 import StorageInterface.StorageInterface;
 import dal.DataAccessLayer;
 import objectSpace.City;
+import objectSpace.StorageInfo;
 
+import javax.swing.plaf.SpinnerUI;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,10 +21,6 @@ public class Storage implements StorageInterface, Serializable {
         this.load();
 
         this.creationDate=new Date();
-    }
-    @Override
-    public Date getCreationDate() {
-        return creationDate;
     }
     @Override
     public void load() throws IOException {
@@ -54,14 +52,10 @@ public class Storage implements StorageInterface, Serializable {
     }
 
     @Override
-    public ArrayList<City> getStorage() {
+    public ArrayList<City> getCitiesList() {
         return this.objects;
     }
 
-    @Override
-    public void setStorage(ArrayList storage) {
-        this.objects = storage;
-    }
 
     @Override
     public void add(City city) {
@@ -70,24 +64,98 @@ public class Storage implements StorageInterface, Serializable {
 
     @Override
     public void update(City city) {
-        for(Object city2: this.getStorage())
+        for(Object city2: this.objects)
         {
             City city1=(City) city2;
             if(city1.getId()==city.getId())
             {
-                this.remove((City) city2);
-                this.add(city);
+                this.objects.remove((City) city2);
+                this.objects.add(city);
             }
         }
     }
 
-    @Override
-    public void remove(City city) {
-        this.objects.remove(city);
-    }
+
     @Override
     public void clear()
     {
         this.objects.clear();
+    }
+    @Override
+    public int countGreaterThanCapital(Boolean capital)
+    {
+        int amount=0;
+        for(Object city2: this.objects)
+        {
+            City city1=(City) city2;
+            if(city1.getCapital().compareTo(capital)>0)
+            {
+                amount++;
+            }
+        }
+        return amount;
+    }
+    @Override
+    public StorageInfo getInfo() {
+        return new StorageInfo(this.objects.size(), this.creationDate);
+    }
+    public void removeAllByCarCode(Long carCode) {
+        for(Object city2: this.objects)
+        {
+            City city1=(City) city2;
+            if(city1.getCarCode()==carCode)
+            {
+                this.objects.remove((City) city2);
+            }
+        }
+    }
+    @Override
+    public void removeById(int id) {
+        for(Object city2:this.objects)
+        {
+            City city1=(City) city2;
+            if(city1.getId()==id)
+            {
+                this.objects.remove((City) city2);
+            }
+        }
+    }
+    @Override
+    public void removeFirst() {
+        if(!this.objects.isEmpty())
+            this.objects.remove(0);
+    }
+    @Override
+    public void removeGreater(City city){
+        for(Object city2: this.objects)
+        {
+            City city1=(City) city2;
+            if(city1.compareTo(city)>0)
+            {
+                this.objects.remove((City) city2);
+            }
+        }
+    }
+    @Override
+    public void removeLower(City city){
+        for(Object city2: this.objects)
+        {
+            City city1=(City) city2;
+            if(city1.compareTo(city)<0)
+            {
+                this.objects.remove((City) city2);
+            }
+        }
+    }
+    @Override
+    public Long sumOfCarCode(){
+        Long sum= 0L;
+        for(Object city2:this.objects)
+        {
+            City city1=(City) city2;
+            if(city1.getCarCode()!=null)
+                sum+=city1.getCarCode();
+        }
+        return sum;
     }
 }

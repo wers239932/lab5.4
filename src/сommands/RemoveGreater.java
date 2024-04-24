@@ -54,14 +54,7 @@ public class RemoveGreater implements Command {
             throw new CommandException(e.getMessage());
         }
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.compareTo(city)>0)
-            {
-                storage.remove((City) city2);
-            }
-        }
+        storage.removeGreater(city);
         response.add("элементы удалены");
         return  response;
     }

@@ -25,14 +25,7 @@ public class RemoveById implements Command {
             throw new CommandException(e.getMessage());
         }
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getId()==this.id)
-            {
-                storage.remove((City) city2);
-            }
-        }
+        storage.removeById(id);
         response.add("объект удален");
         return response;
     }
