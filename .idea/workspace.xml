@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написал отправление сообщений с сервера">
-      <change afterPath="$PROJECT_DIR$/src/api/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectSpace/Capital.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectSpace/CarCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectSpace/ID.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="написал часть функционала сторедж интерфейса">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1" beforeDir="false" afterPath="$PROJECT_DIR$/1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/AppClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Government.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Human.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Update.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713900233026</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="написал часть функционала сторедж интерфейса">
+      <created>1713906232445</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1713906232445</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +410,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added DataAccessLayer - static-like class that can save and load Storage" />
     <MESSAGE value="storage now works, to check use command show - prints all elements in collection" />
     <MESSAGE value="1" />
     <MESSAGE value="2" />
@@ -443,6 +434,7 @@
     <MESSAGE value="перевел в 18 версию java" />
     <MESSAGE value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
     <MESSAGE value="написал отправление сообщений с сервера" />
-    <option name="LAST_COMMIT_MESSAGE" value="написал отправление сообщений с сервера" />
+    <MESSAGE value="написал часть функционала сторедж интерфейса" />
+    <option name="LAST_COMMIT_MESSAGE" value="написал часть функционала сторедж интерфейса" />
   </component>
 </project>
