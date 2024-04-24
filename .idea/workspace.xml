@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="исправил запись размера сообщения на константу">
-      <change afterPath="$PROJECT_DIR$/src/objectSpace/StorageInfo.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="исправил команды на правильное использование стореджа">
+      <change afterPath="$PROJECT_DIR$/src/api/RequestNames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageInterface/StorageInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/AppServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/AppClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/AppClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/AppServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/AppServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/CountGreaterThanCapital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveAllByCarCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сommands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/SumOfCarCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +86,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.standalone">
+  <component name="RunManager" selected="Application.server">
     <configuration name="client" type="Application" factoryName="Application">
       <envs>
-        <env name="SAVEFILE" value="src/savefile.csv" />
         <env name="MODE" value="client" />
+        <env name="SAVEFILE" value="src/savefile.csv" />
+        <env name="SERVER_HOST" value="127.0.0.1" />
+        <env name="SERVER_PORT" value="3000" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="lab5.4" />
@@ -110,8 +102,10 @@
     </configuration>
     <configuration name="server" type="Application" factoryName="Application">
       <envs>
-        <env name="SAVEFILE" value="src/savefile.csv" />
         <env name="MODE" value="server" />
+        <env name="SAVEFILE" value="src/savefile.csv" />
+        <env name="SERVER_HOST" value="127.0.0.1" />
+        <env name="SERVER_PORT" value="3000" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="lab5.4" />
@@ -440,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713986376895</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="исправил команды на правильное использование стореджа">
+      <created>1713990720243</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1713990720243</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -467,7 +468,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="3" />
     <MESSAGE value="4" />
     <MESSAGE value="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show" />
     <MESSAGE value="парсеры для полей города" />
@@ -492,7 +492,8 @@
     <MESSAGE value="фиг его знает, вроде написал часть с приемом сообщения на сервере" />
     <MESSAGE value="дописал обработку двух запросов, теперь вроде понятно как это будет работать" />
     <MESSAGE value="исправил запись размера сообщения на константу" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправил запись размера сообщения на константу" />
+    <MESSAGE value="исправил команды на правильное использование стореджа" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправил команды на правильное использование стореджа" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
