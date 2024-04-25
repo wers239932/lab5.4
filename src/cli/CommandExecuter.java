@@ -56,7 +56,7 @@ public class CommandExecuter {
                         break;
                     }
                     default: {
-                        Command command = this.get(commandName);
+                        Command command = this.getCommand(commandName);
                         commandLine.remove(0);
                         response = command.execute(commandLine, terminal);
                         break;
@@ -83,7 +83,7 @@ public class CommandExecuter {
         this.commandArray.put(command.getName(), command);
     }
 
-    private Command get(Object name) throws CommandDoesntExistException {
+    private Command getCommand(Object name) throws CommandDoesntExistException {
 
         Command command = this.commandArray.get((String) name);
         if (command == null) throw new CommandDoesntExistException();
