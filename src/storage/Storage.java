@@ -63,10 +63,9 @@ public class Storage implements StorageInterface, Serializable {
 
     @Override
     public void update(City city) {
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.getId() == city.getId()) {
-                this.objects.remove((City) city2);
+        for (City cityStored : this.objects) {
+            if (cityStored.getId() == city.getId()) {
+                this.objects.remove(cityStored);
                 this.objects.add(city);
             }
         }
@@ -81,9 +80,8 @@ public class Storage implements StorageInterface, Serializable {
     @Override
     public int countGreaterThanCapital(Boolean capital) {
         int amount = 0;
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.getCapital().compareTo(capital) > 0) {
+        for (City cityStored : this.objects) {
+            if (cityStored.getCapital().compareTo(capital) > 0) {
                 amount++;
             }
         }
@@ -96,20 +94,18 @@ public class Storage implements StorageInterface, Serializable {
     }
 
     public void removeAllByCarCode(Long carCode) {
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.getCarCode() == carCode) {
-                this.objects.remove((City) city2);
+        for (City cityStored : this.objects) {
+            if (cityStored.getCarCode() == carCode) {
+                this.objects.remove(cityStored);
             }
         }
     }
 
     @Override
     public void removeById(int id) {
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.getId() == id) {
-                this.objects.remove((City) city2);
+        for (City cityStored : this.objects) {
+            if (cityStored.getId() == id) {
+                this.objects.remove(cityStored);
             }
         }
     }
@@ -122,20 +118,18 @@ public class Storage implements StorageInterface, Serializable {
 
     @Override
     public void removeGreater(City city) {
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.compareTo(city) > 0) {
-                this.objects.remove((City) city2);
+        for (City cityStored : this.objects) {
+            if (cityStored.compareTo(city) > 0) {
+                this.objects.remove((City) cityStored);
             }
         }
     }
 
     @Override
     public void removeLower(City city) {
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.compareTo(city) < 0) {
-                this.objects.remove((City) city2);
+        for (City cityStored : this.objects) {
+            if (cityStored.compareTo(city) < 0) {
+                this.objects.remove((City) cityStored);
             }
         }
     }
@@ -143,10 +137,9 @@ public class Storage implements StorageInterface, Serializable {
     @Override
     public Long sumOfCarCode() {
         Long sum = 0L;
-        for (Object city2 : this.objects) {
-            City city1 = (City) city2;
-            if (city1.getCarCode() != null)
-                sum += city1.getCarCode();
+        for (City cityStored : this.objects) {
+            if (cityStored.getCarCode() != null)
+                sum += cityStored.getCarCode();
         }
         return sum;
     }
