@@ -43,11 +43,11 @@ public class Server {
             }
             InetAddress clientAddress = datagramPacket.getAddress();
             int clientPort = datagramPacket.getPort();
-            ByteArrayInputStream inputStream1 = new ByteArrayInputStream(arr);
+            ByteArrayInputStream dataStream = new ByteArrayInputStream(arr);
             Request request;
             try {
-                ObjectInputStream inputStream = new ObjectInputStream(inputStream1);
-                request = (Request) inputStream.readObject();
+                ObjectInputStream objectStream = new ObjectInputStream(dataStream);
+                request = (Request) objectStream.readObject();
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
