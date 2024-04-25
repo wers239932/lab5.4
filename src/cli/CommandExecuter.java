@@ -14,12 +14,17 @@ public class CommandExecuter {
     private IOInterface terminal;
     private HashSet<String> runningScripts;
 
+    public CommandExecuter(IOInterface terminal, ArrayList<Command> commandArray) {
+        this.terminal = terminal;
+        this.commandArray = new HashMap<>();
+        this.addCommandArray(commandArray);
+        this.runningScripts = new HashSet<String>();
+    }
     public CommandExecuter(IOInterface terminal, ArrayList<Command> commandArray, HashSet<String> runningScripts) {
         this.terminal = terminal;
         this.commandArray = new HashMap<>();
         this.addCommandArray(commandArray);
-        if (runningScripts == null) this.runningScripts = new HashSet<String>();
-        else this.runningScripts = runningScripts;
+        this.runningScripts = runningScripts;
     }
 
     private ArrayList<Command> getCommandArray() {

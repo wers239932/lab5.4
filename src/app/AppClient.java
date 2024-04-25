@@ -19,7 +19,7 @@ public class AppClient {
             throw new RuntimeException(e);
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(client);
-        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, null);
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();
     }
 }

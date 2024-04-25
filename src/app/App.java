@@ -20,7 +20,7 @@ public class App {
             System.exit(1);
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(storage);
-        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, null);
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();
     }
 }
