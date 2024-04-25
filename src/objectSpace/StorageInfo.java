@@ -1,8 +1,9 @@
 package objectSpace;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class StorageInfo {
+public class StorageInfo implements Serializable {
     private Date creationDate;
     private int size;
     public StorageInfo(int size, Date creationDate) {

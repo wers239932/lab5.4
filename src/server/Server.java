@@ -2,6 +2,7 @@ package server;
 
 import StorageInterface.StorageInterface;
 import api.Request;
+import api.RequestStatus;
 import api.Response;
 import objectSpace.*;
 import storage.Storage;
@@ -65,7 +66,7 @@ public class Server {
             switch (commandName) {
                 case (ADD): {
                     this.storage.add((City) request.getData());
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -74,7 +75,7 @@ public class Server {
                     break;
                 }
                 case (GET_CITIES_LIST): {
-                    Response<ArrayList<City>> response = new Response<>(storage.getCitiesList(), null);
+                    Response<ArrayList<City>> response = new Response<>(storage.getCitiesList(), RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -84,7 +85,7 @@ public class Server {
                 }
                 case (UPDATE): {
                     this.storage.update((City) request.getData());
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -94,7 +95,7 @@ public class Server {
                 }
                 case (CLEAR): {
                     this.storage.clear();
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -104,7 +105,7 @@ public class Server {
                 }
                 case (COUNT_GREATER_THAN_CAPITAL): {
                     Capital capital = (Capital) request.getData();
-                    Response<Integer> response = new Response<>(this.storage.countGreaterThanCapital(capital.getCapital()), null);
+                    Response<Integer> response = new Response<>(this.storage.countGreaterThanCapital(capital.getCapital()), RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -115,7 +116,7 @@ public class Server {
                 case (REMOVE_ALL_BY_CAR_CODE): {
                     CarCode carCode = (CarCode) request.getData();
                     this.storage.removeAllByCarCode(carCode.getCarCode());
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -125,7 +126,7 @@ public class Server {
                 }
                 case (GET_INFO): {
                     StorageInfo storageInfo = this.storage.getInfo();
-                    Response<StorageInfo> response = new Response<>(storageInfo, null);
+                    Response<StorageInfo> response = new Response<>(storageInfo, RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -136,7 +137,7 @@ public class Server {
                 case (REMOVE_BY_ID): {
                     ID id = (ID) request.getData();
                     this.storage.removeById(id.getId());
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -146,7 +147,7 @@ public class Server {
                 }
                 case (REMOVE_FIRST): {
                     this.storage.removeFirst();
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -157,7 +158,7 @@ public class Server {
                 case (REMOVE_GREATER): {
                     City city = (City) request.getData();
                     this.storage.removeGreater(city);
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -168,7 +169,7 @@ public class Server {
                 case (REMOVE_LOWER): {
                     City city = (City) request.getData();
                     this.storage.removeLower(city);
-                    Response<Object> response = new Response<>(null, null);
+                    Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
@@ -178,7 +179,7 @@ public class Server {
                 }
                 case (SUM_OF_CAR_CODE): {
                     Long sum = this.storage.sumOfCarCode();
-                    Response<Long> response = new Response<>(sum, null);
+                    Response<Long> response = new Response<>(sum, RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {

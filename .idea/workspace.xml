@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="частично работающие сервер и клиент">
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="добавляю отправку ответа от сервера для команд">
+      <change afterPath="$PROJECT_DIR$/src/api/RequestStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectSpace/StorageInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/StorageInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -444,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713995661914</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="добавляю отправку ответа от сервера для команд">
+      <created>1714047453353</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1714047453353</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,7 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show" />
     <MESSAGE value="парсеры для полей города" />
     <MESSAGE value="парсеры для полей города сделаны, нет парсинга внутри города, странно работает команда add" />
     <MESSAGE value="очень странная вещь с add" />
@@ -496,6 +506,18 @@
     <MESSAGE value="исправил запись размера сообщения на константу" />
     <MESSAGE value="исправил команды на правильное использование стореджа" />
     <MESSAGE value="частично работающие сервер и клиент" />
-    <option name="LAST_COMMIT_MESSAGE" value="частично работающие сервер и клиент" />
+    <MESSAGE value="добавляю отправку ответа от сервера для команд" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавляю отправку ответа от сервера для команд" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/сommands/Info.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

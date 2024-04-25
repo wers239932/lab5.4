@@ -10,6 +10,11 @@ public class Request<T> implements Serializable {
         this.data = data;
     }
 
+    public Request(String commandName) {
+        this.commandName = commandName;
+        this.data = null;
+    }
+
     public String getCommandName() {
         return commandName;
     }
