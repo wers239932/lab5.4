@@ -3,6 +3,7 @@ package storage;
 import StorageInterface.StorageInterface;
 import dal.DataAccessLayer;
 import objectSpace.City;
+import objectSpace.CityNameComparator;
 import objectSpace.StorageInfo;
 
 import java.io.IOException;
@@ -48,6 +49,8 @@ public class Storage implements StorageInterface, Serializable {
 
     @Override
     public ArrayList<City> getCitiesList() {
+        CityNameComparator comparator = new CityNameComparator();
+        this.objects.sort(comparator);
         return this.objects;
     }
 
