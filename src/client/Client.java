@@ -3,10 +3,9 @@ package client;
 import StorageInterface.StorageInterface;
 import api.Request;
 import api.RequestNames;
-import api.RequestStatus;
 import api.Response;
-import objectSpace.City;
-import objectSpace.StorageInfo;
+import storage.City;
+import storage.StorageInfo;
 
 import java.io.*;
 import java.net.*;

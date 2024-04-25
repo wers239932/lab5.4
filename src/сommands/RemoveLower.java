@@ -4,7 +4,7 @@ import StorageInterface.StorageInterface;
 import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import objectSpace.*;
+import storage.*;
 
 import java.util.ArrayList;
 

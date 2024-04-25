@@ -1,6 +1,6 @@
-package objectSpace;
+package storage;
 
-import objectSpace.objectExceptions.CoordinatesException;
+import storage.objectExceptions.CoordinatesException;
 
 import java.io.Serializable;
 

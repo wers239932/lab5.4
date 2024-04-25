@@ -4,8 +4,8 @@ import StorageInterface.StorageInterface;
 import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import objectSpace.*;
-import objectSpace.objectExceptions.IdException;
+import storage.*;
+import storage.objectExceptions.IdException;
 
 import java.util.ArrayList;
 
@@ -50,8 +50,7 @@ public class Update implements Command {
             Government government = parserGovernment.getArgumentWithRules("введите тип правительства: KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY", terminal, arg -> City.parseGovernment((String) arg));
             Parser<Human> parserGovernor = new Parser();
             Human governor = parserGovernor.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> Human.parseGovernor((String) arg));
-            city = new City(name, new Coordinates(x, y), area, population, deep, capital, carcode, government, governor);
-            city.setId(id);
+            city = new City(id, name, new Coordinates(x, y), area, population, deep, capital, carcode, government, governor);
         } catch (Exception e) {
             throw new CommandException(e.getMessage());
         }

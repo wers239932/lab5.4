@@ -1,6 +1,6 @@
-package objectSpace;
+package storage;
 
-import objectSpace.objectExceptions.*;
+import storage.objectExceptions.*;
 
 import java.io.Serializable;
 import java.time.Clock;
@@ -181,8 +181,20 @@ public class City implements Comparable<City>, Serializable {
         this.coordinates = coordinates;
     }
 
-    public City(int id) {
+    // **использовать только для метода update**
+    public City(int id, String name, Coordinates coordinates, Long area, int population, double metersAboveSeaLevel, Boolean capital, Long carCode, Government government, Human governor) {
         this.id = id;
+        this.name = name;
+        Clock clock = Clock.system(ZoneId.of("Europe/Moscow"));
+        this.creationDate = ZonedDateTime.now(clock);
+        this.area = area;
+        this.government = government;
+        this.governor = governor;
+        this.capital = capital;
+        this.carCode = carCode;
+        this.metersAboveSeaLevel = metersAboveSeaLevel;
+        this.population = population;
+        this.coordinates = coordinates;
     }
 
     public void setArea(Long area) {
@@ -221,7 +233,7 @@ public class City implements Comparable<City>, Serializable {
         return metersAboveSeaLevel;
     }
 
-    public long getPopulation() {
+    public int getPopulation() {
         return population;
     }
 
@@ -241,7 +253,7 @@ public class City implements Comparable<City>, Serializable {
         this.coordinates = coordinates;
     }
 
-    public void setCreationDate(ZonedDateTime creationDate) {
+    void setCreationDate(ZonedDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -253,11 +265,11 @@ public class City implements Comparable<City>, Serializable {
         this.governor = governor;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
-    public void setMetersAboveSeaLevel(Long metersAboveSeaLevel) {
+    public void setMetersAboveSeaLevel(double metersAboveSeaLevel) {
         this.metersAboveSeaLevel = metersAboveSeaLevel;
     }
 

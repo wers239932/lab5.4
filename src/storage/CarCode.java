@@ -1,4 +1,4 @@
-package objectSpace;
+package storage;
 
 import java.io.Serializable;
 

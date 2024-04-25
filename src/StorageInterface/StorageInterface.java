@@ -1,7 +1,7 @@
 package StorageInterface;
 
-import objectSpace.City;
-import objectSpace.StorageInfo;
+import storage.City;
+import storage.StorageInfo;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package objectSpace.objectExceptions;
+package storage.objectExceptions;
 
 /**
  * Абстрактный класс обибок при вводе неверных типов данных при создании объекта типа City

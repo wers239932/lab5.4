@@ -1,6 +1,6 @@
-package objectSpace;
+package storage;
 
-import objectSpace.objectExceptions.GovernorException;
+import storage.objectExceptions.GovernorException;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

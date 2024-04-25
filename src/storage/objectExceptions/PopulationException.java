@@ -1,4 +1,4 @@
-package objectSpace.objectExceptions;
+package storage.objectExceptions;
 
 /**
  * Класс расширяющий ArgumentCityException означающий ошибку с населением
