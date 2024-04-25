@@ -13,7 +13,7 @@ import java.net.*;
 import java.util.ArrayList;
 
 public class Client implements StorageInterface {
-    private final static int bufferSize = 10000;
+    private final static int bufferSize = 508;
     private InetAddress address;
     private int port;
 
