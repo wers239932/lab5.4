@@ -4,8 +4,8 @@ import StorageInterface.StorageInterface;
 import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import objectSpace.City;
-import objectSpace.objectExceptions.CapitalException;
+import storage.City;
+import storage.objectExceptions.CapitalException;
 
 import java.util.ArrayList;
 

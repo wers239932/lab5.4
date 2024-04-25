@@ -1,4 +1,4 @@
-package objectSpace.objectExceptions;
+package storage.objectExceptions;
 
 /**
  * * @author vladimir

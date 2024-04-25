@@ -1,4 +1,4 @@
-package objectSpace;
+package storage;
 
 import cli.ArgumentParser;
 import cli.IOInterface;

@@ -2,14 +2,15 @@ package storage;
 
 import StorageInterface.StorageInterface;
 import dal.DataAccessLayer;
-import objectSpace.City;
-import objectSpace.CityNameComparator;
-import objectSpace.StorageInfo;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.time.Clock;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 public class Storage implements StorageInterface, Serializable {
     private ArrayList<City> objects;
@@ -58,6 +59,10 @@ public class Storage implements StorageInterface, Serializable {
 
     @Override
     public void add(City city) {
+        Random randonGenerator = new Random();
+        city.setId(randonGenerator.nextInt(Integer.MAX_VALUE) + 1);
+        Clock clock = Clock.system(ZoneId.of("Europe/Moscow"));
+        city.setCreationDate(ZonedDateTime.now(clock));
         this.objects.add(city);
     }
 
@@ -65,8 +70,15 @@ public class Storage implements StorageInterface, Serializable {
     public void update(City city) {
         for (City cityStored : this.objects) {
             if (cityStored.getId() == city.getId()) {
-                this.objects.remove(cityStored);
-                this.objects.add(city);
+                cityStored.setName(city.getName());
+                cityStored.setArea(city.getArea());
+                cityStored.setGovernment(city.getGovernment());
+                cityStored.setGovernor(city.getGovernor());
+                cityStored.setCapital(city.getCapital());
+                cityStored.setCarCode(city.getCarCode());
+                cityStored.setMetersAboveSeaLevel(city.getMetersAboveSeaLevel());
+                cityStored.setPopulation(city.getPopulation());
+                cityStored.setCoordinates(city.getCoordinates());
             }
         }
     }
@@ -120,7 +132,7 @@ public class Storage implements StorageInterface, Serializable {
     public void removeGreater(City city) {
         for (City cityStored : this.objects) {
             if (cityStored.compareTo(city) > 0) {
-                this.objects.remove((City) cityStored);
+                this.objects.remove(cityStored);
             }
         }
     }
@@ -129,7 +141,7 @@ public class Storage implements StorageInterface, Serializable {
     public void removeLower(City city) {
         for (City cityStored : this.objects) {
             if (cityStored.compareTo(city) < 0) {
-                this.objects.remove((City) cityStored);
+                this.objects.remove(cityStored);
             }
         }
     }
