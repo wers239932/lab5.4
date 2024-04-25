@@ -1,7 +1,6 @@
 package api;
 
 import java.io.Serializable;
-import java.io.StringReader;
 
 public class Response<T> implements Serializable {
     private T data;

@@ -45,10 +45,6 @@ public class Storage implements StorageInterface, Serializable {
         }
         dataAccessLayer.writeAllRecords(contents);
     }
-    public ArrayList<City> getAllCitiesList()
-    {
-        return objects;
-    }
 
     @Override
     public ArrayList<City> getCitiesList() {

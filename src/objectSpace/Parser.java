@@ -1,13 +1,12 @@
 package objectSpace;
 
-import cli.ArgumentCheker;
+import cli.ArgumentParser;
 import cli.IOInterface;
-import cli.Terminal;
 import cli.commandExceptions.CommandException;
 
 public class Parser<T> {
     T t;
-    public T getArgumentWithRules(String msg, IOInterface terminal, ArgumentCheker parser) throws CommandException {
+    public T getArgumentWithRules(String msg, IOInterface terminal, ArgumentParser parser) throws CommandException {
         String arg = "";
         if(terminal.isInteractive()) {
             terminal.writeLine(msg);

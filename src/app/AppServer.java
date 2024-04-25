@@ -1,14 +1,10 @@
 package app;
 
-import cli.CommandExecuter;
-import cli.Terminal;
 import dal.DataAccessLayer;
 import server.Server;
 import storage.Storage;
-import сommands.CommandArrayFiller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class AppServer {
     public static void Run() {

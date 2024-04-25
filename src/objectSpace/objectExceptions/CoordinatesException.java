@@ -8,7 +8,4 @@ public class CoordinatesException extends ArgumentCityException{
         super(msg);
     }
 
-    public CoordinatesException(String msg, Throwable cause, int argumentNumber){
-        super(msg, cause, argumentNumber);
-    }
 }

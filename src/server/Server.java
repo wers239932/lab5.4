@@ -5,11 +5,9 @@ import api.Request;
 import api.RequestStatus;
 import api.Response;
 import objectSpace.*;
-import storage.Storage;
 
 import java.io.*;
 import java.net.*;
-import java.nio.channels.DatagramChannel;
 import java.util.ArrayList;
 
 import static api.RequestNames.*;
@@ -31,16 +29,6 @@ public class Server {
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }
-
-        /*try {
-            this.address = new InetSocketAddress(port);
-            this.datagramChannel = DatagramChannel.open();
-            this.datagramChannel.bind(address);
-        } catch(BindException e){
-            System.out.println("Порт занят. Выберете другой порт");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
     }
 
     public void handle() {
@@ -193,12 +181,6 @@ public class Server {
             }
         }
 
-        /*
-         * читаем байты и объект реквест из udp
-         * читаем имя команды
-         * по имени понимаем какой класс ожидаем в поле дата
-         * вызываем функцию соответствующую команде с нужными параметрами
-         * */
     }
 
     public void sendReply(Serializable object, InetAddress address, int port) throws IOException {
@@ -211,10 +193,4 @@ public class Server {
         DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
         this.datagramSocket.send(datagramPacket);
     }
-    /*public Object getMessage()
-    {
-        this.datagramChannel.receive(new ByteBuffer());
-        byte[] data = this.datagramChannel.receive();
-        ByteBuffer buf = ByteBuffer.wrap(data);
-    }*/
 }

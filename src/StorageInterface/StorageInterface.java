@@ -5,7 +5,6 @@ import objectSpace.StorageInfo;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 public interface StorageInterface {
     public ArrayList<City> getCitiesList();

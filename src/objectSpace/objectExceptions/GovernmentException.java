@@ -7,7 +7,4 @@ public class GovernmentException extends ArgumentCityException{
     public GovernmentException(String msg){
         super(msg);
     }
-    public GovernmentException(String msg, Throwable cause, int argumentNumber){
-        super(msg, cause, argumentNumber);
-    }
 }

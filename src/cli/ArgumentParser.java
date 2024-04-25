@@ -1,5 +1,5 @@
 package cli;
 @FunctionalInterface
-public interface  ArgumentCheker<T, String> {
+public interface ArgumentParser<T, String> {
 T parse(String arg) throws Exception;
 }

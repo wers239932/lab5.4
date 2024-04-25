@@ -9,8 +9,5 @@ public class PopulationException extends ArgumentCityException{
         super(msg);
     }
 
-    public PopulationException(String msg, Throwable cause, int argumentNumber){
-        super(msg, cause, argumentNumber);
-    }
 
 }
