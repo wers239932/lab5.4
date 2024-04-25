@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="добавляю отправку ответа от сервера для команд">
-      <change afterPath="$PROJECT_DIR$/src/api/RequestStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/StorageInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/StorageInfo.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="реализовал команды, нужно написать нормальную обработку исключений">
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -455,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714047453353</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="реализовал команды, нужно написать нормальную обработку исключений">
+      <created>1714053950075</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1714053950075</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="парсеры для полей города" />
     <MESSAGE value="парсеры для полей города сделаны, нет парсинга внутри города, странно работает команда add" />
     <MESSAGE value="очень странная вещь с add" />
     <MESSAGE value="странная вещь с add" />
@@ -507,7 +507,8 @@
     <MESSAGE value="исправил команды на правильное использование стореджа" />
     <MESSAGE value="частично работающие сервер и клиент" />
     <MESSAGE value="добавляю отправку ответа от сервера для команд" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавляю отправку ответа от сервера для команд" />
+    <MESSAGE value="реализовал команды, нужно написать нормальную обработку исключений" />
+    <option name="LAST_COMMIT_MESSAGE" value="реализовал команды, нужно написать нормальную обработку исключений" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -75,7 +75,7 @@ public class Server {
                     break;
                 }
                 case (GET_CITIES_LIST): {
-                    Response<ArrayList<City>> response = new Response<>(storage.getCitiesList(), RequestStatus.DONE, null);
+                    Response<ArrayList<City>> response = new Response<>(this.storage.getCitiesList(), RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
                     } catch (IOException e) {
