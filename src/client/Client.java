@@ -7,16 +7,13 @@ import api.RequestStatus;
 import api.Response;
 import objectSpace.City;
 import objectSpace.StorageInfo;
-import сommands.Add;
 
 import java.io.*;
 import java.net.*;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Client implements StorageInterface {
-    private final static int bufferSize = 60000;
+    private final static int bufferSize = 508;
     private InetAddress address;
     private int port;
     public Client(String host, int port) throws UnknownHostException {

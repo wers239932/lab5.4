@@ -1,6 +1,5 @@
 package app;
 
-import StorageInterface.StorageInterface;
 import cli.CommandExecuter;
 import cli.Terminal;
 import client.Client;

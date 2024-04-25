@@ -1,16 +1,11 @@
 package сommands;
 
-import cli.IOInterface;
-import objectSpace.Parser;
-import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
-import objectSpace.City;
-import objectSpace.Coordinates;
-import objectSpace.Government;
-import objectSpace.Human;
-import objectSpace.objectExceptions.IdException;
 import StorageInterface.StorageInterface;
+import cli.Command;
+import cli.IOInterface;
+import cli.commandExceptions.CommandException;
+import objectSpace.*;
+import objectSpace.objectExceptions.IdException;
 
 import java.util.ArrayList;
 

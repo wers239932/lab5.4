@@ -1,11 +1,10 @@
 package сommands;
 
+import StorageInterface.StorageInterface;
+import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
 import objectSpace.City;
-import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 

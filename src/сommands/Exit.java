@@ -2,7 +2,6 @@ package сommands;
 
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
 import cli.Command;
 
 import java.util.ArrayList;

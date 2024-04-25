@@ -3,7 +3,6 @@ package сommands;
 import cli.IOInterface;
 import objectSpace.Parser;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
 import cli.Command;
 import objectSpace.*;
 import StorageInterface.StorageInterface;

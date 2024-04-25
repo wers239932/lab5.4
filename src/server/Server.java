@@ -19,7 +19,7 @@ public class Server {
     private InetAddress hostAddress;
 
     private StorageInterface storage;
-    private final int messageSize = 60000;
+    private final int messageSize = 508;
 
     public Server(String host, int port, StorageInterface storage) {
         this.storage = storage;
