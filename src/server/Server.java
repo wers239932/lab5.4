@@ -2,6 +2,7 @@ package server;
 
 import StorageInterface.StorageInterface;
 import api.Request;
+import api.RequestNames;
 import api.RequestStatus;
 import api.Response;
 import objectSpace.*;
@@ -52,7 +53,7 @@ public class Server {
             }
             String commandName = request.getCommandName();
             switch (commandName) {
-                case (ADD): {
+                case (RequestNames.ADD): {
                     this.storage.add((City) request.getData());
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
@@ -62,7 +63,7 @@ public class Server {
                     }
                     break;
                 }
-                case (GET_CITIES_LIST): {
+                case (RequestNames.GET_CITIES_LIST): {
                     Response<ArrayList<City>> response = new Response<>(this.storage.getCitiesList(), RequestStatus.DONE, null);
                     try {
                         this.sendReply(response, clientAddress, clientPort);
@@ -71,7 +72,7 @@ public class Server {
                     }
                     break;
                 }
-                case (UPDATE): {
+                case (RequestNames.UPDATE): {
                     this.storage.update((City) request.getData());
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
@@ -81,7 +82,7 @@ public class Server {
                     }
                     break;
                 }
-                case (CLEAR): {
+                case (RequestNames.CLEAR): {
                     this.storage.clear();
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
@@ -91,7 +92,7 @@ public class Server {
                     }
                     break;
                 }
-                case (COUNT_GREATER_THAN_CAPITAL): {
+                case (RequestNames.COUNT_GREATER_THAN_CAPITAL): {
                     Capital capital = (Capital) request.getData();
                     Response<Integer> response = new Response<>(this.storage.countGreaterThanCapital(capital.getCapital()), RequestStatus.DONE, null);
                     try {
@@ -101,7 +102,7 @@ public class Server {
                     }
                     break;
                 }
-                case (REMOVE_ALL_BY_CAR_CODE): {
+                case (RequestNames.REMOVE_ALL_BY_CAR_CODE): {
                     CarCode carCode = (CarCode) request.getData();
                     this.storage.removeAllByCarCode(carCode.getCarCode());
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
@@ -112,7 +113,7 @@ public class Server {
                     }
                     break;
                 }
-                case (GET_INFO): {
+                case (RequestNames.GET_INFO): {
                     StorageInfo storageInfo = this.storage.getInfo();
                     Response<StorageInfo> response = new Response<>(storageInfo, RequestStatus.DONE, null);
                     try {
@@ -122,7 +123,7 @@ public class Server {
                     }
                     break;
                 }
-                case (REMOVE_BY_ID): {
+                case (RequestNames.REMOVE_BY_ID): {
                     ID id = (ID) request.getData();
                     this.storage.removeById(id.getId());
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
@@ -133,7 +134,7 @@ public class Server {
                     }
                     break;
                 }
-                case (REMOVE_FIRST): {
+                case (RequestNames.REMOVE_FIRST): {
                     this.storage.removeFirst();
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
                     try {
@@ -143,7 +144,7 @@ public class Server {
                     }
                     break;
                 }
-                case (REMOVE_GREATER): {
+                case (RequestNames.REMOVE_GREATER): {
                     City city = (City) request.getData();
                     this.storage.removeGreater(city);
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
@@ -154,7 +155,7 @@ public class Server {
                     }
                     break;
                 }
-                case (REMOVE_LOWER): {
+                case (RequestNames.REMOVE_LOWER): {
                     City city = (City) request.getData();
                     this.storage.removeLower(city);
                     Response<Object> response = new Response<>(RequestStatus.DONE, null);
@@ -165,7 +166,7 @@ public class Server {
                     }
                     break;
                 }
-                case (SUM_OF_CAR_CODE): {
+                case (RequestNames.SUM_OF_CAR_CODE): {
                     Long sum = this.storage.sumOfCarCode();
                     Response<Long> response = new Response<>(sum, RequestStatus.DONE, null);
                     try {
@@ -175,7 +176,7 @@ public class Server {
                     }
                     break;
                 }
-                case (GET_COMMAND_ARRAY): {
+                case (RequestNames.GET_COMMAND_ARRAY): {
                     break;
                 }
             }

@@ -20,7 +20,6 @@ public class CommandArrayFiller {
         commandList.add(new RemoveFirst(storage));
         commandList.add(new RemoveGreater(storage));
         commandList.add(new RemoveLower(storage));
-        commandList.add(new Save(storage));
         commandList.add(new Show(storage));
         commandList.add(new SumOfCarCode(storage));
         commandList.add(new Update(storage));

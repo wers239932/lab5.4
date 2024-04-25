@@ -39,7 +39,6 @@ public class CommandExecuter {
                 ArrayList commandLine = new ArrayList(List.of(this.terminal.readLine().split(" +")));
                 String commandName= (String) commandLine.get(0);
                 ArrayList<String> response = new ArrayList<>();
-                /*ArrayList<String> script = new ArrayList<>();*/
                 switch (commandName) {
                     case ("help"):
                     {
