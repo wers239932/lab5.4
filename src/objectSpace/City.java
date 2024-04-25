@@ -2,6 +2,7 @@ package objectSpace;
 
 import objectSpace.objectExceptions.*;
 
+import java.io.Serializable;
 import java.time.*;
 import java.util.Objects;
 import java.util.Random;
@@ -10,7 +11,7 @@ import java.util.Random;
  * Класс город, объектами которого мы манипулируем
  */
 
-public class City implements Comparable<City>{
+public class City implements Comparable<City>, Serializable {
 
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     public static String parseName(String nameToCheck) throws NameCityException {

@@ -1,16 +1,11 @@
 package сommands;
 
-import cli.IOInterface;
-import objectSpace.Parser;
-import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
-import objectSpace.City;
-import objectSpace.Coordinates;
-import objectSpace.Government;
-import objectSpace.Human;
-import objectSpace.objectExceptions.IdException;
 import StorageInterface.StorageInterface;
+import cli.Command;
+import cli.IOInterface;
+import cli.commandExceptions.CommandException;
+import objectSpace.*;
+import objectSpace.objectExceptions.IdException;
 
 import java.util.ArrayList;
 
@@ -55,21 +50,14 @@ public class Update implements Command {
             Parser<Human> parserGovernor = new Parser();
             Human governor = parserGovernor.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> Human.parseGovernor((String) arg));
             city = new City(name,new Coordinates(x,y),area,population,deep,capital,carcode,government, governor);
+            city.setId(id);
         }
         catch (Exception e)
         {
             throw new CommandException(e.getMessage());
         }
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getId()==id)
-            {
-                storage.remove((City) city2);
-                storage.add(city);
-            }
-        }
+        storage.update(city);
         response.add("объект обновлен");
         return response;
     }

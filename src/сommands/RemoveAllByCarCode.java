@@ -1,12 +1,11 @@
 package сommands;
 
+import StorageInterface.StorageInterface;
+import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
 import objectSpace.City;
 import objectSpace.objectExceptions.CarCodeException;
-import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
@@ -26,14 +25,7 @@ public class RemoveAllByCarCode implements Command {
         }
 
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getCarCode()==carCode)
-            {
-                storage.remove((City) city2);
-            }
-        }
+        storage.removeAllByCarCode(carCode);
         response.add("объекты удалены");
         return response;
     }

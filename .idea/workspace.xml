@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="добавил хорошую реализацию execute_script">
-      <change beforePath="$PROJECT_DIR$/src/objectSpace/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectSpace/Parser.java" afterDir="false" />
+    <list default="true" id="eac19fe9-925e-4cf1-be82-e14eb67fbbe7" name="Changes" comment="исправил обращение к стореджу в методе getCitiesList">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/AppClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/AppClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/CountGreaterThanCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/CountGreaterThanCapital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveAllByCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveAllByCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/RemoveLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/SumOfCarCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/SumOfCarCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сommands/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/сommands/Write.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +57,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2etfYSs07M157Ij4h6K0vtI8bkp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,17 +68,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/vladimir/Desktop/итмо/прога/программирование/лаба 5/lab5.4",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;server&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/c/Users/vladimir/Desktop/итмо/прога/программирование/лаба 5/lab5.4&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vladimir\Desktop\итмо\прога\программирование\лаба 5\lab5.4" />
@@ -70,10 +99,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="main" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.standalone">
+    <configuration name="client" type="Application" factoryName="Application">
       <envs>
+        <env name="MODE" value="client" />
         <env name="SAVEFILE" value="src/savefile.csv" />
+        <env name="SERVER_HOST" value="127.0.0.1" />
+        <env name="SERVER_PORT" value="3000" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="lab5.4" />
@@ -81,6 +113,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="server" type="Application" factoryName="Application">
+      <envs>
+        <env name="MODE" value="server" />
+        <env name="SAVEFILE" value="src/savefile.csv" />
+        <env name="SERVER_HOST" value="127.0.0.1" />
+        <env name="SERVER_PORT" value="3000" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="lab5.4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="standalone" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/corretto-17.0.11" />
+      <envs>
+        <env name="SAVEFILE" value="src/savefile.csv" />
+        <env name="MODE" value="standalone" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="lab5.4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.standalone" />
+      <item itemvalue="Application.client" />
+      <item itemvalue="Application.server" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -329,7 +391,98 @@
       <option name="project" value="LOCAL" />
       <updated>1713812582961</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="создал классы для сервера и клиента">
+      <created>1713867301161</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1713867301161</updated>
+    </task>
+    <task id="LOCAL-00036" summary="перевел в 18 версию java">
+      <created>1713873352434</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1713873352434</updated>
+    </task>
+    <task id="LOCAL-00037" summary="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)">
+      <created>1713876933279</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1713876933279</updated>
+    </task>
+    <task id="LOCAL-00038" summary="написал отправление сообщений с сервера">
+      <created>1713889772465</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1713889772465</updated>
+    </task>
+    <task id="LOCAL-00039" summary="написал отправление сообщений с сервера">
+      <created>1713900233026</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1713900233026</updated>
+    </task>
+    <task id="LOCAL-00040" summary="написал часть функционала сторедж интерфейса">
+      <created>1713906232445</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1713906232445</updated>
+    </task>
+    <task id="LOCAL-00041" summary="фиг его знает, вроде написал часть с приемом сообщения на сервере">
+      <created>1713961216757</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1713961216757</updated>
+    </task>
+    <task id="LOCAL-00042" summary="дописал обработку двух запросов, теперь вроде понятно как это будет работать">
+      <created>1713986376895</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1713986376895</updated>
+    </task>
+    <task id="LOCAL-00043" summary="исправил команды на правильное использование стореджа">
+      <created>1713990720243</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1713990720243</updated>
+    </task>
+    <task id="LOCAL-00044" summary="частично работающие сервер и клиент">
+      <created>1713995661914</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1713995661914</updated>
+    </task>
+    <task id="LOCAL-00045" summary="добавляю отправку ответа от сервера для команд">
+      <created>1714047453353</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1714047453353</updated>
+    </task>
+    <task id="LOCAL-00046" summary="реализовал команды, нужно написать нормальную обработку исключений">
+      <created>1714053950075</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1714053950075</updated>
+    </task>
+    <task id="LOCAL-00047" summary="исправил обращение к стореджу в методе getCitiesList">
+      <created>1714054080054</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1714054080054</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,19 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made constructor for CommandExecuter, made static CommandArrayFiller" />
-    <MESSAGE value="now we add an array of commands instead of map when loading commandArray" />
-    <MESSAGE value="deleted useless methods from CommandExecuter" />
-    <MESSAGE value="deleted some more useless methods from CommandExecuter" />
-    <MESSAGE value="added DataAccessLayer - static-like class that can save and load Storage" />
-    <MESSAGE value="storage now works, to check use command show - prints all elements in collection" />
-    <MESSAGE value="1" />
-    <MESSAGE value="2" />
-    <MESSAGE value="3" />
-    <MESSAGE value="4" />
-    <MESSAGE value="добавил DataAccessLayer, Storage, сохранение и загрузку из файла, сделал рабочими команды save и show" />
-    <MESSAGE value="парсеры для полей города" />
-    <MESSAGE value="парсеры для полей города сделаны, нет парсинга внутри города, странно работает команда add" />
     <MESSAGE value="очень странная вещь с add" />
     <MESSAGE value="странная вещь с add" />
     <MESSAGE value="add работает, коллекция сохраняется" />
@@ -381,6 +521,19 @@
     <MESSAGE value="добавил метод для запуска комманд экзекьютера из скрипта" />
     <MESSAGE value="добавил какую-то реализацию execute_script" />
     <MESSAGE value="добавил хорошую реализацию execute_script" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил хорошую реализацию execute_script" />
+    <MESSAGE value="создал классы для сервера и клиента" />
+    <MESSAGE value="перевел в 18 версию java" />
+    <MESSAGE value="написал часть подключения сервера к клиенту, написал через датаграммы(вроде нужно было через сетевой канал)" />
+    <MESSAGE value="написал отправление сообщений с сервера" />
+    <MESSAGE value="написал часть функционала сторедж интерфейса" />
+    <MESSAGE value="фиг его знает, вроде написал часть с приемом сообщения на сервере" />
+    <MESSAGE value="дописал обработку двух запросов, теперь вроде понятно как это будет работать" />
+    <MESSAGE value="исправил запись размера сообщения на константу" />
+    <MESSAGE value="исправил команды на правильное использование стореджа" />
+    <MESSAGE value="частично работающие сервер и клиент" />
+    <MESSAGE value="добавляю отправку ответа от сервера для команд" />
+    <MESSAGE value="реализовал команды, нужно написать нормальную обработку исключений" />
+    <MESSAGE value="исправил обращение к стореджу в методе getCitiesList" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправил обращение к стореджу в методе getCitiesList" />
   </component>
 </project>

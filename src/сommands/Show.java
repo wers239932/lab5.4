@@ -1,11 +1,10 @@
 package сommands;
 
+import StorageInterface.StorageInterface;
+import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
 import objectSpace.City;
-import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
@@ -18,7 +17,7 @@ public class Show implements Command {
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
-        for(Object city1: storage.getStorage())
+        for(Object city1: storage.getCitiesList())
         {
             response.add(((City) city1).toString());
         }

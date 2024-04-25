@@ -1,12 +1,11 @@
 package сommands;
 
+import StorageInterface.StorageInterface;
+import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
 import objectSpace.City;
 import objectSpace.objectExceptions.IdException;
-import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
@@ -25,14 +24,7 @@ public class RemoveById implements Command {
             throw new CommandException(e.getMessage());
         }
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getId()==this.id)
-            {
-                storage.remove((City) city2);
-            }
-        }
+        storage.removeById(id);
         response.add("объект удален");
         return response;
     }

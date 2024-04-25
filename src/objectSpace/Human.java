@@ -2,13 +2,14 @@ package objectSpace;
 
 import objectSpace.objectExceptions.GovernorException;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * Класс всего полезного о человеке - дата рождения
  */
 
-public class Human {
+public class Human implements Serializable {
     private final LocalDateTime birthday;
     public static Human parseGovernor(String governor) throws GovernorException {
         LocalDateTime date;

@@ -1,7 +1,6 @@
 package cli;
 
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
 
 import java.util.ArrayList;
 

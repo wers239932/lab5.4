@@ -1,11 +1,9 @@
 package сommands;
 
+import StorageInterface.StorageInterface;
+import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
-import cli.Command;
-import objectSpace.City;
-import StorageInterface.StorageInterface;
 
 import java.util.ArrayList;
 
@@ -17,15 +15,8 @@ public class SumOfCarCode implements Command {
     }
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
-        Long sum= 0L;
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getCarCode()!=null)
-            sum+=city1.getCarCode();
-        }
-        response.add("сумма carcode по всем объектам равна " + sum.toString());
+        response.add("сумма carcode по всем объектам равна " + storage.sumOfCarCode().toString());
         return response;
     }
     @Override

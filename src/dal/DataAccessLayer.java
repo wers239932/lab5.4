@@ -34,7 +34,7 @@ public class DataAccessLayer {
                 break;
             records.add(record);
         }
-        records.removeFirst();
+        records.remove(0);
         return records;
     }
     private String readRecord() throws IOException {

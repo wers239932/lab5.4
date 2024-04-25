@@ -2,11 +2,13 @@ package objectSpace;
 
 import objectSpace.objectExceptions.CoordinatesException;
 
+import java.io.Serializable;
+
 /**
  * класс координат в формате (x,y)
  */
 
-public class Coordinates {
+public class Coordinates implements Serializable {
     private float x;
     private long y;
     public static float parseXCoord(String x) throws CoordinatesException {

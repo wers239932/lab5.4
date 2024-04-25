@@ -2,7 +2,6 @@ package сommands;
 
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Terminal;
 import cli.Command;
 import objectSpace.City;
 import objectSpace.objectExceptions.CapitalException;
@@ -24,16 +23,8 @@ public class CountGreaterThanCapital implements Command {
         } catch (CapitalException e) {
             throw new CommandException(e.getMessage());
         }
-        int amount=0;
+        int amount=storage.countGreaterThanCapital(capital);
         ArrayList<String> response = new ArrayList<>();
-        for(Object city2:storage.getStorage())
-        {
-            City city1=(City) city2;
-            if(city1.getCapital().compareTo(capital)>0)
-            {
-                amount++;
-            }
-        }
         response.add("количество объектов с полем carCode больше заданного равно " + amount);
         return response;
     }
