@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Client implements StorageInterface {
+    private final static int bufferSize = 60000;
     private InetAddress address;
     private int port;
     public Client(String host, int port) throws UnknownHostException {
@@ -49,7 +50,7 @@ public class Client implements StorageInterface {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        byte[] buffer = new byte[60000];
+        byte[] buffer = new byte[bufferSize];
         DatagramPacket udpResp = new DatagramPacket(buffer, buffer.length);
         try {
             socket.receive(udpResp);

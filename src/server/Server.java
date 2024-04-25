@@ -65,6 +65,12 @@ public class Server {
             switch (commandName) {
                 case (ADD): {
                     this.storage.add((City) request.getData());
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (GET_CITIES_LIST): {
@@ -78,47 +84,106 @@ public class Server {
                 }
                 case (UPDATE): {
                     this.storage.update((City) request.getData());
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (CLEAR): {
                     this.storage.clear();
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (COUNT_GREATER_THAN_CAPITAL): {
                     Capital capital = (Capital) request.getData();
-                    this.storage.countGreaterThanCapital(capital.getCapital());
+                    Response<Integer> response = new Response<>(this.storage.countGreaterThanCapital(capital.getCapital()), null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (REMOVE_ALL_BY_CAR_CODE): {
                     CarCode carCode = (CarCode) request.getData();
                     this.storage.removeAllByCarCode(carCode.getCarCode());
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (GET_INFO): {
                     StorageInfo storageInfo = this.storage.getInfo();
+                    Response<StorageInfo> response = new Response<>(storageInfo, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (REMOVE_BY_ID): {
                     ID id = (ID) request.getData();
                     this.storage.removeById(id.getId());
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (REMOVE_FIRST): {
                     this.storage.removeFirst();
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (REMOVE_GREATER): {
                     City city = (City) request.getData();
                     this.storage.removeGreater(city);
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (REMOVE_LOWER): {
                     City city = (City) request.getData();
                     this.storage.removeLower(city);
+                    Response<Object> response = new Response<>(null, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (SUM_OF_CAR_CODE): {
                     Long sum = this.storage.sumOfCarCode();
+                    Response<Long> response = new Response<>(sum, null);
+                    try {
+                        this.sendReply(response, clientAddress, clientPort);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 }
                 case (GET_COMMAND_ARRAY): {
