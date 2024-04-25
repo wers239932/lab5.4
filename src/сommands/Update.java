@@ -11,10 +11,11 @@ import java.util.ArrayList;
 
 public class Update implements Command {
     private StorageInterface storage;
-    public Update(StorageInterface storage)
-    {
+
+    public Update(StorageInterface storage) {
         this.storage = storage;
     }
+
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         int id;
@@ -42,18 +43,16 @@ public class Update implements Command {
             Parser<Double> parserMetersAbove = new Parser();
             double deep = parserMetersAbove.getArgumentWithRules("введите высоту над уровнем моря в формате double", terminal, arg -> City.parseMetersAboveSeaLevel((String) arg));
             Parser<Boolean> parserCapital = new Parser();
-            Boolean capital  = parserCapital.getArgumentWithRules("введите true если у города есть столица, что угодно другое в ином случае", terminal, arg -> City.parseCapital((String) arg));
+            Boolean capital = parserCapital.getArgumentWithRules("введите true если у города есть столица, что угодно другое в ином случае", terminal, arg -> City.parseCapital((String) arg));
             Parser<Long> parserCarCode = new Parser();
             Long carcode = parserCarCode.getArgumentWithRules("введите carCode - целое число от 0 до 1000", terminal, arg -> City.parseCarCode((String) arg));
             Parser<Government> parserGovernment = new Parser();
             Government government = parserGovernment.getArgumentWithRules("введите тип правительства: KLEPTOCRACY, CORPORATOCRACY или PATRIARCHY", terminal, arg -> City.parseGovernment((String) arg));
             Parser<Human> parserGovernor = new Parser();
             Human governor = parserGovernor.getArgumentWithRules("введите дату в формате yyyy-MM-dd<английская буква T>HH:mm:ss", terminal, arg -> Human.parseGovernor((String) arg));
-            city = new City(name,new Coordinates(x,y),area,population,deep,capital,carcode,government, governor);
+            city = new City(name, new Coordinates(x, y), area, population, deep, capital, carcode, government, governor);
             city.setId(id);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new CommandException(e.getMessage());
         }
         ArrayList<String> response = new ArrayList<>();
@@ -61,6 +60,7 @@ public class Update implements Command {
         response.add("объект обновлен");
         return response;
     }
+
     @Override
     public String getName() {
         return "update";
@@ -70,6 +70,7 @@ public class Update implements Command {
     public String getDescription() {
         return "update id {element} : обновить значение элемента коллекции, id которого равен заданному";
     }
+
     @Override
     public Boolean getNeedObject() {
         return true;

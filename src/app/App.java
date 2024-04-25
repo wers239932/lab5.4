@@ -10,8 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class App {
-    public static void Run()
-    {
+    public static void Run() {
         DataAccessLayer dataAccessLayer = new DataAccessLayer(System.getenv("SAVEFILE"));
         Storage storage = null;
         try {
@@ -21,7 +20,7 @@ public class App {
             System.exit(1);
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(storage);
-        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, null);
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();
     }
 }

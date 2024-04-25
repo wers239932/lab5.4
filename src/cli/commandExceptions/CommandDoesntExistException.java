@@ -1,4 +1,4 @@
 package cli.commandExceptions;
 
-public class CommandDoesntExistException extends Exception{
+public class CommandDoesntExistException extends Exception {
 }

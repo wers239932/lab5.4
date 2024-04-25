@@ -9,8 +9,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class AppClient {
-    public static void Run()
-    {
+    public static void Run() {
         String host = System.getenv("SERVER_HOST");
         int port = Integer.parseInt(System.getenv("SERVER_PORT"));
         Client client = null;
@@ -20,7 +19,7 @@ public class AppClient {
             throw new RuntimeException(e);
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(client);
-        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, null);
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();
     }
 }

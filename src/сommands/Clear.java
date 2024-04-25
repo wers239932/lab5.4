@@ -1,18 +1,19 @@
 package сommands;
 
-import cli.IOInterface;
-import cli.commandExceptions.CommandException;
 import StorageInterface.StorageInterface;
 import cli.Command;
+import cli.IOInterface;
+import cli.commandExceptions.CommandException;
 
 import java.util.ArrayList;
 
 public class Clear implements Command {
     private StorageInterface storage;
-    public Clear(StorageInterface storage)
-    {
+
+    public Clear(StorageInterface storage) {
         this.storage = storage;
     }
+
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         ArrayList<String> response = new ArrayList<>();
@@ -20,6 +21,7 @@ public class Clear implements Command {
         response.add("коллекция очищена");
         return response;
     }
+
     @Override
     public String getName() {
         return "clear";
@@ -29,6 +31,7 @@ public class Clear implements Command {
     public String getDescription() {
         return "clear : очистить коллекцию";
     }
+
     @Override
     public Boolean getNeedObject() {
         return false;

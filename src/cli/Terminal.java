@@ -1,41 +1,35 @@
 package cli;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Terminal implements IOInterface{
+public class Terminal implements IOInterface {
     private final Scanner sc;
+
     @Override
-    public void writeLine(String line)
-    {
+    public void writeLine(String line) {
         System.out.println(line);
     }
+
     @Override
-    public void writeResponse(ArrayList<String> response)
-    {
-        for(String line : response)
-        {
+    public void writeResponse(ArrayList<String> response) {
+        for (String line : response) {
             this.writeLine(line);
         }
     }
-    public Terminal()
-    {
-        this.sc=new Scanner(System.in);
+
+    public Terminal() {
+        this.sc = new Scanner(System.in);
     }
+
     @Override
-    public String readLine()
-    {
+    public String readLine() {
         return this.sc.nextLine();
     }
 
     @Override
     public Boolean isInteractive() {
         return true;
-    }
-
-    public void closeStream() throws IOException {
-        sc.close();
     }
 }

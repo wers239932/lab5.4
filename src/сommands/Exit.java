@@ -1,8 +1,8 @@
 package сommands;
 
+import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
-import cli.Command;
 
 import java.util.ArrayList;
 
@@ -12,6 +12,7 @@ public class Exit implements Command {
         System.exit(0);
         return null;
     }
+
     @Override
     public String getName() {
         return "exit";
@@ -21,6 +22,7 @@ public class Exit implements Command {
     public String getDescription() {
         return "exit : завершить программу (без сохранения в файл)";
     }
+
     @Override
     public Boolean getNeedObject() {
         return false;

@@ -1,13 +1,10 @@
 package objectSpace.objectExceptions;
 
 /**
- *  * @author vladimir
+ * * @author vladimir
  */
-public class IncorrectDataExceptoin extends RuntimeException{
-    public IncorrectDataExceptoin(String msg){
+public class IncorrectDataExceptoin extends RuntimeException {
+    public IncorrectDataExceptoin(String msg) {
         super(msg);
-    }
-    public IncorrectDataExceptoin(String msg, Throwable cause){
-        super(msg, cause);
     }
 }

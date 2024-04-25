@@ -10,10 +10,11 @@ import java.util.ArrayList;
 
 public class Save implements Command {
     private StorageInterface storage;
-    public Save(StorageInterface storage)
-    {
+
+    public Save(StorageInterface storage) {
         this.storage = storage;
     }
+
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         try {
@@ -25,6 +26,7 @@ public class Save implements Command {
         response.add("коллекция сохранена");
         return response;
     }
+
     @Override
     public String getName() {
         return "save";
@@ -34,6 +36,7 @@ public class Save implements Command {
     public String getDescription() {
         return "save : сохранить коллекцию в файл";
     }
+
     @Override
     public Boolean getNeedObject() {
         return false;

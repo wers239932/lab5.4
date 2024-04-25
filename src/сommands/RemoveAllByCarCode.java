@@ -12,10 +12,11 @@ import java.util.ArrayList;
 public class RemoveAllByCarCode implements Command {
     private StorageInterface storage;
     private Long carCode;
-    public RemoveAllByCarCode(StorageInterface storage)
-    {
+
+    public RemoveAllByCarCode(StorageInterface storage) {
         this.storage = storage;
     }
+
     @Override
     public ArrayList<String> execute(ArrayList<String> args, IOInterface terminal) throws CommandException {
         try {
@@ -29,6 +30,7 @@ public class RemoveAllByCarCode implements Command {
         response.add("объекты удалены");
         return response;
     }
+
     @Override
     public String getName() {
         return "remove_all_by_car_code";
@@ -38,6 +40,7 @@ public class RemoveAllByCarCode implements Command {
     public String getDescription() {
         return "remove_all_by_car_code carCode : удалить из коллекции все элементы, значение поля carCode которого эквивалентно заданному";
     }
+
     @Override
     public Boolean getNeedObject() {
         return false;

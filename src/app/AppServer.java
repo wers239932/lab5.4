@@ -1,11 +1,12 @@
 package app;
 
+import cli.Command;
 import cli.CommandExecuter;
 import cli.Terminal;
 import dal.DataAccessLayer;
 import server.Server;
 import storage.Storage;
-import сommands.CommandArrayFiller;
+import сommands.Save;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,5 +25,12 @@ public class AppServer {
         int port = Integer.parseInt(System.getenv("SERVER_PORT"));
         Server server = new Server(host, port, storage);
         server.handle();
+
+        //раскомментировать если сделаем терминал на сервере
+        /*ArrayList<Command> commandArray = new ArrayList<>();
+        commandArray.add(new Save(storage));
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, null);
+        commandExecuter.start();*/
+
     }
 }
