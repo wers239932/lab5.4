@@ -5,18 +5,18 @@ import java.io.Serializable;
 public class Response<T> implements Serializable {
     private T data;
     private String error;
-    private String requestStatus;
+    private final RequestStatus requestStatus;
 
     public String getError() {
         return error;
     }
 
-    public Response(T data, String status, String error){
+    public Response(T data, RequestStatus status, String error){
         this.data = data;
         this.requestStatus = status;
         if(error!=null) this.error = error;
     }
-    public Response(String status, String error)
+    public Response(RequestStatus status, String error)
     {
         this.requestStatus = status;
         this.error = error;
@@ -25,7 +25,7 @@ public class Response<T> implements Serializable {
     public T getData() {
         return data;
     }
-    public String getRequestStatus() {
+    public RequestStatus getRequestStatus() {
         return this.requestStatus;
     }
 }

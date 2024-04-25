@@ -1,6 +1,11 @@
 package api;
 
-public class RequestStatus {
-    public final static String DONE = "done";
-    public final static String FAILED = "failed";
+import java.io.Serializable;
+
+public enum RequestStatus implements Serializable {
+    DONE("done"),
+    FAILED("failed");
+
+    RequestStatus(String failed) {
+    }
 }
