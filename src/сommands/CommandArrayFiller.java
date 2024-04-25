@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class CommandArrayFiller {
     static ArrayList<Command> commandList;
-    public static ArrayList<Command> setBasicCommands(StorageInterface storage)
-    {
+
+    public static ArrayList<Command> setBasicCommands(StorageInterface storage) {
         commandList = new ArrayList<>();
         commandList.add(new Add(storage));
         commandList.add(new Clear(storage));

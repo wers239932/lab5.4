@@ -17,24 +17,25 @@ import java.util.Random;
 public class City implements Comparable<City>, Serializable {
 
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+
     public static String parseName(String nameToCheck) throws NameCityException {
-        if(nameToCheck.equals("")) throw new NameCityException("название не может быть null");
+        if (nameToCheck.equals("")) throw new NameCityException("название не может быть null");
         return nameToCheck;
     }
-    public static int parseId(String idToCheck) throws IdException{
+
+    public static int parseId(String idToCheck) throws IdException {
         int id;
-        if(!idToCheck.matches("[1-9]\\d*\\s*")) {
+        if (!idToCheck.matches("[1-9]\\d*\\s*")) {
             throw new IdException("id должен быть целым неотрицательным числом");
         }
         try {
             id = Integer.parseInt(idToCheck);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new IdException("не удалось преобразовать из строки в int");
         }
         return id;
     }
+
     /**
      * название
      */
@@ -48,55 +49,55 @@ public class City implements Comparable<City>, Serializable {
      * дата создания объекта
      */
     private ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    public static ZonedDateTime parseZonedDateTime(String date){
+
+    public static ZonedDateTime parseZonedDateTime(String date) {
         ZonedDateTime zonedDateTime;
-        try
-        {
+        try {
             zonedDateTime = ZonedDateTime.parse(date);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new DateTimeException("не удалось преобразовать строку в ZonedDateTime");
         }
         return zonedDateTime;
     }
+
     /**
      * площадь города
      */
     private Long area; //Значение поля должно быть больше 0, Поле не может быть null
+
     public static long parseArea(String area) throws AreaException {
         long y;
         try {
             y = Long.parseLong(area);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new AreaException("не удалось преобразовать из строки в long");
         }
-        if(y<0) throw new AreaException("area<0");
+        if (y < 0) throw new AreaException("area<0");
         return y;
     }
+
     /**
      * население
      */
     private int population; //Значение поля должно быть больше 0
+
     public static int parsePopulation(String population) throws Exception {
         int y;
         try {
             y = Integer.parseInt(population);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new PopulationException("не удалось преобразовать из строки в long");
         }
-        if(y<0) throw new PopulationException("население меньше 0");
+        if (y < 0) throw new PopulationException("население меньше 0");
         return y;
     }
+
     /**
      * высота над уровнем моря, должно быть больше 0
      */
     private double metersAboveSeaLevel;
-    public static double parseMetersAboveSeaLevel(String x) throws  HeightException {
+
+    public static double parseMetersAboveSeaLevel(String x) throws HeightException {
         double y;
         try {
             y = Double.parseDouble(x);
@@ -110,22 +111,24 @@ public class City implements Comparable<City>, Serializable {
      * наличие столицы
      */
     private Boolean capital; //Поле может быть null
+
     public static Boolean parseCapital(String capital) throws CapitalException {
         Boolean y;
-        if(!capital.equals("")) {
+        if (!capital.equals("")) {
             try {
                 y = Boolean.parseBoolean(capital);
                 return y;
             } catch (Exception e) {
                 throw new CapitalException("не удалось преобразовать из строки в Boolean");
             }
-        }
-        else return null;
+        } else return null;
     }
+
     /**
      * carCode, некоторое поле, больше 0, меньше 1000
      */
     private Long carCode; //Значение поля должно быть больше 0, Максимальное значение поля: 1000, Поле может быть null
+
     public static Long parseCarCode(String carcode) throws CarCodeException {
         Long carcode1;
         if (!carcode.equals("") && !carcode.equals("null")) {
@@ -136,13 +139,14 @@ public class City implements Comparable<City>, Serializable {
             }
             if (carcode1 <= 0 || carcode1 > 1000) throw new CarCodeException("carcode не в промежутке от 0 до 999");
             return carcode1;
-        }
-        else return null;
+        } else return null;
     }
+
     /**
      * @see Government
      */
     private Government government; //Поле может быть null
+
     public static Government parseGovernment(String government) throws GovernmentException {
         Government government1;
         if (!government.equals("") && !government.equals("null")) {
@@ -152,31 +156,34 @@ public class City implements Comparable<City>, Serializable {
                 throw new GovernmentException("не удалось преобразовать из строки в enum");
             }
             return government1;
-        }
-        else return null;
+        } else return null;
     }
+
     /**
      * @see Human
      */
     private Human governor; //Поле может быть null
 
     private static final Random randonGenerator = new Random();
-    public City(String name, Coordinates coordinates, Long area, int population, double metersAboveSeaLevel, Boolean capital, Long carCode, Government government, Human governor)
-    {
+
+    public City(String name, Coordinates coordinates, Long area, int population, double metersAboveSeaLevel, Boolean capital, Long carCode, Government government, Human governor) {
         this.id = randonGenerator.nextInt(Integer.MAX_VALUE) + 1;
-        this.name=name;
-        Clock clock=Clock.system(ZoneId.of("Europe/Moscow"));
-        this.creationDate= ZonedDateTime.now(clock);
-        this.area=area;
-        this.government=government;
-        this.governor=governor;
-        this.capital=capital;
-        this.carCode=carCode;
-        this.metersAboveSeaLevel= metersAboveSeaLevel;
-        this.population=population;
-        this.coordinates=coordinates;
+        this.name = name;
+        Clock clock = Clock.system(ZoneId.of("Europe/Moscow"));
+        this.creationDate = ZonedDateTime.now(clock);
+        this.area = area;
+        this.government = government;
+        this.governor = governor;
+        this.capital = capital;
+        this.carCode = carCode;
+        this.metersAboveSeaLevel = metersAboveSeaLevel;
+        this.population = population;
+        this.coordinates = coordinates;
     }
-    public City(int id) {this.id=id;}
+
+    public City(int id) {
+        this.id = id;
+    }
 
     public void setArea(Long area) {
         this.area = area;
@@ -273,34 +280,34 @@ public class City implements Comparable<City>, Serializable {
 
     @Override
     public String toString() {
-        if(Objects.isNull(this.government))
-            return this.id +","+this.name+","+this.coordinates.toString()+","+
-                this.creationDate +","+ this.area
-                +","+ this.population +","+ this.metersAboveSeaLevel
-                +","+ this.capital +","
-                + this.carCode +","+"null"+","
-                +this.governor.toString();
+        if (Objects.isNull(this.government))
+            return this.id + "," + this.name + "," + this.coordinates.toString() + "," +
+                    this.creationDate + "," + this.area
+                    + "," + this.population + "," + this.metersAboveSeaLevel
+                    + "," + this.capital + ","
+                    + this.carCode + "," + "null" + ","
+                    + this.governor.toString();
         else
-            return this.id +","+this.name+","+this.coordinates.toString()+","+
-                    this.creationDate +","+ this.area
-                    +","+ this.population +","+ this.metersAboveSeaLevel
-                    +","+ this.capital +","
-                    + this.carCode +","+this.government.toString()+","
-                    +this.governor.toString();
+            return this.id + "," + this.name + "," + this.coordinates.toString() + "," +
+                    this.creationDate + "," + this.area
+                    + "," + this.population + "," + this.metersAboveSeaLevel
+                    + "," + this.capital + ","
+                    + this.carCode + "," + this.government.toString() + ","
+                    + this.governor.toString();
     }
 
     @Override
     public int compareTo(City o) {
-        int diff=this.area.compareTo(o.getArea());
-        if(diff==0)
-        {
-            diff=id-o.getId();
+        int diff = this.area.compareTo(o.getArea());
+        if (diff == 0) {
+            diff = id - o.getId();
         }
         return diff;
     }
 
     /**
      * парсит набор строк в город
+     *
      * @param args
      * @throws CoordinatesException
      * @throws NameCityException
@@ -313,12 +320,9 @@ public class City implements Comparable<City>, Serializable {
      * @throws GovernorException
      */
     public static City parseCity(String[] args) throws CoordinatesException, NameCityException, AreaException, PopulationException, HeightException, CapitalException, CarCodeException, GovernmentException, GovernorException {
-        if(args.length!=12)
-        {
+        if (args.length != 12) {
             throw new IncorrectDataExceptoin("некорректное количество данных, введено " + args.length + " аргументов");
-        }
-        else
-        {
+        } else {
             Integer id = null;
             String name = null;
             Coordinates coordinates = null;
@@ -335,7 +339,7 @@ public class City implements Comparable<City>, Serializable {
                 name = City.parseName(args[1].trim());
                 float x = Coordinates.parseXCoord(args[2].trim());
                 long y = Coordinates.parseYCoord(args[3].trim());
-                coordinates = new Coordinates(x,y);
+                coordinates = new Coordinates(x, y);
                 creationDate = City.parseZonedDateTime(args[4].trim());
                 area = City.parseArea(args[5].trim());
                 population = City.parsePopulation(args[6].trim());
@@ -344,12 +348,10 @@ public class City implements Comparable<City>, Serializable {
                 carCode = City.parseCarCode(args[9].trim());
                 government = City.parseGovernment(args[10].trim());
                 governor = Human.parseGovernor(args[11].trim());
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            City city = new City(name,coordinates,area,population,metersAboveSeaLevel,capital,carCode,government,governor);
+            City city = new City(name, coordinates, area, population, metersAboveSeaLevel, capital, carCode, government, governor);
             city.setCreationDate(creationDate);
             city.setId(id);
             return city;

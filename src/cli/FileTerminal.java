@@ -5,22 +5,22 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileTerminal implements IOInterface{
+public class FileTerminal implements IOInterface {
     private Scanner file;
+
     public FileTerminal(String filename) throws FileNotFoundException {
 
         this.file = new Scanner(new FileReader(filename));
     }
+
     @Override
-    public void writeLine(String line)
-    {
+    public void writeLine(String line) {
         System.out.println(line);
     }
 
     @Override
     public void writeResponse(ArrayList<String> response) {
-        for(String line : response)
-        {
+        for (String line : response) {
             this.writeLine(line);
         }
     }

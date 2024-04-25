@@ -5,12 +5,14 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO implements IOInterface{
+public class FileIO implements IOInterface {
     private Scanner file;
+
     public FileIO(String filename) throws FileNotFoundException {
 
         this.file = new Scanner(new FileReader(filename));
     }
+
     @Override
     public void writeLine(String line) {
 

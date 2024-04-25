@@ -7,7 +7,8 @@ public class DataAccessLayer {
     private FileReader reader;
     private File file;
     private String filename;
-    public DataAccessLayer(String filename){
+
+    public DataAccessLayer(String filename) {
         this.filename = filename;
         this.file = new File(filename);
         try {
@@ -18,45 +19,44 @@ public class DataAccessLayer {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+
     public ArrayList<String> readAllRecords() throws IOException {
         ArrayList<String> records = new ArrayList<>();
         String record;
-        while (true)
-        {
+        while (true) {
             record = this.readRecord();
-            if(record == null)
+            if (record == null)
                 break;
             records.add(record);
         }
         records.remove(0);
         return records;
     }
+
     private String readRecord() throws IOException {
         String str = null;
         int ch = this.reader.read();
         if (ch != -1) str = "";
         else str = null;
 
-        while (ch != (int)'\r' && ch != -1) {
+        while (ch != (int) '\r' && ch != -1) {
 
-            if(ch != (int)'\n') {
+            if (ch != (int) '\n') {
                 str += (char) ch;
-            }
-            else if(!str.equals("")) {
+            } else if (!str.equals("")) {
                 break;
             }
             ch = this.reader.read();
 
         }
-        if(str!=null && str.equals("")) str=null;
+        if (str != null && str.equals("")) str = null;
         return str;
     }
+
     public void writeAllRecords(ArrayList<String> lines) throws IOException {
         BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(filename));
         for (String line : lines) {

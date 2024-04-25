@@ -10,8 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class App {
-    public static void Run()
-    {
+    public static void Run() {
         DataAccessLayer dataAccessLayer = new DataAccessLayer(System.getenv("SAVEFILE"));
         Storage storage = null;
         try {

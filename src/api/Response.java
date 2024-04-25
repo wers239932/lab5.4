@@ -11,13 +11,13 @@ public class Response<T> implements Serializable {
         return error;
     }
 
-    public Response(T data, RequestStatus status, String error){
+    public Response(T data, RequestStatus status, String error) {
         this.data = data;
         this.requestStatus = status;
-        if(error!=null) this.error = error;
+        if (error != null) this.error = error;
     }
-    public Response(RequestStatus status, String error)
-    {
+
+    public Response(RequestStatus status, String error) {
         this.requestStatus = status;
         this.error = error;
     }
@@ -25,6 +25,7 @@ public class Response<T> implements Serializable {
     public T getData() {
         return data;
     }
+
     public RequestStatus getRequestStatus() {
         return this.requestStatus;
     }

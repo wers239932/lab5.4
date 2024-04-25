@@ -11,18 +11,17 @@ import java.io.Serializable;
 public class Coordinates implements Serializable {
     private float x;
     private long y;
+
     public static float parseXCoord(String x) throws CoordinatesException {
         float y;
-        try
-        {
+        try {
             y = Float.parseFloat(x);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new CoordinatesException("не удалось преобразовать из строки в float");
         }
         return y;
     }
+
     public static long parseYCoord(String x) throws CoordinatesException {
         long y;
         try {
@@ -33,10 +32,9 @@ public class Coordinates implements Serializable {
         return y;
     }
 
-    public Coordinates(float x, long y)
-    {
-        this.x=x;
-        this.y=y;
+    public Coordinates(float x, long y) {
+        this.x = x;
+        this.y = y;
     }
 
     public long getY() {
@@ -48,8 +46,7 @@ public class Coordinates implements Serializable {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return x + "," + y;
     }
 }
