@@ -29,7 +29,7 @@ public class AppServer {
         //раскомментировать если сделаем терминал на сервере
         /*ArrayList<Command> commandArray = new ArrayList<>();
         commandArray.add(new Save(storage));
-        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray, null);
+        CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();*/
 
     }
