@@ -5,6 +5,8 @@ import cli.Terminal;
 import dal.DataAccessLayer;
 import storage.Storage;
 import сommands.CommandArrayFiller;
+import сommands.Exit;
+import сommands.Save;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class App {
             System.exit(1);
         }
         ArrayList commandArray = CommandArrayFiller.setBasicCommands(storage);
+        commandArray.add(new Save(storage));
         CommandExecuter commandExecuter = new CommandExecuter(new Terminal(), commandArray);
         commandExecuter.start();
     }
