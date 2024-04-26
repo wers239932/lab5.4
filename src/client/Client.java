@@ -12,7 +12,8 @@ import java.net.*;
 import java.util.ArrayList;
 
 public class Client implements StorageInterface {
-    private final static int bufferSize = 508;
+    private final static int messageSize = 508;
+    public final static int timeout = 1500;
     private InetAddress address;
     private int port;
 
@@ -25,7 +26,7 @@ public class Client implements StorageInterface {
         DatagramSocket socket;
         try {
             socket = new DatagramSocket();
-
+            socket.setSoTimeout(timeout);
         } catch (SocketException e) {
             throw new RuntimeException(e);
         }
@@ -39,6 +40,8 @@ public class Client implements StorageInterface {
             System.out.println(e.getMessage());
             return null;
         }
+        if (outputStream.toByteArray().length > messageSize)
+            throw new RuntimeException("реквест не влезает в размер сообщения");
 
         DatagramPacket dp = new DatagramPacket(outputStream.toByteArray(), outputStream.size(), address, port);
         try {
@@ -46,10 +49,12 @@ public class Client implements StorageInterface {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        byte[] buffer = new byte[bufferSize];
+        byte[] buffer = new byte[messageSize];
         DatagramPacket udpResp = new DatagramPacket(buffer, buffer.length);
         try {
             socket.receive(udpResp);
+        } catch (SocketTimeoutException e) {
+            return sendRequest(request);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

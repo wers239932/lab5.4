@@ -10,6 +10,7 @@ import storage.*;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Server {
     private DatagramSocket datagramSocket;
@@ -189,6 +190,12 @@ public class Server {
         objectOutputStream.flush();
         byte[] sendData = byteArrayOutputStream.toByteArray();
         int len = sendData.length;
+        try {
+            if (len > messageSize)
+                throw new Exception("реквест не влезает в размер сообщения");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
         this.datagramSocket.send(datagramPacket);
     }
