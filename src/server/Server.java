@@ -235,25 +235,22 @@ public class Server {
         int len = sendData.length;
         Random random = new Random(); // генерироать в классе
         int id = random.nextInt();
-        int dataSize = messageSize-headerSize;
-        byte total = (byte) (len/dataSize+1);  // (len+data len%datasize)
+        int dataSize = messageSize - headerSize;
+        byte total = (byte) (len / dataSize + 1);  // (len + dataSize - len % datasize)
         byte index = 0;
         //id->byte[4]
 
-        while (index<total)
-        {
+        while (index < total) {
             ByteArrayOutputStream part = new ByteArrayOutputStream();
             byte[] bytes = ByteBuffer.allocate(4).putInt(id).array();
             part.write(bytes);
             part.write(total);
             part.write(index);
-            int end = (index+1)*dataSize;
-            if(end>len) end = len;
-            part.write(Arrays.copyOfRange(sendData,index*dataSize,end));
+            int end = (index + 1) * dataSize;
+            if (end > len) end = len;
+            part.write(Arrays.copyOfRange(sendData, index * dataSize, end));
             index++;
             DatagramPacket datagramPacket = new DatagramPacket(part.toByteArray(), part.size(), address, port);
-            System.out.println(sendData.length);
-            System.out.println(part.toByteArray().length);
             this.datagramSocket.send(datagramPacket);
         }
         /*try {

@@ -9,8 +9,6 @@ import storage.StorageInfo;
 
 import java.io.*;
 import java.net.*;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.util.ArrayList;
 
@@ -79,7 +77,7 @@ public class Client implements StorageInterface {
                 System.arraycopy(byteResponse, 0, c, 0, byteResponse.length);
                 System.arraycopy(part, 0, c, byteResponse.length, part.length);
                 byteResponse = c;
-                if(index+1==total) break;
+                if (index + 1 == total) break;
                 socket.receive(udpResp);
                 inputStream = new ByteArrayInputStream(buffer);
             } catch (IOException e) {
@@ -88,8 +86,6 @@ public class Client implements StorageInterface {
         }
         try {
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteResponse);
-            System.out.println(new String(byteResponse));
-            System.out.println(byteResponse.length);
             ObjectInputStream inputStream1 = new ObjectInputStream(byteArrayInputStream);
             Response response = (Response) inputStream1.readObject();
             return response;
