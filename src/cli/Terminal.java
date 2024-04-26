@@ -32,4 +32,8 @@ public class Terminal implements IOInterface {
     public Boolean isInteractive() {
         return true;
     }
+    @Override
+    public void closeStream() {
+        this.sc.close();
+    }
 }

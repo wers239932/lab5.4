@@ -35,4 +35,10 @@ public class FileTerminal implements IOInterface {
     public Boolean isInteractive() {
         return false;
     }
+
+    @Override
+    public void closeStream() {
+        this.file.close();
+    }
+
 }
