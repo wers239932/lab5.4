@@ -11,9 +11,11 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
+import static java.util.concurrent.TimeUnit.*;
+
 public class Client implements StorageInterface {
     private final static int messageSize = 508;
-    public final static int timeout = 1500;
+    public final static long timeout = 1L;
     private InetAddress address;
     private int port;
 
@@ -26,7 +28,7 @@ public class Client implements StorageInterface {
         DatagramSocket socket;
         try {
             socket = new DatagramSocket();
-            socket.setSoTimeout(timeout);
+            socket.setSoTimeout((int) MILLISECONDS.convert((timeout), SECONDS));
         } catch (SocketException e) {
             throw new RuntimeException(e);
         }
@@ -54,6 +56,7 @@ public class Client implements StorageInterface {
         try {
             socket.receive(udpResp);
         } catch (SocketTimeoutException e) {
+            System.out.println("таймаут");
             return sendRequest(request);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -75,7 +78,7 @@ public class Client implements StorageInterface {
         Request<Object> request = new Request<>(RequestNames.GET_CITIES_LIST);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
         ArrayList<City> citiesList = (ArrayList<City>) response.getData();
         return citiesList;
     }
@@ -85,7 +88,7 @@ public class Client implements StorageInterface {
         Request<City> request = new Request<City>(RequestNames.ADD, city);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -93,7 +96,7 @@ public class Client implements StorageInterface {
         Request<City> request = new Request<City>(RequestNames.UPDATE, city);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -101,7 +104,7 @@ public class Client implements StorageInterface {
         Request<Object> request = new Request<>(RequestNames.CLEAR);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -119,7 +122,7 @@ public class Client implements StorageInterface {
         Request<Boolean> request = new Request<>(RequestNames.COUNT_GREATER_THAN_CAPITAL, capital);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
         return (Integer) response.getData();
     }
 
@@ -128,7 +131,7 @@ public class Client implements StorageInterface {
         Request<City> request = new Request<>(RequestNames.REMOVE_ALL_BY_CAR_CODE);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -136,16 +139,16 @@ public class Client implements StorageInterface {
         Request<City> request = new Request<>(RequestNames.GET_INFO);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
         return (StorageInfo) response.getData();
     }
 
     @Override
     public void removeById(int id) {
-        Request<Integer> request = new Request<Integer>(RequestNames.REMOVE_BY_ID, id);
+        Request<Integer> request = new Request<>(RequestNames.REMOVE_BY_ID, id);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -153,7 +156,7 @@ public class Client implements StorageInterface {
         Request<Object> request = new Request<>(RequestNames.REMOVE_FIRST);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -161,7 +164,7 @@ public class Client implements StorageInterface {
         Request<City> request = new Request<>(RequestNames.REMOVE_GREATER, city);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -169,7 +172,7 @@ public class Client implements StorageInterface {
         Request<City> request = new Request<>(RequestNames.REMOVE_LOWER, city);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
     }
 
     @Override
@@ -177,7 +180,7 @@ public class Client implements StorageInterface {
         Request<Object> request = new Request<>(RequestNames.SUM_OF_CAR_CODE);
         Response response = this.sendRequest(request);
         if (!response.isDone())
-            System.out.println("что-то не то");
+            System.out.println(response.getError());
         return (Long) response.getData();
     }
 }
