@@ -55,7 +55,7 @@ public class Client implements StorageInterface {
         try {
             socket.receive(udpResp);
         } catch (SocketTimeoutException e) {
-            System.out.println("таймаут");
+            System.out.println("превышено время ожидания от сервера");
             return sendRequest(request);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -66,7 +66,7 @@ public class Client implements StorageInterface {
         int id;
         byte total;
         byte index;
-        while (true) { // проверка id, проверка порядка, запись нескольких
+        while (true) {
             try {
                 inputStream.read(idBytes);
                 total = (byte) inputStream.read();
