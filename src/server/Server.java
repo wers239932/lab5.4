@@ -10,7 +10,6 @@ import storage.*;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 public class Server {
     private DatagramSocket datagramSocket;
