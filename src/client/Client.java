@@ -9,13 +9,15 @@ import storage.StorageInfo;
 
 import java.io.*;
 import java.net.*;
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.*;
 
 public class Client implements StorageInterface {
     private final static int messageSize = 508;
-    public final static long timeout = 1L;
+    public final static Duration timeout = Duration.ofSeconds(1);
     private InetAddress address;
     private int port;
 
@@ -28,7 +30,7 @@ public class Client implements StorageInterface {
         DatagramSocket socket;
         try {
             socket = new DatagramSocket();
-            socket.setSoTimeout((int) MILLISECONDS.convert((timeout), SECONDS));
+            socket.setSoTimeout((int) timeout.toMillis());
         } catch (SocketException e) {
             throw new RuntimeException(e);
         }
