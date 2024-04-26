@@ -182,14 +182,22 @@ public class Server {
 
     }
 
-    public void sendReply(Serializable object, InetAddress address, int port) throws IOException {
+    public void sendReply(Response object, InetAddress address, int port) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
         objectOutputStream.writeObject(object);
         objectOutputStream.flush();
         byte[] sendData = byteArrayOutputStream.toByteArray();
         int len = sendData.length;
-        DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
-        this.datagramSocket.send(datagramPacket);
+        try {
+            if (len > messageSize){
+                throw new Exception("реквест не влезает в размер сообщения");
+            }
+            DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
+            this.datagramSocket.send(datagramPacket);
+        } catch (Exception e) {
+            this.sendReply(new Response<>(RequestStatus.FAILED, e.getMessage()), address, port);
+            System.out.println(e.getMessage());
+        }
     }
 }
