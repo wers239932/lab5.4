@@ -6,8 +6,11 @@ import storage.*;
 
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.System.in;
@@ -16,7 +19,6 @@ public class Server {
     private DatagramSocket datagramSocket;
     private InetAddress hostAddress;
     private StorageInterface storage;
-    private final int messageSize = 1432;
     public final static Duration timeout = Duration.ofMillis(50);
     private Scanner scanner;
 
@@ -66,8 +68,8 @@ public class Server {
                 }
             } else {
                 try {
-                    byte arr[] = new byte[messageSize];
-                    DatagramPacket datagramPacket = new DatagramPacket(arr, messageSize);
+                    byte arr[] = new byte[ProtocolInfo.messageSize];
+                    DatagramPacket datagramPacket = new DatagramPacket(arr, ProtocolInfo.messageSize);
                     try {
                         this.datagramSocket.receive(datagramPacket);
                     } catch (SocketTimeoutException e) {
@@ -229,15 +231,23 @@ public class Server {
         objectOutputStream.flush();
         byte[] sendData = byteArrayOutputStream.toByteArray();
         int len = sendData.length;
-        try {
-            if (len > messageSize) {
-                throw new Exception("респонс не влезает в размер сообщения");
-            }
-            DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
+        Random random = new Random();
+        int id = random.nextInt();
+        int dataSize = ProtocolInfo.messageSize - ProtocolInfo.headerSize;
+        byte total = (byte) ((len + dataSize - 1) / dataSize);
+        byte index = 0;
+        while (index < total) {
+            ByteArrayOutputStream part = new ByteArrayOutputStream();
+            byte[] bytes = ByteBuffer.allocate(4).putInt(id).array();
+            part.write(bytes);
+            part.write(total);
+            part.write(index);
+            int end = (index + 1) * dataSize;
+            if (end > len) end = len;
+            part.write(Arrays.copyOfRange(sendData, index * dataSize, end));
+            index++;
+            DatagramPacket datagramPacket = new DatagramPacket(part.toByteArray(), part.size(), address, port);
             this.datagramSocket.send(datagramPacket);
-        } catch (Exception e) {
-            this.sendReply(new Response<>(RequestStatus.FAILED, e.getMessage()), address, port);
-            System.out.println(e.getMessage());
         }
     }
 }
