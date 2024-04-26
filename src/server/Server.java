@@ -6,8 +6,11 @@ import storage.*;
 
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.System.in;
@@ -17,6 +20,7 @@ public class Server {
     private InetAddress hostAddress;
     private StorageInterface storage;
     private final int messageSize = 1432;
+    private final int headerSize = 6;
     public final static Duration timeout = Duration.ofMillis(50);
     private Scanner scanner;
 
@@ -229,7 +233,30 @@ public class Server {
         objectOutputStream.flush();
         byte[] sendData = byteArrayOutputStream.toByteArray();
         int len = sendData.length;
-        try {
+        Random random = new Random(); // генерироать в классе
+        int id = random.nextInt();
+        int dataSize = messageSize-headerSize;
+        byte total = (byte) (len/dataSize+1);  // (len+data len%datasize)
+        byte index = 0;
+        //id->byte[4]
+
+        while (index<total)
+        {
+            ByteArrayOutputStream part = new ByteArrayOutputStream();
+            byte[] bytes = ByteBuffer.allocate(4).putInt(id).array();
+            part.write(bytes);
+            part.write(total);
+            part.write(index);
+            int end = (index+1)*dataSize;
+            if(end>len) end = len;
+            part.write(Arrays.copyOfRange(sendData,index*dataSize,end));
+            index++;
+            DatagramPacket datagramPacket = new DatagramPacket(part.toByteArray(), part.size(), address, port);
+            System.out.println(sendData.length);
+            System.out.println(part.toByteArray().length);
+            this.datagramSocket.send(datagramPacket);
+        }
+        /*try {
             if (len > messageSize) {
                 throw new Exception("респонс не влезает в размер сообщения");
             }
@@ -238,6 +265,6 @@ public class Server {
         } catch (Exception e) {
             this.sendReply(new Response<>(RequestStatus.FAILED, e.getMessage()), address, port);
             System.out.println(e.getMessage());
-        }
+        }*/
     }
 }

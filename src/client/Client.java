@@ -9,11 +9,14 @@ import storage.StorageInfo;
 
 import java.io.*;
 import java.net.*;
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.util.ArrayList;
 
 public class Client implements StorageInterface {
     private final static int messageSize = 1432;
+    private final static int headerSize = 6;
     public final static Duration timeout = Duration.ofSeconds(1);
     private InetAddress address;
     private int port;
@@ -61,8 +64,33 @@ public class Client implements StorageInterface {
             throw new RuntimeException(e);
         }
         ByteArrayInputStream inputStream = new ByteArrayInputStream(buffer);
+        byte[] byteResponse = new byte[0];
+        byte[] idBytes = new byte[4];
+        int id;
+        byte total;
+        byte index;
+        while (true) { // проверка id, проверка порядка, запись нескольких
+            try {
+                inputStream.read(idBytes);
+                total = (byte) inputStream.read();
+                index = (byte) inputStream.read();
+                byte[] part = inputStream.readAllBytes();
+                byte[] c = new byte[byteResponse.length + part.length];
+                System.arraycopy(byteResponse, 0, c, 0, byteResponse.length);
+                System.arraycopy(part, 0, c, byteResponse.length, part.length);
+                byteResponse = c;
+                if(index+1==total) break;
+                socket.receive(udpResp);
+                inputStream = new ByteArrayInputStream(buffer);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         try {
-            ObjectInputStream inputStream1 = new ObjectInputStream(inputStream);
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteResponse);
+            System.out.println(new String(byteResponse));
+            System.out.println(byteResponse.length);
+            ObjectInputStream inputStream1 = new ObjectInputStream(byteArrayInputStream);
             Response response = (Response) inputStream1.readObject();
             return response;
         } catch (IOException e) {
