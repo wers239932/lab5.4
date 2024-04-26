@@ -42,10 +42,9 @@ public class Server {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            if (available>0) {
+            if (available > 0) {
                 String command = scanner.nextLine();
-                switch (command)
-                {
+                switch (command) {
                     case ("exit"): {
                         try {
                             storage.save();
@@ -223,10 +222,6 @@ public class Server {
     }
 
 
-
-
-
-
     public void sendReply(Response object, InetAddress address, int port) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
@@ -235,7 +230,7 @@ public class Server {
         byte[] sendData = byteArrayOutputStream.toByteArray();
         int len = sendData.length;
         try {
-            if (len > messageSize){
+            if (len > messageSize) {
                 throw new Exception("респонс не влезает в размер сообщения");
             }
             DatagramPacket datagramPacket = new DatagramPacket(sendData, len, address, port);
