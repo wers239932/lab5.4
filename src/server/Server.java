@@ -236,7 +236,7 @@ public class Server {
         Random random = new Random(); // генерироать в классе
         int id = random.nextInt();
         int dataSize = messageSize - headerSize;
-        byte total = (byte) (len / dataSize + 1);  // (len + dataSize - len % datasize)
+        byte total = (byte) ((len + dataSize - 1) / dataSize);
         byte index = 0;
         //id->byte[4]
 
