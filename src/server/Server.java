@@ -16,7 +16,7 @@ public class Server {
     private DatagramSocket datagramSocket;
     private InetAddress hostAddress;
     private StorageInterface storage;
-    private final int messageSize = 508;
+    private final int messageSize = 1432;
     public final static Duration timeout = Duration.ofMillis(50);
     private Scanner scanner;
 

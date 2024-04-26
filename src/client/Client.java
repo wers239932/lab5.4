@@ -11,12 +11,9 @@ import java.io.*;
 import java.net.*;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-import static java.util.concurrent.TimeUnit.*;
 
 public class Client implements StorageInterface {
-    private final static int messageSize = 508;
+    private final static int messageSize = 1432;
     public final static Duration timeout = Duration.ofSeconds(1);
     private InetAddress address;
     private int port;
