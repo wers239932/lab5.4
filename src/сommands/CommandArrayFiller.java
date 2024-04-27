@@ -1,6 +1,6 @@
 package сommands;
 
-import StorageInterface.StorageInterface;
+import storageInterface.StorageInterface;
 import cli.Command;
 
 import java.util.ArrayList;

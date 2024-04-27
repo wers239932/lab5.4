@@ -1,4 +1,4 @@
-package StorageInterface;
+package storageInterface;
 
 import storage.City;
 import storage.StorageInfo;

@@ -1,6 +1,6 @@
 package client;
 
-import StorageInterface.StorageInterface;
+import storageInterface.StorageInterface;
 import api.ProtocolInfo;
 import api.Request;
 import api.RequestNames;

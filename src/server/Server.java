@@ -1,6 +1,6 @@
 package server;
 
-import StorageInterface.StorageInterface;
+import storageInterface.StorageInterface;
 import api.*;
 import storage.*;
 

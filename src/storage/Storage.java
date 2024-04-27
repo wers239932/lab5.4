@@ -1,6 +1,6 @@
 package storage;
 
-import StorageInterface.StorageInterface;
+import storageInterface.StorageInterface;
 import dal.DataAccessLayer;
 
 import java.io.IOException;

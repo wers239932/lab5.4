@@ -1,6 +1,6 @@
 package сommands;
 
-import StorageInterface.StorageInterface;
+import storageInterface.StorageInterface;
 import cli.Command;
 import cli.IOInterface;
 import cli.commandExceptions.CommandException;
