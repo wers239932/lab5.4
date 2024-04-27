@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import static java.lang.System.in;
 
@@ -21,6 +22,7 @@ public class Server {
     private StorageInterface storage;
     public final static Duration timeout = Duration.ofMillis(50);
     private Scanner scanner;
+    private Logger logger = Logger.getLogger("server");
 
     public Server(String host, int port, StorageInterface storage) {
         this.scanner = new Scanner(in);
