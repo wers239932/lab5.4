@@ -8,11 +8,11 @@ import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import static java.lang.System.in;
 
@@ -22,7 +22,7 @@ public class Server {
     private StorageInterface storage;
     public final static Duration timeout = Duration.ofMillis(50);
     private Scanner scanner;
-    private Logger logger = Logger.getLogger("server");
+    private Logger logger = Logger.getLogger("MyLog");
 
     public Server(String host, int port, StorageInterface storage) {
         this.scanner = new Scanner(in);
@@ -35,6 +35,15 @@ public class Server {
             throw new RuntimeException(e);
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
+        }
+        Logger logger = Logger.getLogger("MyLog");
+        try {
+            FileHandler fh = new FileHandler("ItsLogTime.log", true);
+            logger.addHandler(fh);
+            fh.setFormatter(new SimpleFormatter());
+            logger.info("сервер создан");
+        } catch (SecurityException | IOException e) {
+            logger.log(Level.SEVERE, "Произошла ошибка при работе с FileHandler.", e);
         }
     }
 
@@ -53,17 +62,21 @@ public class Server {
                         try {
                             storage.save();
                             System.out.println("коллекция сохранена");
+                            logger.fine("коллекция сохранена");
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                         System.out.println("завершение работы");
+                        logger.info("выключение сервера");
                         System.exit(0);
                     }
                     case ("save"): {
                         try {
                             storage.save();
                             System.out.println("коллекция сохранена");
+                            logger.fine("коллекция сохранена");
                         } catch (IOException e) {
+                            logger.severe("ошибка сохранения");
                             throw new RuntimeException(e);
                         }
                     }
@@ -77,6 +90,7 @@ public class Server {
                     } catch (SocketTimeoutException e) {
                         throw new NoMessageException();
                     } catch (IOException e) {
+                        logger.severe("ошибка получения сообщения по сети");
                         throw new RuntimeException(e);
                     }
                     InetAddress clientAddress = datagramPacket.getAddress();
@@ -87,6 +101,7 @@ public class Server {
                         ObjectInputStream objectStream = new ObjectInputStream(dataStream);
                         request = (Request) objectStream.readObject();
                     } catch (IOException | ClassNotFoundException e) {
+                        logger.severe("сообщение клиента не может быть прочитано");
                         throw new RuntimeException(e);
                     }
                     String commandName = request.getCommandName();
@@ -99,6 +114,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.GET_CITIES_LIST): {
@@ -108,6 +124,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.UPDATE): {
@@ -118,6 +135,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.CLEAR): {
@@ -128,6 +146,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.COUNT_GREATER_THAN_CAPITAL): {
@@ -138,6 +157,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.REMOVE_ALL_BY_CAR_CODE): {
@@ -149,6 +169,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.GET_INFO): {
@@ -159,6 +180,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.REMOVE_BY_ID): {
@@ -170,6 +192,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.REMOVE_FIRST): {
@@ -180,6 +203,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.REMOVE_GREATER): {
@@ -191,6 +215,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.REMOVE_LOWER): {
@@ -202,6 +227,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.SUM_OF_CAR_CODE): {
@@ -212,6 +238,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            logger.info("выполнена команда add");
                             break;
                         }
                         case (RequestNames.GET_COMMAND_ARRAY): {
