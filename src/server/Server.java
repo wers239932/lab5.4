@@ -114,7 +114,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда ADD");
                             break;
                         }
                         case (RequestNames.GET_CITIES_LIST): {
@@ -124,7 +124,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда GET_CITIES_LIST");
                             break;
                         }
                         case (RequestNames.UPDATE): {
@@ -135,7 +135,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда UPDATE");
                             break;
                         }
                         case (RequestNames.CLEAR): {
@@ -146,7 +146,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда CLEAR");
                             break;
                         }
                         case (RequestNames.COUNT_GREATER_THAN_CAPITAL): {
@@ -157,7 +157,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда COUNT_GREATER_THAN_CAPITAL");
                             break;
                         }
                         case (RequestNames.REMOVE_ALL_BY_CAR_CODE): {
@@ -169,7 +169,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда REMOVE_ALL_BY_CAR_CODE");
                             break;
                         }
                         case (RequestNames.GET_INFO): {
@@ -180,7 +180,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда GET_INFO");
                             break;
                         }
                         case (RequestNames.REMOVE_BY_ID): {
@@ -192,7 +192,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда REMOVE_BY_ID");
                             break;
                         }
                         case (RequestNames.REMOVE_FIRST): {
@@ -203,7 +203,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда REMOVE_FIRST");
                             break;
                         }
                         case (RequestNames.REMOVE_GREATER): {
@@ -215,7 +215,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда REMOVE_GREATER");
                             break;
                         }
                         case (RequestNames.REMOVE_LOWER): {
@@ -227,7 +227,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда REMOVE_LOWER");
                             break;
                         }
                         case (RequestNames.SUM_OF_CAR_CODE): {
@@ -238,7 +238,7 @@ public class Server {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            logger.info("выполнена команда add");
+                            logger.info("выполнена команда SUM_OF_CAR_CODE");
                             break;
                         }
                         case (RequestNames.GET_COMMAND_ARRAY): {
@@ -278,5 +278,6 @@ public class Server {
             DatagramPacket datagramPacket = new DatagramPacket(part.toByteArray(), part.size(), address, port);
             this.datagramSocket.send(datagramPacket);
         }
+        logger.info("отправлен ответ");
     }
 }
